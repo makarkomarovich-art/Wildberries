@@ -28,6 +28,7 @@ Google Sheets writer for discounts_prices data.
 from __future__ import annotations
 
 from typing import Any, Dict, List, Optional, Tuple
+from datetime import datetime
 from pathlib import Path
 import importlib.util
 import logging
@@ -391,6 +392,18 @@ def write_discounts_prices_to_sheet(
                     ).execute()
     except Exception as e:
         logger.warning(f"Не удалось применить формат процентов: {e}")
+
+    # Записываем дату и время выполнения в ячейку A2
+    try:
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        service.spreadsheets().values().update(
+            spreadsheetId=spreadsheet_id,
+            range=f"{sheet_name}!A2",
+            valueInputOption="RAW",
+            body={"values": [[timestamp]]},
+        ).execute()
+    except Exception as e:
+        logger.warning(f"Не удалось записать метку времени в A2: {e}")
 
     return {
         "processed_rows": processed_rows,

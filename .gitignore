@@ -15,5 +15,11 @@ env/
 # Logs
 *.log
 
-# Keep JSON files (as requested)
-# *.json
+
+# JSON data files (except schemas)
+*.json
+!excel_actions/utils/schemas/*.json
+
+# Test methods and cancelled features
+test_new_methods/
+cancelled/
