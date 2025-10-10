@@ -9,7 +9,6 @@ CREATE TABLE cr_daily_stats (
 
   -- бизнес-дата метрики и период
   date_of_period DATE NOT NULL,          -- дата по Europe/Moscow (сегодня или вчера)
-  period cr_period NOT NULL,             -- 'current' / 'previous'
 
   -- служебная метка, когда снят замер
   snapshot_ts TIMESTAMPTZ NOT NULL DEFAULT NOW(),
@@ -37,9 +36,10 @@ CREATE TABLE cr_daily_stats (
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- перезапись по nm_id + дате + периоду
-CREATE UNIQUE INDEX ux_cr_daily ON cr_daily_stats (nm_id, date_of_period, period);
+-- Уникальность по (nm_id, date_of_period) - одна запись на артикул в день
+CREATE UNIQUE INDEX ux_cr_daily ON cr_daily_stats (nm_id, date_of_period);
 
--- ускорители выборок
+-- Индексы для быстрого поиска
 CREATE INDEX idx_cr_nm_date ON cr_daily_stats (nm_id, date_of_period);
 CREATE INDEX idx_cr_date ON cr_daily_stats (date_of_period);
+CREATE INDEX idx_cr_product_id ON cr_daily_stats (product_id);
