@@ -1,0 +1,111 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WB CR Daily Stats Response Schema",
+  "description": "Validation schema for Wildberries nm-report/detail API response",
+  "type": "object",
+  "required": ["data"],
+  "properties": {
+    "data": {
+      "type": "object",
+      "required": ["cards"],
+      "properties": {
+        "cards": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["nmID", "statistics", "stocks"],
+            "properties": {
+              "nmID": {
+                "type": "integer",
+                "description": "Article ID (nmID)"
+              },
+              "statistics": {
+                "type": "object",
+                "required": ["selectedPeriod", "previousPeriod"],
+                "properties": {
+                  "selectedPeriod": {
+                    "type": "object",
+                    "required": [
+                      "openCardCount",
+                      "addToCartCount",
+                      "ordersCount",
+                      "ordersSumRub",
+                      "buyoutsCount",
+                      "buyoutsSumRub",
+                      "cancelCount",
+                      "conversions"
+                    ],
+                    "properties": {
+                      "openCardCount": {"type": "integer"},
+                      "addToCartCount": {"type": "integer"},
+                      "ordersCount": {"type": "integer"},
+                      "ordersSumRub": {"type": "number"},
+                      "buyoutsCount": {"type": "integer"},
+                      "buyoutsSumRub": {"type": "number"},
+                      "cancelCount": {"type": "integer"},
+                      "conversions": {
+                        "type": "object",
+                        "required": ["addToCartPercent", "cartToOrderPercent", "buyoutsPercent"],
+                        "properties": {
+                          "addToCartPercent": {"type": "integer"},
+                          "cartToOrderPercent": {"type": "integer"},
+                          "buyoutsPercent": {"type": "integer"}
+                        }
+                      }
+                    }
+                  },
+                  "previousPeriod": {
+                    "type": "object",
+                    "required": [
+                      "openCardCount",
+                      "addToCartCount",
+                      "ordersCount",
+                      "ordersSumRub",
+                      "buyoutsCount",
+                      "buyoutsSumRub",
+                      "cancelCount",
+                      "conversions"
+                    ],
+                    "properties": {
+                      "openCardCount": {"type": "integer"},
+                      "addToCartCount": {"type": "integer"},
+                      "ordersCount": {"type": "integer"},
+                      "ordersSumRub": {"type": "number"},
+                      "buyoutsCount": {"type": "integer"},
+                      "buyoutsSumRub": {"type": "number"},
+                      "cancelCount": {"type": "integer"},
+                      "conversions": {
+                        "type": "object",
+                        "required": ["addToCartPercent", "cartToOrderPercent", "buyoutsPercent"],
+                        "properties": {
+                          "addToCartPercent": {"type": "integer"},
+                          "cartToOrderPercent": {"type": "integer"},
+                          "buyoutsPercent": {"type": "integer"}
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "stocks": {
+                "type": "object",
+                "required": ["stocksMp", "stocksWb"],
+                "properties": {
+                  "stocksMp": {
+                    "type": "integer",
+                    "description": "Stocks on marketplace"
+                  },
+                  "stocksWb": {
+                    "type": "integer",
+                    "description": "Stocks on WB warehouse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

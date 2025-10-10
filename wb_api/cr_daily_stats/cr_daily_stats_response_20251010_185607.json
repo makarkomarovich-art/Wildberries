@@ -1,0 +1,1131 @@
+{
+  "data": {
+    "page": 1,
+    "isNextPage": false,
+    "cards": [
+      {
+        "nmID": 456770543,
+        "vendorCode": "rykzak_black",
+        "brandName": "MOOVON",
+        "object": {
+          "id": 138,
+          "name": "Рюкзаки"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-10-10 00:00:00",
+            "end": "2025-10-10 18:56:05",
+            "openCardCount": 211,
+            "addToCartCount": 29,
+            "ordersCount": 8,
+            "ordersSumRub": 11344,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 1418,
+            "avgOrdersCountPerDay": 8,
+            "conversions": {
+              "addToCartPercent": 14,
+              "cartToOrderPercent": 28,
+              "buyoutsPercent": 0
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-10-09 05:03:54",
+            "end": "2025-10-09 23:59:59",
+            "openCardCount": 426,
+            "addToCartCount": 63,
+            "ordersCount": 22,
+            "ordersSumRub": 31197,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 1418,
+            "avgOrdersCountPerDay": 22,
+            "conversions": {
+              "addToCartPercent": 15,
+              "cartToOrderPercent": 35,
+              "buyoutsPercent": 0
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": -50,
+            "addToCartDynamics": -54,
+            "ordersCountDynamics": -64,
+            "ordersSumRubDynamics": -64,
+            "buyoutsCountDynamics": 0,
+            "buyoutsSumRubDynamics": 0,
+            "cancelCountDynamics": 0,
+            "cancelSumRubDynamics": 0,
+            "avgOrdersCountPerDayDynamics": -64,
+            "avgPriceRubDynamics": 0,
+            "conversions": {
+              "addToCartPercent": -7,
+              "cartToOrderPercent": -20,
+              "buyoutsPercent": 0
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 226
+        }
+      },
+      {
+        "nmID": 214175021,
+        "vendorCode": "бритва1(фиол)",
+        "brandName": "Funke",
+        "object": {
+          "id": 620,
+          "name": "Бритвы электрические"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-10-10 00:00:00",
+            "end": "2025-10-10 18:56:05",
+            "openCardCount": 189,
+            "addToCartCount": 23,
+            "ordersCount": 4,
+            "ordersSumRub": 11080,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 2770,
+            "avgOrdersCountPerDay": 4,
+            "conversions": {
+              "addToCartPercent": 12,
+              "cartToOrderPercent": 17,
+              "buyoutsPercent": 0
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-10-09 05:03:54",
+            "end": "2025-10-09 23:59:59",
+            "openCardCount": 187,
+            "addToCartCount": 19,
+            "ordersCount": 7,
+            "ordersSumRub": 19400,
+            "buyoutsCount": 1,
+            "buyoutsSumRub": 2770,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 2771,
+            "avgOrdersCountPerDay": 7,
+            "conversions": {
+              "addToCartPercent": 10,
+              "cartToOrderPercent": 37,
+              "buyoutsPercent": 100
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": 1,
+            "addToCartDynamics": 21,
+            "ordersCountDynamics": -43,
+            "ordersSumRubDynamics": -43,
+            "buyoutsCountDynamics": -100,
+            "buyoutsSumRubDynamics": -100,
+            "cancelCountDynamics": 0,
+            "cancelSumRubDynamics": 0,
+            "avgOrdersCountPerDayDynamics": -43,
+            "avgPriceRubDynamics": 0,
+            "conversions": {
+              "addToCartPercent": 20,
+              "cartToOrderPercent": -54,
+              "buyoutsPercent": -100
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 253
+        }
+      },
+      {
+        "nmID": 235704167,
+        "vendorCode": "бритва2(сереб)",
+        "brandName": "Funke",
+        "object": {
+          "id": 620,
+          "name": "Бритвы электрические"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-10-10 00:00:00",
+            "end": "2025-10-10 18:56:05",
+            "openCardCount": 155,
+            "addToCartCount": 19,
+            "ordersCount": 7,
+            "ordersSumRub": 18200,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 2600,
+            "avgOrdersCountPerDay": 7,
+            "conversions": {
+              "addToCartPercent": 12,
+              "cartToOrderPercent": 37,
+              "buyoutsPercent": 0
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-10-09 05:03:54",
+            "end": "2025-10-09 23:59:59",
+            "openCardCount": 263,
+            "addToCartCount": 33,
+            "ordersCount": 8,
+            "ordersSumRub": 20849,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 2606,
+            "avgOrdersCountPerDay": 8,
+            "conversions": {
+              "addToCartPercent": 13,
+              "cartToOrderPercent": 24,
+              "buyoutsPercent": 0
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": -41,
+            "addToCartDynamics": -42,
+            "ordersCountDynamics": -13,
+            "ordersSumRubDynamics": -13,
+            "buyoutsCountDynamics": 0,
+            "buyoutsSumRubDynamics": 0,
+            "cancelCountDynamics": 0,
+            "cancelSumRubDynamics": 0,
+            "avgOrdersCountPerDayDynamics": -13,
+            "avgPriceRubDynamics": 0,
+            "conversions": {
+              "addToCartPercent": -8,
+              "cartToOrderPercent": 54,
+              "buyoutsPercent": 0
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 257
+        }
+      },
+      {
+        "nmID": 286288378,
+        "vendorCode": "шейвер1",
+        "brandName": "Funke",
+        "object": {
+          "id": 620,
+          "name": "Бритвы электрические"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-10-10 00:00:00",
+            "end": "2025-10-10 18:56:05",
+            "openCardCount": 115,
+            "addToCartCount": 14,
+            "ordersCount": 5,
+            "ordersSumRub": 11240,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 2248,
+            "avgOrdersCountPerDay": 5,
+            "conversions": {
+              "addToCartPercent": 12,
+              "cartToOrderPercent": 36,
+              "buyoutsPercent": 0
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-10-09 05:03:54",
+            "end": "2025-10-09 23:59:59",
+            "openCardCount": 239,
+            "addToCartCount": 15,
+            "ordersCount": 4,
+            "ordersSumRub": 8993,
+            "buyoutsCount": 1,
+            "buyoutsSumRub": 2248,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 2248,
+            "avgOrdersCountPerDay": 4,
+            "conversions": {
+              "addToCartPercent": 6,
+              "cartToOrderPercent": 27,
+              "buyoutsPercent": 100
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": -52,
+            "addToCartDynamics": -7,
+            "ordersCountDynamics": 25,
+            "ordersSumRubDynamics": 25,
+            "buyoutsCountDynamics": -100,
+            "buyoutsSumRubDynamics": -100,
+            "cancelCountDynamics": 0,
+            "cancelSumRubDynamics": 0,
+            "avgOrdersCountPerDayDynamics": 25,
+            "avgPriceRubDynamics": 0,
+            "conversions": {
+              "addToCartPercent": 100,
+              "cartToOrderPercent": 33,
+              "buyoutsPercent": -100
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 354
+        }
+      },
+      {
+        "nmID": 314971243,
+        "vendorCode": "головка.фиол",
+        "brandName": "Funke",
+        "object": {
+          "id": 620,
+          "name": "Бритвы электрические"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-10-10 00:00:00",
+            "end": "2025-10-10 18:56:05",
+            "openCardCount": 112,
+            "addToCartCount": 7,
+            "ordersCount": 5,
+            "ordersSumRub": 3630,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 726,
+            "avgOrdersCountPerDay": 5,
+            "conversions": {
+              "addToCartPercent": 6,
+              "cartToOrderPercent": 71,
+              "buyoutsPercent": 0
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-10-09 05:03:54",
+            "end": "2025-10-09 23:59:59",
+            "openCardCount": 146,
+            "addToCartCount": 13,
+            "ordersCount": 3,
+            "ordersSumRub": 2178,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 726,
+            "avgOrdersCountPerDay": 3,
+            "conversions": {
+              "addToCartPercent": 9,
+              "cartToOrderPercent": 23,
+              "buyoutsPercent": 0
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": -23,
+            "addToCartDynamics": -46,
+            "ordersCountDynamics": 67,
+            "ordersSumRubDynamics": 67,
+            "buyoutsCountDynamics": 0,
+            "buyoutsSumRubDynamics": 0,
+            "cancelCountDynamics": 0,
+            "cancelSumRubDynamics": 0,
+            "avgOrdersCountPerDayDynamics": 67,
+            "avgPriceRubDynamics": 0,
+            "conversions": {
+              "addToCartPercent": -33,
+              "cartToOrderPercent": 209,
+              "buyoutsPercent": 0
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 174
+        }
+      },
+      {
+        "nmID": 447531470,
+        "vendorCode": "шейвер2(черн)",
+        "brandName": "Funke",
+        "object": {
+          "id": 620,
+          "name": "Бритвы электрические"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-10-10 00:00:00",
+            "end": "2025-10-10 18:56:05",
+            "openCardCount": 76,
+            "addToCartCount": 9,
+            "ordersCount": 4,
+            "ordersSumRub": 9600,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 2400,
+            "avgOrdersCountPerDay": 4,
+            "conversions": {
+              "addToCartPercent": 12,
+              "cartToOrderPercent": 44,
+              "buyoutsPercent": 0
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-10-09 05:03:54",
+            "end": "2025-10-09 23:59:59",
+            "openCardCount": 107,
+            "addToCartCount": 15,
+            "ordersCount": 7,
+            "ordersSumRub": 16625,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 2375,
+            "avgOrdersCountPerDay": 7,
+            "conversions": {
+              "addToCartPercent": 14,
+              "cartToOrderPercent": 47,
+              "buyoutsPercent": 0
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": -29,
+            "addToCartDynamics": -40,
+            "ordersCountDynamics": -43,
+            "ordersSumRubDynamics": -42,
+            "buyoutsCountDynamics": 0,
+            "buyoutsSumRubDynamics": 0,
+            "cancelCountDynamics": 0,
+            "cancelSumRubDynamics": 0,
+            "avgOrdersCountPerDayDynamics": -43,
+            "avgPriceRubDynamics": 1,
+            "conversions": {
+              "addToCartPercent": -14,
+              "cartToOrderPercent": -6,
+              "buyoutsPercent": 0
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 66
+        }
+      },
+      {
+        "nmID": 313737367,
+        "vendorCode": "сеточка+лезвия(шейвер)",
+        "brandName": "Funke",
+        "object": {
+          "id": 620,
+          "name": "Бритвы электрические"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-10-10 00:00:00",
+            "end": "2025-10-10 18:56:05",
+            "openCardCount": 72,
+            "addToCartCount": 1,
+            "ordersCount": 1,
+            "ordersSumRub": 676,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 676,
+            "avgOrdersCountPerDay": 1,
+            "conversions": {
+              "addToCartPercent": 1,
+              "cartToOrderPercent": 100,
+              "buyoutsPercent": 0
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-10-09 05:03:54",
+            "end": "2025-10-09 23:59:59",
+            "openCardCount": 127,
+            "addToCartCount": 7,
+            "ordersCount": 2,
+            "ordersSumRub": 1352,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 676,
+            "avgOrdersCountPerDay": 2,
+            "conversions": {
+              "addToCartPercent": 6,
+              "cartToOrderPercent": 29,
+              "buyoutsPercent": 0
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": -43,
+            "addToCartDynamics": -86,
+            "ordersCountDynamics": -50,
+            "ordersSumRubDynamics": -50,
+            "buyoutsCountDynamics": 0,
+            "buyoutsSumRubDynamics": 0,
+            "cancelCountDynamics": 0,
+            "cancelSumRubDynamics": 0,
+            "avgOrdersCountPerDayDynamics": -50,
+            "avgPriceRubDynamics": 0,
+            "conversions": {
+              "addToCartPercent": -83,
+              "cartToOrderPercent": 245,
+              "buyoutsPercent": 0
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 258
+        }
+      },
+      {
+        "nmID": 314971244,
+        "vendorCode": "головка.сереб",
+        "brandName": "Funke",
+        "object": {
+          "id": 620,
+          "name": "Бритвы электрические"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-10-10 00:00:00",
+            "end": "2025-10-10 18:56:05",
+            "openCardCount": 71,
+            "addToCartCount": 4,
+            "ordersCount": 1,
+            "ordersSumRub": 751,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 751,
+            "avgOrdersCountPerDay": 1,
+            "conversions": {
+              "addToCartPercent": 6,
+              "cartToOrderPercent": 25,
+              "buyoutsPercent": 0
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-10-09 05:03:54",
+            "end": "2025-10-09 23:59:59",
+            "openCardCount": 76,
+            "addToCartCount": 8,
+            "ordersCount": 0,
+            "ordersSumRub": 0,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 0,
+            "avgOrdersCountPerDay": 0,
+            "conversions": {
+              "addToCartPercent": 11,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": -7,
+            "addToCartDynamics": -50,
+            "ordersCountDynamics": 100,
+            "ordersSumRubDynamics": 100,
+            "buyoutsCountDynamics": 0,
+            "buyoutsSumRubDynamics": 0,
+            "cancelCountDynamics": 0,
+            "cancelSumRubDynamics": 0,
+            "avgOrdersCountPerDayDynamics": 100,
+            "avgPriceRubDynamics": 100,
+            "conversions": {
+              "addToCartPercent": -45,
+              "cartToOrderPercent": 100,
+              "buyoutsPercent": 0
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 153
+        }
+      },
+      {
+        "nmID": 370495530,
+        "vendorCode": "насадка.шейвер",
+        "brandName": "Funke",
+        "object": {
+          "id": 620,
+          "name": "Бритвы электрические"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-10-10 00:00:00",
+            "end": "2025-10-10 18:56:05",
+            "openCardCount": 56,
+            "addToCartCount": 2,
+            "ordersCount": 2,
+            "ordersSumRub": 1246,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 623,
+            "avgOrdersCountPerDay": 2,
+            "conversions": {
+              "addToCartPercent": 4,
+              "cartToOrderPercent": 100,
+              "buyoutsPercent": 0
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-10-09 05:03:54",
+            "end": "2025-10-09 23:59:59",
+            "openCardCount": 91,
+            "addToCartCount": 4,
+            "ordersCount": 1,
+            "ordersSumRub": 623,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 623,
+            "avgOrdersCountPerDay": 1,
+            "conversions": {
+              "addToCartPercent": 4,
+              "cartToOrderPercent": 25,
+              "buyoutsPercent": 0
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": -38,
+            "addToCartDynamics": -50,
+            "ordersCountDynamics": 100,
+            "ordersSumRubDynamics": 100,
+            "buyoutsCountDynamics": 0,
+            "buyoutsSumRubDynamics": 0,
+            "cancelCountDynamics": 0,
+            "cancelSumRubDynamics": 0,
+            "avgOrdersCountPerDayDynamics": 100,
+            "avgPriceRubDynamics": 0,
+            "conversions": {
+              "addToCartPercent": 0,
+              "cartToOrderPercent": 300,
+              "buyoutsPercent": 0
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 4
+        }
+      },
+      {
+        "nmID": 434600560,
+        "vendorCode": "бритва(черн.рус)",
+        "brandName": "Funke",
+        "object": {
+          "id": 620,
+          "name": "Бритвы электрические"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-10-10 00:00:00",
+            "end": "2025-10-10 18:56:05",
+            "openCardCount": 14,
+            "addToCartCount": 0,
+            "ordersCount": 0,
+            "ordersSumRub": 0,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 0,
+            "avgOrdersCountPerDay": 0,
+            "conversions": {
+              "addToCartPercent": 0,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-10-09 05:03:54",
+            "end": "2025-10-09 23:59:59",
+            "openCardCount": 29,
+            "addToCartCount": 1,
+            "ordersCount": 0,
+            "ordersSumRub": 0,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 0,
+            "avgOrdersCountPerDay": 0,
+            "conversions": {
+              "addToCartPercent": 3,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": -52,
+            "addToCartDynamics": -100,
+            "ordersCountDynamics": 0,
+            "ordersSumRubDynamics": 0,
+            "buyoutsCountDynamics": 0,
+            "buyoutsSumRubDynamics": 0,
+            "cancelCountDynamics": 0,
+            "cancelSumRubDynamics": 0,
+            "avgOrdersCountPerDayDynamics": 0,
+            "avgPriceRubDynamics": 0,
+            "conversions": {
+              "addToCartPercent": -100,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 137
+        }
+      },
+      {
+        "nmID": 434600561,
+        "vendorCode": "бритва(металик.рус)",
+        "brandName": "Funke",
+        "object": {
+          "id": 620,
+          "name": "Бритвы электрические"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-10-10 00:00:00",
+            "end": "2025-10-10 18:56:05",
+            "openCardCount": 12,
+            "addToCartCount": 1,
+            "ordersCount": 0,
+            "ordersSumRub": 0,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 0,
+            "avgOrdersCountPerDay": 0,
+            "conversions": {
+              "addToCartPercent": 8,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-10-09 05:03:54",
+            "end": "2025-10-09 23:59:59",
+            "openCardCount": 21,
+            "addToCartCount": 0,
+            "ordersCount": 0,
+            "ordersSumRub": 0,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 0,
+            "avgOrdersCountPerDay": 0,
+            "conversions": {
+              "addToCartPercent": 0,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": -43,
+            "addToCartDynamics": 100,
+            "ordersCountDynamics": 0,
+            "ordersSumRubDynamics": 0,
+            "buyoutsCountDynamics": 0,
+            "buyoutsSumRubDynamics": 0,
+            "cancelCountDynamics": 0,
+            "cancelSumRubDynamics": 0,
+            "avgOrdersCountPerDayDynamics": 0,
+            "avgPriceRubDynamics": 0,
+            "conversions": {
+              "addToCartPercent": 100,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 67
+        }
+      },
+      {
+        "nmID": 370495529,
+        "vendorCode": "шейвер.зеленый",
+        "brandName": "Funke",
+        "object": {
+          "id": 620,
+          "name": "Бритвы электрические"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-10-10 00:00:00",
+            "end": "2025-10-10 18:56:05",
+            "openCardCount": 5,
+            "addToCartCount": 0,
+            "ordersCount": 0,
+            "ordersSumRub": 0,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 0,
+            "avgOrdersCountPerDay": 0,
+            "conversions": {
+              "addToCartPercent": 0,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-10-09 05:03:54",
+            "end": "2025-10-09 23:59:59",
+            "openCardCount": 17,
+            "addToCartCount": 0,
+            "ordersCount": 0,
+            "ordersSumRub": 0,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 0,
+            "avgOrdersCountPerDay": 0,
+            "conversions": {
+              "addToCartPercent": 0,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": -71,
+            "addToCartDynamics": 0,
+            "ordersCountDynamics": 0,
+            "ordersSumRubDynamics": 0,
+            "buyoutsCountDynamics": 0,
+            "buyoutsSumRubDynamics": 0,
+            "cancelCountDynamics": 0,
+            "cancelSumRubDynamics": 0,
+            "avgOrdersCountPerDayDynamics": 0,
+            "avgPriceRubDynamics": 0,
+            "conversions": {
+              "addToCartPercent": 0,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 0
+        }
+      },
+      {
+        "nmID": 370495527,
+        "vendorCode": "шейвер.мини.черный",
+        "brandName": "Funke",
+        "object": {
+          "id": 620,
+          "name": "Бритвы электрические"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-10-10 00:00:00",
+            "end": "2025-10-10 18:56:05",
+            "openCardCount": 1,
+            "addToCartCount": 0,
+            "ordersCount": 0,
+            "ordersSumRub": 0,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 0,
+            "avgOrdersCountPerDay": 0,
+            "conversions": {
+              "addToCartPercent": 0,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-10-09 05:03:54",
+            "end": "2025-10-09 23:59:59",
+            "openCardCount": 0,
+            "addToCartCount": 0,
+            "ordersCount": 0,
+            "ordersSumRub": 0,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 0,
+            "avgOrdersCountPerDay": 0,
+            "conversions": {
+              "addToCartPercent": 0,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": 100,
+            "addToCartDynamics": 0,
+            "ordersCountDynamics": 0,
+            "ordersSumRubDynamics": 0,
+            "buyoutsCountDynamics": 0,
+            "buyoutsSumRubDynamics": 0,
+            "cancelCountDynamics": 0,
+            "cancelSumRubDynamics": 0,
+            "avgOrdersCountPerDayDynamics": 0,
+            "avgPriceRubDynamics": 0,
+            "conversions": {
+              "addToCartPercent": 0,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 0
+        }
+      },
+      {
+        "nmID": 391194017,
+        "vendorCode": "бритва(черн)",
+        "brandName": "Funke",
+        "object": {
+          "id": 620,
+          "name": "Бритвы электрические"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-10-10 00:00:00",
+            "end": "2025-10-10 18:56:05",
+            "openCardCount": 1,
+            "addToCartCount": 0,
+            "ordersCount": 0,
+            "ordersSumRub": 0,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 0,
+            "avgOrdersCountPerDay": 0,
+            "conversions": {
+              "addToCartPercent": 0,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-10-09 05:03:54",
+            "end": "2025-10-09 23:59:59",
+            "openCardCount": 0,
+            "addToCartCount": 0,
+            "ordersCount": 0,
+            "ordersSumRub": 0,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 0,
+            "avgOrdersCountPerDay": 0,
+            "conversions": {
+              "addToCartPercent": 0,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": 100,
+            "addToCartDynamics": 0,
+            "ordersCountDynamics": 0,
+            "ordersSumRubDynamics": 0,
+            "buyoutsCountDynamics": 0,
+            "buyoutsSumRubDynamics": 0,
+            "cancelCountDynamics": 0,
+            "cancelSumRubDynamics": 0,
+            "avgOrdersCountPerDayDynamics": 0,
+            "avgPriceRubDynamics": 0,
+            "conversions": {
+              "addToCartPercent": 0,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 0
+        }
+      },
+      {
+        "nmID": 185228926,
+        "vendorCode": "10NIKE-01",
+        "brandName": "нике",
+        "object": {
+          "id": 105,
+          "name": "Кроссовки"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-10-10 00:00:00",
+            "end": "2025-10-10 18:56:05",
+            "openCardCount": 0,
+            "addToCartCount": 0,
+            "ordersCount": 0,
+            "ordersSumRub": 0,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 0,
+            "avgOrdersCountPerDay": 0,
+            "conversions": {
+              "addToCartPercent": 0,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-10-09 05:03:54",
+            "end": "2025-10-09 23:59:59",
+            "openCardCount": 1,
+            "addToCartCount": 0,
+            "ordersCount": 0,
+            "ordersSumRub": 0,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 0,
+            "avgOrdersCountPerDay": 0,
+            "conversions": {
+              "addToCartPercent": 0,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": -100,
+            "addToCartDynamics": 0,
+            "ordersCountDynamics": 0,
+            "ordersSumRubDynamics": 0,
+            "buyoutsCountDynamics": 0,
+            "buyoutsSumRubDynamics": 0,
+            "cancelCountDynamics": 0,
+            "cancelSumRubDynamics": 0,
+            "avgOrdersCountPerDayDynamics": 0,
+            "avgPriceRubDynamics": 0,
+            "conversions": {
+              "addToCartPercent": 0,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 0
+        }
+      },
+      {
+        "nmID": 260806532,
+        "vendorCode": "бритва4(4в1)",
+        "brandName": "Funke",
+        "object": {
+          "id": 620,
+          "name": "Бритвы электрические"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-10-10 00:00:00",
+            "end": "2025-10-10 18:56:05",
+            "openCardCount": 0,
+            "addToCartCount": 0,
+            "ordersCount": 0,
+            "ordersSumRub": 0,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 0,
+            "avgOrdersCountPerDay": 0,
+            "conversions": {
+              "addToCartPercent": 0,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-10-09 05:03:54",
+            "end": "2025-10-09 23:59:59",
+            "openCardCount": 9,
+            "addToCartCount": 0,
+            "ordersCount": 0,
+            "ordersSumRub": 0,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 0,
+            "avgOrdersCountPerDay": 0,
+            "conversions": {
+              "addToCartPercent": 0,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": -100,
+            "addToCartDynamics": 0,
+            "ordersCountDynamics": 0,
+            "ordersSumRubDynamics": 0,
+            "buyoutsCountDynamics": 0,
+            "buyoutsSumRubDynamics": 0,
+            "cancelCountDynamics": 0,
+            "cancelSumRubDynamics": 0,
+            "avgOrdersCountPerDayDynamics": 0,
+            "avgPriceRubDynamics": 0,
+            "conversions": {
+              "addToCartPercent": 0,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 0
+        }
+      }
+    ]
+  },
+  "error": false,
+  "errorText": "",
+  "additionalErrors": null
+}

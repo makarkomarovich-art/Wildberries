@@ -7,11 +7,10 @@ CREATE TABLE cr_daily_stats (
   product_id UUID NOT NULL REFERENCES products(id) ON DELETE CASCADE,
   nm_id BIGINT NOT NULL,
 
-  -- бизнес-дата метрики и период
-  date_of_period DATE NOT NULL,          -- дата по Europe/Moscow (сегодня или вчера)
-
-  -- служебная метка, когда снят замер
-  snapshot_ts TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  -- Бизнес-дата: к какому дню относятся метрики
+  -- Источник: Python вычисляет today/yesterday по Europe/Moscow
+  -- selectedPeriod → today, previousPeriod → yesterday
+  date_of_period DATE NOT NULL,
 
   -- метрики (все допускают NULL по ТЗ)
   open_card_count INTEGER,
@@ -32,14 +31,15 @@ CREATE TABLE cr_daily_stats (
   order_price NUMERIC(14,2),   -- orders_sum_rub / orders_count (NULL если count=0/NULL)
   buyout_price NUMERIC(14,2),  -- buyouts_sum_rub / buyouts_count (NULL если count=0/NULL)
 
-  created_at TIMESTAMPTZ DEFAULT NOW(),
-  updated_at TIMESTAMPTZ DEFAULT NOW()
+  -- Технические метки (управляются PostgreSQL)
+  created_at TIMESTAMPTZ DEFAULT NOW(),  -- когда создана
+  updated_at TIMESTAMPTZ DEFAULT NOW()   -- когда обновлена (нужен триггер)
 );
 
--- Уникальность по (nm_id, date_of_period) - одна запись на артикул в день
+-- Уникальность: одна запись на артикул в день
 CREATE UNIQUE INDEX ux_cr_daily ON cr_daily_stats (nm_id, date_of_period);
 
--- Индексы для быстрого поиска
+-- Индексы для поиска
 CREATE INDEX idx_cr_nm_date ON cr_daily_stats (nm_id, date_of_period);
 CREATE INDEX idx_cr_date ON cr_daily_stats (date_of_period);
 CREATE INDEX idx_cr_product_id ON cr_daily_stats (product_id);
