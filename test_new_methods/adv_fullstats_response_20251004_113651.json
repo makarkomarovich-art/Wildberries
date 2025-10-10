@@ -1,0 +1,4472 @@
+[
+  {
+    "advertId": 27461912,
+    "atbs": 0,
+    "boosterStats": [
+      {
+        "avg_position": 54,
+        "date": "2025-09-29",
+        "nm": 472859758
+      },
+      {
+        "avg_position": 18,
+        "date": "2025-10-01",
+        "nm": 472859758
+      }
+    ],
+    "canceled": 0,
+    "clicks": 0,
+    "cpc": 0,
+    "cr": 0,
+    "ctr": 0,
+    "days": [
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Настольный органайзер для канцелярии",
+                "nmId": 472859758,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0.14,
+                "sum_price": 0,
+                "views": 1
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 0.14,
+            "sum_price": 0,
+            "views": 1
+          }
+        ],
+        "atbs": 0,
+        "canceled": 0,
+        "clicks": 0,
+        "cpc": 0,
+        "cr": 0,
+        "ctr": 0,
+        "date": "2025-09-27T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 0.14,
+        "sum_price": 0,
+        "views": 1
+      },
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Настольный органайзер для канцелярии",
+                "nmId": 472859758,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0.12,
+                "sum_price": 0,
+                "views": 1
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 0.12,
+            "sum_price": 0,
+            "views": 1
+          }
+        ],
+        "atbs": 0,
+        "canceled": 0,
+        "clicks": 0,
+        "cpc": 0,
+        "cr": 0,
+        "ctr": 0,
+        "date": "2025-09-25T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 0.12,
+        "sum_price": 0,
+        "views": 1
+      },
+      {
+        "apps": [
+          {
+            "appType": 64,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Настольный органайзер для канцелярии",
+                "nmId": 472859758,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0.12,
+                "sum_price": 0,
+                "views": 1
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 0.12,
+            "sum_price": 0,
+            "views": 1
+          }
+        ],
+        "atbs": 0,
+        "canceled": 0,
+        "clicks": 0,
+        "cpc": 0,
+        "cr": 0,
+        "ctr": 0,
+        "date": "2025-10-02T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 0.12,
+        "sum_price": 0,
+        "views": 1
+      },
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Настольный органайзер для канцелярии",
+                "nmId": 472859758,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0.2,
+                "sum_price": 0,
+                "views": 1
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 0.2,
+            "sum_price": 0,
+            "views": 1
+          }
+        ],
+        "atbs": 0,
+        "canceled": 0,
+        "clicks": 0,
+        "cpc": 0,
+        "cr": 0,
+        "ctr": 0,
+        "date": "2025-10-01T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 0.2,
+        "sum_price": 0,
+        "views": 1
+      },
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Настольный органайзер для канцелярии",
+                "nmId": 472859758,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0.12,
+                "sum_price": 0,
+                "views": 1
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 0.12,
+            "sum_price": 0,
+            "views": 1
+          }
+        ],
+        "atbs": 0,
+        "canceled": 0,
+        "clicks": 0,
+        "cpc": 0,
+        "cr": 0,
+        "ctr": 0,
+        "date": "2025-09-29T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 0.12,
+        "sum_price": 0,
+        "views": 1
+      }
+    ],
+    "orders": 0,
+    "shks": 0,
+    "sum": 0.69,
+    "sum_price": 0,
+    "views": 5
+  },
+  {
+    "advertId": 28134229,
+    "atbs": 91,
+    "boosterStats": [
+      {
+        "avg_position": 76,
+        "date": "2025-09-25",
+        "nm": 467102886
+      },
+      {
+        "avg_position": 83,
+        "date": "2025-09-26",
+        "nm": 467102886
+      },
+      {
+        "avg_position": 78,
+        "date": "2025-09-27",
+        "nm": 467102886
+      },
+      {
+        "avg_position": 73,
+        "date": "2025-09-28",
+        "nm": 467102886
+      },
+      {
+        "avg_position": 76,
+        "date": "2025-09-29",
+        "nm": 467102886
+      },
+      {
+        "avg_position": 69,
+        "date": "2025-09-30",
+        "nm": 467102886
+      },
+      {
+        "avg_position": 67,
+        "date": "2025-10-01",
+        "nm": 467102886
+      },
+      {
+        "avg_position": 63,
+        "date": "2025-10-02",
+        "nm": 467102886
+      }
+    ],
+    "canceled": 0,
+    "clicks": 521,
+    "cpc": 8.13,
+    "cr": 3.65,
+    "ctr": 2.68,
+    "days": [
+      {
+        "apps": [
+          {
+            "appType": 1,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 2,
+            "cpc": 10.25,
+            "cr": 0,
+            "ctr": 2.44,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 2,
+                "cpc": 10.25,
+                "cr": 0,
+                "ctr": 2.44,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102886,
+                "orders": 0,
+                "shks": 0,
+                "sum": 20.5,
+                "sum_price": 0,
+                "views": 82
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 20.5,
+            "sum_price": 0,
+            "views": 82
+          },
+          {
+            "appType": 32,
+            "atbs": 2,
+            "canceled": 0,
+            "clicks": 9,
+            "cpc": 10.37,
+            "cr": 0,
+            "ctr": 2.08,
+            "nms": [
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 9,
+                "cpc": 10.37,
+                "cr": 0,
+                "ctr": 2.08,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102886,
+                "orders": 0,
+                "shks": 0,
+                "sum": 93.34,
+                "sum_price": 0,
+                "views": 433
+              },
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 507758935,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 93.34,
+            "sum_price": 0,
+            "views": 433
+          },
+          {
+            "appType": 64,
+            "atbs": 8,
+            "canceled": 0,
+            "clicks": 28,
+            "cpc": 6.15,
+            "cr": 3.57,
+            "ctr": 3.6,
+            "nms": [
+              {
+                "atbs": 7,
+                "canceled": 0,
+                "clicks": 28,
+                "cpc": 6.15,
+                "cr": 3.57,
+                "ctr": 3.6,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102886,
+                "orders": 1,
+                "shks": 1,
+                "sum": 172.32,
+                "sum_price": 1440,
+                "views": 778
+              },
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 507758935,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              }
+            ],
+            "orders": 1,
+            "shks": 1,
+            "sum": 172.32,
+            "sum_price": 1440,
+            "views": 778
+          }
+        ],
+        "atbs": 10,
+        "canceled": 0,
+        "clicks": 39,
+        "cpc": 7.34,
+        "cr": 2.56,
+        "ctr": 3.02,
+        "date": "2025-09-28T00:00:00Z",
+        "orders": 1,
+        "shks": 1,
+        "sum": 286.16,
+        "sum_price": 1440,
+        "views": 1293
+      },
+      {
+        "apps": [
+          {
+            "appType": 1,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 3,
+            "cpc": 16.77,
+            "cr": 0,
+            "ctr": 1.49,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 3,
+                "cpc": 16.77,
+                "cr": 0,
+                "ctr": 1.49,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102886,
+                "orders": 0,
+                "shks": 0,
+                "sum": 50.3,
+                "sum_price": 0,
+                "views": 202
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 50.3,
+            "sum_price": 0,
+            "views": 202
+          },
+          {
+            "appType": 32,
+            "atbs": 3,
+            "canceled": 0,
+            "clicks": 24,
+            "cpc": 11.12,
+            "cr": 4.17,
+            "ctr": 1.86,
+            "nms": [
+              {
+                "atbs": 2,
+                "canceled": 0,
+                "clicks": 24,
+                "cpc": 11.12,
+                "cr": 4.17,
+                "ctr": 1.86,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102886,
+                "orders": 1,
+                "shks": 1,
+                "sum": 266.99,
+                "sum_price": 1440,
+                "views": 1287
+              },
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 507758935,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              }
+            ],
+            "orders": 1,
+            "shks": 1,
+            "sum": 266.99,
+            "sum_price": 1440,
+            "views": 1287
+          },
+          {
+            "appType": 64,
+            "atbs": 9,
+            "canceled": 0,
+            "clicks": 53,
+            "cpc": 9.22,
+            "cr": 5.66,
+            "ctr": 2.34,
+            "nms": [
+              {
+                "atbs": 9,
+                "canceled": 0,
+                "clicks": 53,
+                "cpc": 9.22,
+                "cr": 5.66,
+                "ctr": 2.34,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102886,
+                "orders": 3,
+                "shks": 3,
+                "sum": 488.52,
+                "sum_price": 4392,
+                "views": 2267
+              }
+            ],
+            "orders": 3,
+            "shks": 3,
+            "sum": 488.52,
+            "sum_price": 4392,
+            "views": 2267
+          }
+        ],
+        "atbs": 12,
+        "canceled": 0,
+        "clicks": 80,
+        "cpc": 10.07,
+        "cr": 5,
+        "ctr": 2.13,
+        "date": "2025-09-30T00:00:00Z",
+        "orders": 4,
+        "shks": 4,
+        "sum": 805.81,
+        "sum_price": 5832,
+        "views": 3756
+      },
+      {
+        "apps": [
+          {
+            "appType": 64,
+            "atbs": 10,
+            "canceled": 0,
+            "clicks": 58,
+            "cpc": 7.96,
+            "cr": 3.45,
+            "ctr": 2.65,
+            "nms": [
+              {
+                "atbs": 7,
+                "canceled": 0,
+                "clicks": 58,
+                "cpc": 7.96,
+                "cr": 1.72,
+                "ctr": 2.65,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102886,
+                "orders": 1,
+                "shks": 1,
+                "sum": 461.9,
+                "sum_price": 1488,
+                "views": 2185
+              },
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102887,
+                "orders": 1,
+                "shks": 1,
+                "sum": 0,
+                "sum_price": 1140,
+                "views": 0
+              },
+              {
+                "atbs": 2,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467207051,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              }
+            ],
+            "orders": 2,
+            "shks": 2,
+            "sum": 461.9,
+            "sum_price": 2628,
+            "views": 2185
+          },
+          {
+            "appType": 1,
+            "atbs": 1,
+            "canceled": 0,
+            "clicks": 4,
+            "cpc": 12.8,
+            "cr": 0,
+            "ctr": 1.95,
+            "nms": [
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 4,
+                "cpc": 12.8,
+                "cr": 0,
+                "ctr": 1.95,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102886,
+                "orders": 0,
+                "shks": 0,
+                "sum": 51.18,
+                "sum_price": 0,
+                "views": 205
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 51.18,
+            "sum_price": 0,
+            "views": 205
+          },
+          {
+            "appType": 32,
+            "atbs": 4,
+            "canceled": 0,
+            "clicks": 21,
+            "cpc": 12.88,
+            "cr": 0,
+            "ctr": 1.56,
+            "nms": [
+              {
+                "atbs": 2,
+                "canceled": 0,
+                "clicks": 21,
+                "cpc": 12.88,
+                "cr": 0,
+                "ctr": 1.56,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102886,
+                "orders": 0,
+                "shks": 0,
+                "sum": 270.44,
+                "sum_price": 0,
+                "views": 1342
+              },
+              {
+                "atbs": 2,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102887,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 270.44,
+            "sum_price": 0,
+            "views": 1342
+          }
+        ],
+        "atbs": 15,
+        "canceled": 0,
+        "clicks": 83,
+        "cpc": 9.44,
+        "cr": 2.41,
+        "ctr": 2.22,
+        "date": "2025-10-01T00:00:00Z",
+        "orders": 2,
+        "shks": 2,
+        "sum": 783.52,
+        "sum_price": 2628,
+        "views": 3732
+      },
+      {
+        "apps": [
+          {
+            "appType": 1,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 4,
+            "cpc": 6.21,
+            "cr": 0,
+            "ctr": 4,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 4,
+                "cpc": 6.21,
+                "cr": 0,
+                "ctr": 4,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102886,
+                "orders": 0,
+                "shks": 0,
+                "sum": 24.83,
+                "sum_price": 0,
+                "views": 100
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 24.83,
+            "sum_price": 0,
+            "views": 100
+          },
+          {
+            "appType": 32,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 15,
+            "cpc": 7.51,
+            "cr": 0,
+            "ctr": 2.73,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 15,
+                "cpc": 7.51,
+                "cr": 0,
+                "ctr": 2.73,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102886,
+                "orders": 0,
+                "shks": 0,
+                "sum": 112.68,
+                "sum_price": 0,
+                "views": 550
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 112.68,
+            "sum_price": 0,
+            "views": 550
+          },
+          {
+            "appType": 64,
+            "atbs": 9,
+            "canceled": 0,
+            "clicks": 43,
+            "cpc": 5.92,
+            "cr": 4.65,
+            "ctr": 3.69,
+            "nms": [
+              {
+                "atbs": 8,
+                "canceled": 0,
+                "clicks": 43,
+                "cpc": 5.92,
+                "cr": 4.65,
+                "ctr": 3.69,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102886,
+                "orders": 2,
+                "shks": 2,
+                "sum": 254.55,
+                "sum_price": 2880,
+                "views": 1166
+              },
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102887,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              }
+            ],
+            "orders": 2,
+            "shks": 2,
+            "sum": 254.55,
+            "sum_price": 2880,
+            "views": 1166
+          }
+        ],
+        "atbs": 9,
+        "canceled": 0,
+        "clicks": 62,
+        "cpc": 6.32,
+        "cr": 3.23,
+        "ctr": 3.41,
+        "date": "2025-09-29T00:00:00Z",
+        "orders": 2,
+        "shks": 2,
+        "sum": 392.06,
+        "sum_price": 2880,
+        "views": 1816
+      },
+      {
+        "apps": [
+          {
+            "appType": 1,
+            "atbs": 1,
+            "canceled": 0,
+            "clicks": 2,
+            "cpc": 13.63,
+            "cr": 0,
+            "ctr": 1.83,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 2,
+                "cpc": 13.63,
+                "cr": 0,
+                "ctr": 1.83,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102886,
+                "orders": 0,
+                "shks": 0,
+                "sum": 27.25,
+                "sum_price": 0,
+                "views": 109
+              },
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 507758935,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 27.25,
+            "sum_price": 0,
+            "views": 109
+          },
+          {
+            "appType": 32,
+            "atbs": 1,
+            "canceled": 0,
+            "clicks": 11,
+            "cpc": 10.92,
+            "cr": 0,
+            "ctr": 2.11,
+            "nms": [
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 11,
+                "cpc": 10.92,
+                "cr": 0,
+                "ctr": 2.11,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102886,
+                "orders": 0,
+                "shks": 0,
+                "sum": 120.16,
+                "sum_price": 0,
+                "views": 521
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 120.16,
+            "sum_price": 0,
+            "views": 521
+          },
+          {
+            "appType": 64,
+            "atbs": 3,
+            "canceled": 0,
+            "clicks": 35,
+            "cpc": 5,
+            "cr": 2.86,
+            "ctr": 4.59,
+            "nms": [
+              {
+                "atbs": 3,
+                "canceled": 0,
+                "clicks": 35,
+                "cpc": 5,
+                "cr": 2.86,
+                "ctr": 4.59,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102886,
+                "orders": 1,
+                "shks": 1,
+                "sum": 175.1,
+                "sum_price": 1344,
+                "views": 762
+              }
+            ],
+            "orders": 1,
+            "shks": 1,
+            "sum": 175.1,
+            "sum_price": 1344,
+            "views": 762
+          }
+        ],
+        "atbs": 5,
+        "canceled": 0,
+        "clicks": 48,
+        "cpc": 6.72,
+        "cr": 2.08,
+        "ctr": 3.45,
+        "date": "2025-09-25T00:00:00Z",
+        "orders": 1,
+        "shks": 1,
+        "sum": 322.51,
+        "sum_price": 1344,
+        "views": 1392
+      },
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 1,
+            "canceled": 0,
+            "clicks": 23,
+            "cpc": 9.34,
+            "cr": 4.35,
+            "ctr": 2.19,
+            "nms": [
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 23,
+                "cpc": 9.34,
+                "cr": 4.35,
+                "ctr": 2.19,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102886,
+                "orders": 1,
+                "shks": 1,
+                "sum": 214.78,
+                "sum_price": 1488,
+                "views": 1049
+              }
+            ],
+            "orders": 1,
+            "shks": 1,
+            "sum": 214.78,
+            "sum_price": 1488,
+            "views": 1049
+          },
+          {
+            "appType": 64,
+            "atbs": 10,
+            "canceled": 0,
+            "clicks": 56,
+            "cpc": 6.72,
+            "cr": 5.36,
+            "ctr": 3.1,
+            "nms": [
+              {
+                "atbs": 8,
+                "canceled": 0,
+                "clicks": 56,
+                "cpc": 6.72,
+                "cr": 1.79,
+                "ctr": 3.1,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102886,
+                "orders": 1,
+                "shks": 1,
+                "sum": 376.15,
+                "sum_price": 1488,
+                "views": 1809
+              },
+              {
+                "atbs": 2,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 507758935,
+                "orders": 2,
+                "shks": 2,
+                "sum": 0,
+                "sum_price": 2262,
+                "views": 0
+              }
+            ],
+            "orders": 3,
+            "shks": 3,
+            "sum": 376.15,
+            "sum_price": 3750,
+            "views": 1809
+          },
+          {
+            "appType": 1,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102886,
+                "orders": 0,
+                "shks": 0,
+                "sum": 44.92,
+                "sum_price": 0,
+                "views": 182
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 44.92,
+            "sum_price": 0,
+            "views": 182
+          }
+        ],
+        "atbs": 11,
+        "canceled": 0,
+        "clicks": 79,
+        "cpc": 8.05,
+        "cr": 5.06,
+        "ctr": 2.6,
+        "date": "2025-10-02T00:00:00Z",
+        "orders": 4,
+        "shks": 4,
+        "sum": 635.85,
+        "sum_price": 5238,
+        "views": 3040
+      },
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 5,
+            "canceled": 0,
+            "clicks": 17,
+            "cpc": 10.59,
+            "cr": 0,
+            "ctr": 2.13,
+            "nms": [
+              {
+                "atbs": 2,
+                "canceled": 0,
+                "clicks": 17,
+                "cpc": 10.59,
+                "cr": 0,
+                "ctr": 2.13,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102886,
+                "orders": 0,
+                "shks": 0,
+                "sum": 180.04,
+                "sum_price": 0,
+                "views": 800
+              },
+              {
+                "atbs": 2,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102887,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              },
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 507758935,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 180.04,
+            "sum_price": 0,
+            "views": 800
+          },
+          {
+            "appType": 64,
+            "atbs": 12,
+            "canceled": 0,
+            "clicks": 55,
+            "cpc": 5.02,
+            "cr": 3.64,
+            "ctr": 4.46,
+            "nms": [
+              {
+                "atbs": 12,
+                "canceled": 0,
+                "clicks": 55,
+                "cpc": 5.02,
+                "cr": 3.64,
+                "ctr": 4.46,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102886,
+                "orders": 2,
+                "shks": 2,
+                "sum": 276.37,
+                "sum_price": 2784,
+                "views": 1233
+              }
+            ],
+            "orders": 2,
+            "shks": 2,
+            "sum": 276.37,
+            "sum_price": 2784,
+            "views": 1233
+          },
+          {
+            "appType": 1,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102886,
+                "orders": 0,
+                "shks": 0,
+                "sum": 47.26,
+                "sum_price": 0,
+                "views": 190
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 47.26,
+            "sum_price": 0,
+            "views": 190
+          }
+        ],
+        "atbs": 17,
+        "canceled": 0,
+        "clicks": 72,
+        "cpc": 7,
+        "cr": 2.78,
+        "ctr": 3.24,
+        "date": "2025-09-26T00:00:00Z",
+        "orders": 2,
+        "shks": 2,
+        "sum": 503.67,
+        "sum_price": 2784,
+        "views": 2223
+      },
+      {
+        "apps": [
+          {
+            "appType": 64,
+            "atbs": 10,
+            "canceled": 0,
+            "clicks": 39,
+            "cpc": 7.96,
+            "cr": 5.13,
+            "ctr": 2.89,
+            "nms": [
+              {
+                "atbs": 7,
+                "canceled": 0,
+                "clicks": 39,
+                "cpc": 7.96,
+                "cr": 2.56,
+                "ctr": 2.89,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102886,
+                "orders": 1,
+                "shks": 1,
+                "sum": 310.42,
+                "sum_price": 1392,
+                "views": 1348
+              },
+              {
+                "atbs": 3,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 507758935,
+                "orders": 1,
+                "shks": 1,
+                "sum": 0,
+                "sum_price": 1189,
+                "views": 0
+              }
+            ],
+            "orders": 2,
+            "shks": 2,
+            "sum": 310.42,
+            "sum_price": 2581,
+            "views": 1348
+          },
+          {
+            "appType": 1,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 1,
+            "cpc": 30,
+            "cr": 0,
+            "ctr": 0.83,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 1,
+                "cpc": 30,
+                "cr": 0,
+                "ctr": 0.83,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102886,
+                "orders": 0,
+                "shks": 0,
+                "sum": 30,
+                "sum_price": 0,
+                "views": 120
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 30,
+            "sum_price": 0,
+            "views": 120
+          },
+          {
+            "appType": 32,
+            "atbs": 2,
+            "canceled": 0,
+            "clicks": 18,
+            "cpc": 9.09,
+            "cr": 5.56,
+            "ctr": 2.43,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 18,
+                "cpc": 9.09,
+                "cr": 0,
+                "ctr": 2.43,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102886,
+                "orders": 0,
+                "shks": 0,
+                "sum": 163.63,
+                "sum_price": 0,
+                "views": 742
+              },
+              {
+                "atbs": 2,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 507758935,
+                "orders": 1,
+                "shks": 1,
+                "sum": 0,
+                "sum_price": 1421,
+                "views": 0
+              }
+            ],
+            "orders": 1,
+            "shks": 1,
+            "sum": 163.63,
+            "sum_price": 1421,
+            "views": 742
+          }
+        ],
+        "atbs": 12,
+        "canceled": 0,
+        "clicks": 58,
+        "cpc": 8.69,
+        "cr": 5.17,
+        "ctr": 2.62,
+        "date": "2025-09-27T00:00:00Z",
+        "orders": 3,
+        "shks": 3,
+        "sum": 504.05,
+        "sum_price": 4002,
+        "views": 2210
+      }
+    ],
+    "orders": 19,
+    "shks": 19,
+    "sum": 4233.63,
+    "sum_price": 26148,
+    "views": 19462
+  },
+  {
+    "advertId": 27682379,
+    "atbs": 0,
+    "boosterStats": [
+      {
+        "avg_position": 48,
+        "date": "2025-09-27",
+        "nm": 473520917
+      },
+      {
+        "avg_position": 48,
+        "date": "2025-09-28",
+        "nm": 473520917
+      },
+      {
+        "avg_position": 36,
+        "date": "2025-10-01",
+        "nm": 473520917
+      },
+      {
+        "avg_position": 25,
+        "date": "2025-10-02",
+        "nm": 473520917
+      }
+    ],
+    "canceled": 0,
+    "clicks": 0,
+    "cpc": 0,
+    "cr": 0,
+    "ctr": 0,
+    "days": [
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520917,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0.13,
+                "sum_price": 0,
+                "views": 1
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 0.13,
+            "sum_price": 0,
+            "views": 1
+          }
+        ],
+        "atbs": 0,
+        "canceled": 0,
+        "clicks": 0,
+        "cpc": 0,
+        "cr": 0,
+        "ctr": 0,
+        "date": "2025-10-02T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 0.13,
+        "sum_price": 0,
+        "views": 1
+      },
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520917,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0.34,
+                "sum_price": 0,
+                "views": 3
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 0.34,
+            "sum_price": 0,
+            "views": 3
+          }
+        ],
+        "atbs": 0,
+        "canceled": 0,
+        "clicks": 0,
+        "cpc": 0,
+        "cr": 0,
+        "ctr": 0,
+        "date": "2025-09-29T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 0.34,
+        "sum_price": 0,
+        "views": 3
+      },
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520917,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0.13,
+                "sum_price": 0,
+                "views": 1
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 0.13,
+            "sum_price": 0,
+            "views": 1
+          }
+        ],
+        "atbs": 0,
+        "canceled": 0,
+        "clicks": 0,
+        "cpc": 0,
+        "cr": 0,
+        "ctr": 0,
+        "date": "2025-10-01T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 0.13,
+        "sum_price": 0,
+        "views": 1
+      },
+      {
+        "apps": [
+          {
+            "appType": 64,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520917,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0.12,
+                "sum_price": 0,
+                "views": 1
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 0.12,
+            "sum_price": 0,
+            "views": 1
+          }
+        ],
+        "atbs": 0,
+        "canceled": 0,
+        "clicks": 0,
+        "cpc": 0,
+        "cr": 0,
+        "ctr": 0,
+        "date": "2025-09-24T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 0.12,
+        "sum_price": 0,
+        "views": 1
+      },
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520917,
+                "orders": 0,
+                "shks": 0,
+                "sum": 1.32,
+                "sum_price": 0,
+                "views": 11
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 1.32,
+            "sum_price": 0,
+            "views": 11
+          }
+        ],
+        "atbs": 0,
+        "canceled": 0,
+        "clicks": 0,
+        "cpc": 0,
+        "cr": 0,
+        "ctr": 0,
+        "date": "2025-09-28T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 1.32,
+        "sum_price": 0,
+        "views": 11
+      },
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520917,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0.01,
+                "sum_price": 0,
+                "views": 2
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 0.01,
+            "sum_price": 0,
+            "views": 2
+          }
+        ],
+        "atbs": 0,
+        "canceled": 0,
+        "clicks": 0,
+        "cpc": 0,
+        "cr": 0,
+        "ctr": 0,
+        "date": "2025-09-26T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 0.01,
+        "sum_price": 0,
+        "views": 2
+      },
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520917,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0.56,
+                "sum_price": 0,
+                "views": 5
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 0.56,
+            "sum_price": 0,
+            "views": 5
+          }
+        ],
+        "atbs": 0,
+        "canceled": 0,
+        "clicks": 0,
+        "cpc": 0,
+        "cr": 0,
+        "ctr": 0,
+        "date": "2025-09-27T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 0.56,
+        "sum_price": 0,
+        "views": 5
+      }
+    ],
+    "orders": 0,
+    "shks": 0,
+    "sum": 2.6,
+    "sum_price": 0,
+    "views": 24
+  },
+  {
+    "advertId": 27461890,
+    "atbs": 0,
+    "canceled": 0,
+    "clicks": 0,
+    "cpc": 0,
+    "cr": 0,
+    "ctr": 0,
+    "days": [
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Настольный органайзер для канцелярии",
+                "nmId": 472859758,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0.25,
+                "sum_price": 0,
+                "views": 1
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 0.25,
+            "sum_price": 0,
+            "views": 1
+          }
+        ],
+        "atbs": 0,
+        "canceled": 0,
+        "clicks": 0,
+        "cpc": 0,
+        "cr": 0,
+        "ctr": 0,
+        "date": "2025-09-28T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 0.25,
+        "sum_price": 0,
+        "views": 1
+      }
+    ],
+    "orders": 0,
+    "shks": 0,
+    "sum": 0.25,
+    "sum_price": 0,
+    "views": 1
+  },
+  {
+    "advertId": 28123036,
+    "atbs": 1,
+    "canceled": 0,
+    "clicks": 1,
+    "cpc": 1.7,
+    "cr": 0,
+    "ctr": 16.67,
+    "days": [
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0.25,
+                "sum_price": 0,
+                "views": 1
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 0.25,
+            "sum_price": 0,
+            "views": 1
+          }
+        ],
+        "atbs": 0,
+        "canceled": 0,
+        "clicks": 0,
+        "cpc": 0,
+        "cr": 0,
+        "ctr": 0,
+        "date": "2025-09-29T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 0.25,
+        "sum_price": 0,
+        "views": 1
+      },
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0.35,
+                "sum_price": 0,
+                "views": 1
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 0.35,
+            "sum_price": 0,
+            "views": 1
+          }
+        ],
+        "atbs": 0,
+        "canceled": 0,
+        "clicks": 0,
+        "cpc": 0,
+        "cr": 0,
+        "ctr": 0,
+        "date": "2025-09-22T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 0.35,
+        "sum_price": 0,
+        "views": 1
+      },
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0.25,
+                "sum_price": 0,
+                "views": 1
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 0.25,
+            "sum_price": 0,
+            "views": 1
+          }
+        ],
+        "atbs": 0,
+        "canceled": 0,
+        "clicks": 0,
+        "cpc": 0,
+        "cr": 0,
+        "ctr": 0,
+        "date": "2025-09-28T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 0.25,
+        "sum_price": 0,
+        "views": 1
+      },
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 1,
+            "cpc": 0.25,
+            "cr": 0,
+            "ctr": 100,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 1,
+                "cpc": 0.25,
+                "cr": 0,
+                "ctr": 100,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0.25,
+                "sum_price": 0,
+                "views": 1
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 0.25,
+            "sum_price": 0,
+            "views": 1
+          }
+        ],
+        "atbs": 0,
+        "canceled": 0,
+        "clicks": 1,
+        "cpc": 0.25,
+        "cr": 0,
+        "ctr": 100,
+        "date": "2025-09-25T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 0.25,
+        "sum_price": 0,
+        "views": 1
+      },
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 1,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0.25,
+                "sum_price": 0,
+                "views": 1
+              },
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520920,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 0.25,
+            "sum_price": 0,
+            "views": 1
+          }
+        ],
+        "atbs": 1,
+        "canceled": 0,
+        "clicks": 0,
+        "cpc": 0,
+        "cr": 0,
+        "ctr": 0,
+        "date": "2025-09-30T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 0.25,
+        "sum_price": 0,
+        "views": 1
+      },
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0.35,
+                "sum_price": 0,
+                "views": 1
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 0.35,
+            "sum_price": 0,
+            "views": 1
+          }
+        ],
+        "atbs": 0,
+        "canceled": 0,
+        "clicks": 0,
+        "cpc": 0,
+        "cr": 0,
+        "ctr": 0,
+        "date": "2025-10-01T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 0.35,
+        "sum_price": 0,
+        "views": 1
+      }
+    ],
+    "orders": 0,
+    "shks": 0,
+    "sum": 1.7,
+    "sum_price": 0,
+    "views": 6
+  },
+  {
+    "advertId": 28170874,
+    "atbs": 42,
+    "boosterStats": [
+      {
+        "avg_position": 48,
+        "date": "2025-09-22",
+        "nm": 467207049
+      },
+      {
+        "avg_position": 35,
+        "date": "2025-09-23",
+        "nm": 467207049
+      },
+      {
+        "avg_position": 23,
+        "date": "2025-09-24",
+        "nm": 467207049
+      },
+      {
+        "avg_position": 54,
+        "date": "2025-09-25",
+        "nm": 467207049
+      },
+      {
+        "avg_position": 83,
+        "date": "2025-09-26",
+        "nm": 467207049
+      },
+      {
+        "avg_position": 84,
+        "date": "2025-09-27",
+        "nm": 467207049
+      },
+      {
+        "avg_position": 77,
+        "date": "2025-09-28",
+        "nm": 467207049
+      },
+      {
+        "avg_position": 76,
+        "date": "2025-09-29",
+        "nm": 467207049
+      },
+      {
+        "avg_position": 41,
+        "date": "2025-09-30",
+        "nm": 467207049
+      }
+    ],
+    "canceled": 1,
+    "clicks": 262,
+    "cpc": 3.89,
+    "cr": 1.91,
+    "ctr": 3.6,
+    "days": [
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467207049,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0.5,
+                "sum_price": 0,
+                "views": 2
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 0.5,
+            "sum_price": 0,
+            "views": 2
+          },
+          {
+            "appType": 64,
+            "atbs": 1,
+            "canceled": 1,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467207049,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0.16,
+                "sum_price": 0,
+                "views": 1
+              },
+              {
+                "atbs": 1,
+                "canceled": 1,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 507758935,
+                "orders": 1,
+                "shks": 1,
+                "sum": 0,
+                "sum_price": 1246,
+                "views": 0
+              }
+            ],
+            "orders": 1,
+            "shks": 1,
+            "sum": 0.16,
+            "sum_price": 1246,
+            "views": 1
+          }
+        ],
+        "atbs": 1,
+        "canceled": 1,
+        "clicks": 0,
+        "cpc": 0,
+        "cr": 0,
+        "ctr": 0,
+        "date": "2025-09-23T00:00:00Z",
+        "orders": 1,
+        "shks": 1,
+        "sum": 0.66,
+        "sum_price": 1246,
+        "views": 3
+      },
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467207049,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0.25,
+                "sum_price": 0,
+                "views": 1
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 0.25,
+            "sum_price": 0,
+            "views": 1
+          }
+        ],
+        "atbs": 0,
+        "canceled": 0,
+        "clicks": 0,
+        "cpc": 0,
+        "cr": 0,
+        "ctr": 0,
+        "date": "2025-09-25T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 0.25,
+        "sum_price": 0,
+        "views": 1
+      },
+      {
+        "apps": [
+          {
+            "appType": 1,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 1,
+            "cpc": 5.4,
+            "cr": 0,
+            "ctr": 2.78,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 1,
+                "cpc": 5.4,
+                "cr": 0,
+                "ctr": 2.78,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467207049,
+                "orders": 0,
+                "shks": 0,
+                "sum": 5.4,
+                "sum_price": 0,
+                "views": 36
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 5.4,
+            "sum_price": 0,
+            "views": 36
+          },
+          {
+            "appType": 32,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 4,
+            "cpc": 5.1,
+            "cr": 0,
+            "ctr": 2.67,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 4,
+                "cpc": 5.1,
+                "cr": 0,
+                "ctr": 2.67,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467207049,
+                "orders": 0,
+                "shks": 0,
+                "sum": 20.4,
+                "sum_price": 0,
+                "views": 150
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 20.4,
+            "sum_price": 0,
+            "views": 150
+          },
+          {
+            "appType": 64,
+            "atbs": 1,
+            "canceled": 0,
+            "clicks": 13,
+            "cpc": 3.37,
+            "cr": 0,
+            "ctr": 4.15,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 13,
+                "cpc": 3.37,
+                "cr": 0,
+                "ctr": 4.15,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467207049,
+                "orders": 0,
+                "shks": 0,
+                "sum": 43.84,
+                "sum_price": 0,
+                "views": 313
+              },
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 507758935,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 43.84,
+            "sum_price": 0,
+            "views": 313
+          }
+        ],
+        "atbs": 1,
+        "canceled": 0,
+        "clicks": 18,
+        "cpc": 3.87,
+        "cr": 0,
+        "ctr": 3.61,
+        "date": "2025-09-26T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 69.64,
+        "sum_price": 0,
+        "views": 499
+      },
+      {
+        "apps": [
+          {
+            "appType": 1,
+            "atbs": 1,
+            "canceled": 0,
+            "clicks": 8,
+            "cpc": 3.37,
+            "cr": 0,
+            "ctr": 4.44,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 8,
+                "cpc": 3.37,
+                "cr": 0,
+                "ctr": 4.44,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467207049,
+                "orders": 0,
+                "shks": 0,
+                "sum": 26.98,
+                "sum_price": 0,
+                "views": 180
+              },
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102887,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 26.98,
+            "sum_price": 0,
+            "views": 180
+          },
+          {
+            "appType": 32,
+            "atbs": 7,
+            "canceled": 0,
+            "clicks": 34,
+            "cpc": 3.87,
+            "cr": 0,
+            "ctr": 3.48,
+            "nms": [
+              {
+                "atbs": 5,
+                "canceled": 0,
+                "clicks": 34,
+                "cpc": 3.87,
+                "cr": 0,
+                "ctr": 3.48,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467207049,
+                "orders": 0,
+                "shks": 0,
+                "sum": 131.6,
+                "sum_price": 0,
+                "views": 977
+              },
+              {
+                "atbs": 2,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467207051,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 131.6,
+            "sum_price": 0,
+            "views": 977
+          },
+          {
+            "appType": 64,
+            "atbs": 9,
+            "canceled": 0,
+            "clicks": 64,
+            "cpc": 3.58,
+            "cr": 1.56,
+            "ctr": 3.93,
+            "nms": [
+              {
+                "atbs": 7,
+                "canceled": 0,
+                "clicks": 64,
+                "cpc": 3.58,
+                "cr": 0,
+                "ctr": 3.93,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467207049,
+                "orders": 0,
+                "shks": 0,
+                "sum": 228.85,
+                "sum_price": 0,
+                "views": 1627
+              },
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 507758935,
+                "orders": 1,
+                "shks": 1,
+                "sum": 0,
+                "sum_price": 1305,
+                "views": 0
+              },
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467207051,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              }
+            ],
+            "orders": 1,
+            "shks": 1,
+            "sum": 228.85,
+            "sum_price": 1305,
+            "views": 1627
+          }
+        ],
+        "atbs": 17,
+        "canceled": 0,
+        "clicks": 106,
+        "cpc": 3.66,
+        "cr": 0.94,
+        "ctr": 3.81,
+        "date": "2025-09-27T00:00:00Z",
+        "orders": 1,
+        "shks": 1,
+        "sum": 387.43,
+        "sum_price": 1305,
+        "views": 2784
+      },
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 1,
+            "cpc": 0.5,
+            "cr": 0,
+            "ctr": 50,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 1,
+                "cpc": 0.5,
+                "cr": 0,
+                "ctr": 50,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467207049,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0.5,
+                "sum_price": 0,
+                "views": 2
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 0.5,
+            "sum_price": 0,
+            "views": 2
+          }
+        ],
+        "atbs": 0,
+        "canceled": 0,
+        "clicks": 1,
+        "cpc": 0.5,
+        "cr": 0,
+        "ctr": 50,
+        "date": "2025-09-22T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 0.5,
+        "sum_price": 0,
+        "views": 2
+      },
+      {
+        "apps": [
+          {
+            "appType": 64,
+            "atbs": 1,
+            "canceled": 0,
+            "clicks": 1,
+            "cpc": 0.25,
+            "cr": 0,
+            "ctr": 100,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 1,
+                "cpc": 0.25,
+                "cr": 0,
+                "ctr": 100,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467207049,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0.25,
+                "sum_price": 0,
+                "views": 1
+              },
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 507758935,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 0.25,
+            "sum_price": 0,
+            "views": 1
+          }
+        ],
+        "atbs": 1,
+        "canceled": 0,
+        "clicks": 1,
+        "cpc": 0.25,
+        "cr": 0,
+        "ctr": 100,
+        "date": "2025-09-24T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 0.25,
+        "sum_price": 0,
+        "views": 1
+      },
+      {
+        "apps": [
+          {
+            "appType": 1,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 6,
+            "cpc": 4.94,
+            "cr": 0,
+            "ctr": 3.03,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 6,
+                "cpc": 4.94,
+                "cr": 0,
+                "ctr": 3.03,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467207049,
+                "orders": 0,
+                "shks": 0,
+                "sum": 29.65,
+                "sum_price": 0,
+                "views": 198
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 29.65,
+            "sum_price": 0,
+            "views": 198
+          },
+          {
+            "appType": 32,
+            "atbs": 8,
+            "canceled": 0,
+            "clicks": 56,
+            "cpc": 2.89,
+            "cr": 0,
+            "ctr": 4.69,
+            "nms": [
+              {
+                "atbs": 3,
+                "canceled": 0,
+                "clicks": 56,
+                "cpc": 2.89,
+                "cr": 0,
+                "ctr": 4.69,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467207049,
+                "orders": 0,
+                "shks": 0,
+                "sum": 162.11,
+                "sum_price": 0,
+                "views": 1193
+              },
+              {
+                "atbs": 2,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 507758935,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              },
+              {
+                "atbs": 3,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467207051,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 162.11,
+            "sum_price": 0,
+            "views": 1193
+          },
+          {
+            "appType": 64,
+            "atbs": 13,
+            "canceled": 0,
+            "clicks": 50,
+            "cpc": 5.2,
+            "cr": 4,
+            "ctr": 2.74,
+            "nms": [
+              {
+                "atbs": 7,
+                "canceled": 0,
+                "clicks": 50,
+                "cpc": 5.2,
+                "cr": 2,
+                "ctr": 2.74,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467207049,
+                "orders": 1,
+                "shks": 1,
+                "sum": 259.77,
+                "sum_price": 1653,
+                "views": 1822
+              },
+              {
+                "atbs": 2,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467102887,
+                "orders": 1,
+                "shks": 1,
+                "sum": 0,
+                "sum_price": 1120,
+                "views": 0
+              },
+              {
+                "atbs": 3,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 507758935,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              },
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467207051,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              }
+            ],
+            "orders": 2,
+            "shks": 2,
+            "sum": 259.77,
+            "sum_price": 2773,
+            "views": 1822
+          }
+        ],
+        "atbs": 21,
+        "canceled": 0,
+        "clicks": 112,
+        "cpc": 4.03,
+        "cr": 1.79,
+        "ctr": 3.49,
+        "date": "2025-09-28T00:00:00Z",
+        "orders": 2,
+        "shks": 2,
+        "sum": 451.53,
+        "sum_price": 2773,
+        "views": 3213
+      },
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 1,
+            "cpc": 10.8,
+            "cr": 100,
+            "ctr": 1.39,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 1,
+                "cpc": 10.8,
+                "cr": 100,
+                "ctr": 1.39,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467207049,
+                "orders": 1,
+                "shks": 1,
+                "sum": 10.8,
+                "sum_price": 1653,
+                "views": 72
+              }
+            ],
+            "orders": 1,
+            "shks": 1,
+            "sum": 10.8,
+            "sum_price": 1653,
+            "views": 72
+          },
+          {
+            "appType": 64,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467207049,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0.43,
+                "sum_price": 0,
+                "views": 3
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 0.43,
+            "sum_price": 0,
+            "views": 3
+          }
+        ],
+        "atbs": 0,
+        "canceled": 0,
+        "clicks": 1,
+        "cpc": 11.23,
+        "cr": 100,
+        "ctr": 1.33,
+        "date": "2025-09-30T00:00:00Z",
+        "orders": 1,
+        "shks": 1,
+        "sum": 11.23,
+        "sum_price": 1653,
+        "views": 75
+      },
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467207049,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0.15,
+                "sum_price": 0,
+                "views": 1
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 0.15,
+            "sum_price": 0,
+            "views": 1
+          }
+        ],
+        "atbs": 0,
+        "canceled": 0,
+        "clicks": 0,
+        "cpc": 0,
+        "cr": 0,
+        "ctr": 0,
+        "date": "2025-10-01T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 0.15,
+        "sum_price": 0,
+        "views": 1
+      },
+      {
+        "apps": [
+          {
+            "appType": 64,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 11,
+            "cpc": 4.98,
+            "cr": 0,
+            "ctr": 2.84,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 11,
+                "cpc": 4.98,
+                "cr": 0,
+                "ctr": 2.84,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467207049,
+                "orders": 0,
+                "shks": 0,
+                "sum": 54.73,
+                "sum_price": 0,
+                "views": 387
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 54.73,
+            "sum_price": 0,
+            "views": 387
+          },
+          {
+            "appType": 32,
+            "atbs": 1,
+            "canceled": 0,
+            "clicks": 12,
+            "cpc": 3.08,
+            "cr": 0,
+            "ctr": 4.36,
+            "nms": [
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 12,
+                "cpc": 3.08,
+                "cr": 0,
+                "ctr": 4.36,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467207049,
+                "orders": 0,
+                "shks": 0,
+                "sum": 37.02,
+                "sum_price": 0,
+                "views": 275
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 37.02,
+            "sum_price": 0,
+            "views": 275
+          },
+          {
+            "appType": 1,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Плетеная корзина для белья",
+                "nmId": 467207049,
+                "orders": 0,
+                "shks": 0,
+                "sum": 6.7,
+                "sum_price": 0,
+                "views": 45
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 6.7,
+            "sum_price": 0,
+            "views": 45
+          }
+        ],
+        "atbs": 1,
+        "canceled": 0,
+        "clicks": 23,
+        "cpc": 4.28,
+        "cr": 0,
+        "ctr": 3.25,
+        "date": "2025-09-29T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 98.44,
+        "sum_price": 0,
+        "views": 707
+      }
+    ],
+    "orders": 5,
+    "shks": 5,
+    "sum": 1020.08,
+    "sum_price": 6977,
+    "views": 7286
+  },
+  {
+    "advertId": 27915530,
+    "atbs": 54,
+    "boosterStats": [
+      {
+        "avg_position": 76,
+        "date": "2025-09-24",
+        "nm": 473520918
+      },
+      {
+        "avg_position": 70,
+        "date": "2025-09-25",
+        "nm": 473520918
+      },
+      {
+        "avg_position": 84,
+        "date": "2025-09-26",
+        "nm": 473520918
+      },
+      {
+        "avg_position": 90,
+        "date": "2025-09-27",
+        "nm": 473520918
+      },
+      {
+        "avg_position": 69,
+        "date": "2025-09-28",
+        "nm": 473520918
+      },
+      {
+        "avg_position": 51,
+        "date": "2025-09-29",
+        "nm": 473520918
+      },
+      {
+        "avg_position": 60,
+        "date": "2025-09-30",
+        "nm": 473520918
+      },
+      {
+        "avg_position": 57,
+        "date": "2025-10-01",
+        "nm": 473520918
+      },
+      {
+        "avg_position": 59,
+        "date": "2025-10-02",
+        "nm": 473520918
+      }
+    ],
+    "canceled": 0,
+    "clicks": 495,
+    "cpc": 5.89,
+    "cr": 0.81,
+    "ctr": 3.13,
+    "days": [
+      {
+        "apps": [
+          {
+            "appType": 1,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 3,
+            "cpc": 2.6,
+            "cr": 0,
+            "ctr": 5.77,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 3,
+                "cpc": 2.6,
+                "cr": 0,
+                "ctr": 5.77,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 7.8,
+                "sum_price": 0,
+                "views": 52
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 7.8,
+            "sum_price": 0,
+            "views": 52
+          },
+          {
+            "appType": 32,
+            "atbs": 5,
+            "canceled": 0,
+            "clicks": 65,
+            "cpc": 1.98,
+            "cr": 0,
+            "ctr": 7.78,
+            "nms": [
+              {
+                "atbs": 4,
+                "canceled": 0,
+                "clicks": 65,
+                "cpc": 1.98,
+                "cr": 0,
+                "ctr": 7.78,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 128.43,
+                "sum_price": 0,
+                "views": 836
+              },
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный подростковый с котиком",
+                "nmId": 473520914,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 128.43,
+            "sum_price": 0,
+            "views": 836
+          },
+          {
+            "appType": 64,
+            "atbs": 1,
+            "canceled": 0,
+            "clicks": 9,
+            "cpc": 7.63,
+            "cr": 0,
+            "ctr": 1.9,
+            "nms": [
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 9,
+                "cpc": 7.63,
+                "cr": 0,
+                "ctr": 1.9,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 68.69,
+                "sum_price": 0,
+                "views": 474
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 68.69,
+            "sum_price": 0,
+            "views": 474
+          }
+        ],
+        "atbs": 6,
+        "canceled": 0,
+        "clicks": 77,
+        "cpc": 2.66,
+        "cr": 0,
+        "ctr": 5.65,
+        "date": "2025-09-30T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 204.92,
+        "sum_price": 0,
+        "views": 1362
+      },
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 2,
+            "canceled": 0,
+            "clicks": 29,
+            "cpc": 4.47,
+            "cr": 0,
+            "ctr": 3.18,
+            "nms": [
+              {
+                "atbs": 2,
+                "canceled": 0,
+                "clicks": 29,
+                "cpc": 4.47,
+                "cr": 0,
+                "ctr": 3.18,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 129.75,
+                "sum_price": 0,
+                "views": 911
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 129.75,
+            "sum_price": 0,
+            "views": 911
+          },
+          {
+            "appType": 64,
+            "atbs": 1,
+            "canceled": 0,
+            "clicks": 16,
+            "cpc": 5.24,
+            "cr": 0,
+            "ctr": 2.8,
+            "nms": [
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 16,
+                "cpc": 5.24,
+                "cr": 0,
+                "ctr": 2.8,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 83.91,
+                "sum_price": 0,
+                "views": 572
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 83.91,
+            "sum_price": 0,
+            "views": 572
+          },
+          {
+            "appType": 1,
+            "atbs": 1,
+            "canceled": 0,
+            "clicks": 2,
+            "cpc": 3.75,
+            "cr": 0,
+            "ctr": 4,
+            "nms": [
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 2,
+                "cpc": 3.75,
+                "cr": 0,
+                "ctr": 4,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 7.5,
+                "sum_price": 0,
+                "views": 50
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 7.5,
+            "sum_price": 0,
+            "views": 50
+          }
+        ],
+        "atbs": 4,
+        "canceled": 0,
+        "clicks": 47,
+        "cpc": 4.71,
+        "cr": 0,
+        "ctr": 3.07,
+        "date": "2025-10-01T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 221.16,
+        "sum_price": 0,
+        "views": 1533
+      },
+      {
+        "apps": [
+          {
+            "appType": 64,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 5,
+            "cpc": 8.5,
+            "cr": 0,
+            "ctr": 1.67,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 5,
+                "cpc": 8.5,
+                "cr": 0,
+                "ctr": 1.67,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 42.52,
+                "sum_price": 0,
+                "views": 300
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 42.52,
+            "sum_price": 0,
+            "views": 300
+          },
+          {
+            "appType": 1,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 2,
+            "cpc": 2.7,
+            "cr": 0,
+            "ctr": 5.56,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 2,
+                "cpc": 2.7,
+                "cr": 0,
+                "ctr": 5.56,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 5.4,
+                "sum_price": 0,
+                "views": 36
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 5.4,
+            "sum_price": 0,
+            "views": 36
+          },
+          {
+            "appType": 32,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 19,
+            "cpc": 4.17,
+            "cr": 0,
+            "ctr": 3.47,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 19,
+                "cpc": 4.17,
+                "cr": 0,
+                "ctr": 3.47,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 79.28,
+                "sum_price": 0,
+                "views": 547
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 79.28,
+            "sum_price": 0,
+            "views": 547
+          }
+        ],
+        "atbs": 0,
+        "canceled": 0,
+        "clicks": 26,
+        "cpc": 4.89,
+        "cr": 0,
+        "ctr": 2.94,
+        "date": "2025-09-24T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 127.2,
+        "sum_price": 0,
+        "views": 883
+      },
+      {
+        "apps": [
+          {
+            "appType": 64,
+            "atbs": 2,
+            "canceled": 0,
+            "clicks": 16,
+            "cpc": 15.61,
+            "cr": 0,
+            "ctr": 1.64,
+            "nms": [
+              {
+                "atbs": 2,
+                "canceled": 0,
+                "clicks": 16,
+                "cpc": 15.61,
+                "cr": 0,
+                "ctr": 1.64,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 249.68,
+                "sum_price": 0,
+                "views": 978
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 249.68,
+            "sum_price": 0,
+            "views": 978
+          },
+          {
+            "appType": 1,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 3,
+            "cpc": 10.09,
+            "cr": 0,
+            "ctr": 2.86,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 3,
+                "cpc": 10.09,
+                "cr": 0,
+                "ctr": 2.86,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 30.28,
+                "sum_price": 0,
+                "views": 105
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 30.28,
+            "sum_price": 0,
+            "views": 105
+          },
+          {
+            "appType": 32,
+            "atbs": 6,
+            "canceled": 0,
+            "clicks": 30,
+            "cpc": 12.58,
+            "cr": 3.33,
+            "ctr": 1.79,
+            "nms": [
+              {
+                "atbs": 3,
+                "canceled": 0,
+                "clicks": 30,
+                "cpc": 12.58,
+                "cr": 0,
+                "ctr": 1.79,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 377.28,
+                "sum_price": 0,
+                "views": 1673
+              },
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520920,
+                "orders": 1,
+                "shks": 1,
+                "sum": 0,
+                "sum_price": 473,
+                "views": 0
+              },
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный подростковый с котиком",
+                "nmId": 473520915,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              },
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный подростковый с котиком",
+                "nmId": 473520916,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              }
+            ],
+            "orders": 1,
+            "shks": 1,
+            "sum": 377.28,
+            "sum_price": 473,
+            "views": 1673
+          }
+        ],
+        "atbs": 8,
+        "canceled": 0,
+        "clicks": 49,
+        "cpc": 13.41,
+        "cr": 2.04,
+        "ctr": 1.78,
+        "date": "2025-09-28T00:00:00Z",
+        "orders": 1,
+        "shks": 1,
+        "sum": 657.24,
+        "sum_price": 473,
+        "views": 2756
+      },
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0.17,
+                "sum_price": 0,
+                "views": 1
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 0.17,
+            "sum_price": 0,
+            "views": 1
+          }
+        ],
+        "atbs": 0,
+        "canceled": 0,
+        "clicks": 0,
+        "cpc": 0,
+        "cr": 0,
+        "ctr": 0,
+        "date": "2025-09-22T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 0.17,
+        "sum_price": 0,
+        "views": 1
+      },
+      {
+        "apps": [
+          {
+            "appType": 1,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 7.02,
+                "sum_price": 0,
+                "views": 54
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 7.02,
+            "sum_price": 0,
+            "views": 54
+          },
+          {
+            "appType": 32,
+            "atbs": 1,
+            "canceled": 0,
+            "clicks": 31,
+            "cpc": 3.7,
+            "cr": 0,
+            "ctr": 3.32,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 31,
+                "cpc": 3.7,
+                "cr": 0,
+                "ctr": 3.32,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 114.61,
+                "sum_price": 0,
+                "views": 933
+              },
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520920,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 114.61,
+            "sum_price": 0,
+            "views": 933
+          },
+          {
+            "appType": 64,
+            "atbs": 1,
+            "canceled": 0,
+            "clicks": 18,
+            "cpc": 4.13,
+            "cr": 0,
+            "ctr": 3.07,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 18,
+                "cpc": 4.13,
+                "cr": 0,
+                "ctr": 3.07,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 74.38,
+                "sum_price": 0,
+                "views": 586
+              },
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520920,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 74.38,
+            "sum_price": 0,
+            "views": 586
+          }
+        ],
+        "atbs": 2,
+        "canceled": 0,
+        "clicks": 49,
+        "cpc": 4,
+        "cr": 0,
+        "ctr": 3.12,
+        "date": "2025-09-26T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 196.01,
+        "sum_price": 0,
+        "views": 1573
+      },
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 26,
+            "cpc": 4.75,
+            "cr": 0,
+            "ctr": 2.54,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 26,
+                "cpc": 4.75,
+                "cr": 0,
+                "ctr": 2.54,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 123.62,
+                "sum_price": 0,
+                "views": 1025
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 123.62,
+            "sum_price": 0,
+            "views": 1025
+          },
+          {
+            "appType": 64,
+            "atbs": 1,
+            "canceled": 0,
+            "clicks": 10,
+            "cpc": 7.44,
+            "cr": 10,
+            "ctr": 1.69,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 10,
+                "cpc": 7.44,
+                "cr": 0,
+                "ctr": 1.69,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 74.45,
+                "sum_price": 0,
+                "views": 593
+              },
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный подростковый с котиком",
+                "nmId": 473520916,
+                "orders": 1,
+                "shks": 1,
+                "sum": 0,
+                "sum_price": 416,
+                "views": 0
+              }
+            ],
+            "orders": 1,
+            "shks": 1,
+            "sum": 74.45,
+            "sum_price": 416,
+            "views": 593
+          },
+          {
+            "appType": 1,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 9.49,
+                "sum_price": 0,
+                "views": 73
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 9.49,
+            "sum_price": 0,
+            "views": 73
+          }
+        ],
+        "atbs": 1,
+        "canceled": 0,
+        "clicks": 36,
+        "cpc": 5.77,
+        "cr": 2.78,
+        "ctr": 2.13,
+        "date": "2025-09-27T00:00:00Z",
+        "orders": 1,
+        "shks": 1,
+        "sum": 207.56,
+        "sum_price": 416,
+        "views": 1691
+      },
+      {
+        "apps": [
+          {
+            "appType": 1,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 9.84,
+                "sum_price": 0,
+                "views": 72
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 9.84,
+            "sum_price": 0,
+            "views": 72
+          },
+          {
+            "appType": 32,
+            "atbs": 5,
+            "canceled": 0,
+            "clicks": 34,
+            "cpc": 3.41,
+            "cr": 0,
+            "ctr": 3.8,
+            "nms": [
+              {
+                "atbs": 3,
+                "canceled": 0,
+                "clicks": 34,
+                "cpc": 3.41,
+                "cr": 0,
+                "ctr": 3.8,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 116,
+                "sum_price": 0,
+                "views": 895
+              },
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный подростковый с котиком",
+                "nmId": 473520915,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              },
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный подростковый с котиком",
+                "nmId": 473520914,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 116,
+            "sum_price": 0,
+            "views": 895
+          },
+          {
+            "appType": 64,
+            "atbs": 5,
+            "canceled": 0,
+            "clicks": 22,
+            "cpc": 3.72,
+            "cr": 4.55,
+            "ctr": 3.57,
+            "nms": [
+              {
+                "atbs": 2,
+                "canceled": 0,
+                "clicks": 22,
+                "cpc": 3.72,
+                "cr": 0,
+                "ctr": 3.57,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 81.81,
+                "sum_price": 0,
+                "views": 617
+              },
+              {
+                "atbs": 2,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520920,
+                "orders": 1,
+                "shks": 1,
+                "sum": 0,
+                "sum_price": 368,
+                "views": 0
+              },
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520919,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              }
+            ],
+            "orders": 1,
+            "shks": 1,
+            "sum": 81.81,
+            "sum_price": 368,
+            "views": 617
+          }
+        ],
+        "atbs": 10,
+        "canceled": 0,
+        "clicks": 56,
+        "cpc": 3.71,
+        "cr": 1.79,
+        "ctr": 3.54,
+        "date": "2025-09-25T00:00:00Z",
+        "orders": 1,
+        "shks": 1,
+        "sum": 207.65,
+        "sum_price": 368,
+        "views": 1584
+      },
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 9,
+            "canceled": 0,
+            "clicks": 71,
+            "cpc": 4.03,
+            "cr": 0,
+            "ctr": 4.93,
+            "nms": [
+              {
+                "atbs": 9,
+                "canceled": 0,
+                "clicks": 71,
+                "cpc": 4.03,
+                "cr": 0,
+                "ctr": 4.93,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 286.03,
+                "sum_price": 0,
+                "views": 1440
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 286.03,
+            "sum_price": 0,
+            "views": 1440
+          },
+          {
+            "appType": 64,
+            "atbs": 3,
+            "canceled": 0,
+            "clicks": 24,
+            "cpc": 6.7,
+            "cr": 0,
+            "ctr": 3.1,
+            "nms": [
+              {
+                "atbs": 2,
+                "canceled": 0,
+                "clicks": 24,
+                "cpc": 6.7,
+                "cr": 0,
+                "ctr": 3.1,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 160.85,
+                "sum_price": 0,
+                "views": 773
+              },
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520920,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 160.85,
+            "sum_price": 0,
+            "views": 773
+          },
+          {
+            "appType": 1,
+            "atbs": 1,
+            "canceled": 0,
+            "clicks": 3,
+            "cpc": 7.32,
+            "cr": 0,
+            "ctr": 2.97,
+            "nms": [
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 3,
+                "cpc": 7.32,
+                "cr": 0,
+                "ctr": 2.97,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 21.95,
+                "sum_price": 0,
+                "views": 101
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 21.95,
+            "sum_price": 0,
+            "views": 101
+          }
+        ],
+        "atbs": 13,
+        "canceled": 0,
+        "clicks": 98,
+        "cpc": 4.78,
+        "cr": 0,
+        "ctr": 4.24,
+        "date": "2025-10-02T00:00:00Z",
+        "orders": 0,
+        "shks": 0,
+        "sum": 468.83,
+        "sum_price": 0,
+        "views": 2314
+      },
+      {
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 6,
+            "canceled": 0,
+            "clicks": 44,
+            "cpc": 8.22,
+            "cr": 0,
+            "ctr": 3.39,
+            "nms": [
+              {
+                "atbs": 3,
+                "canceled": 0,
+                "clicks": 44,
+                "cpc": 8.22,
+                "cr": 0,
+                "ctr": 3.39,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 361.48,
+                "sum_price": 0,
+                "views": 1298
+              },
+              {
+                "atbs": 2,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520920,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              },
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный подростковый с котиком",
+                "nmId": 473520914,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 361.48,
+            "sum_price": 0,
+            "views": 1298
+          },
+          {
+            "appType": 64,
+            "atbs": 4,
+            "canceled": 0,
+            "clicks": 13,
+            "cpc": 17.81,
+            "cr": 7.69,
+            "ctr": 1.73,
+            "nms": [
+              {
+                "atbs": 3,
+                "canceled": 0,
+                "clicks": 13,
+                "cpc": 17.81,
+                "cr": 7.69,
+                "ctr": 1.73,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 1,
+                "shks": 1,
+                "sum": 231.56,
+                "sum_price": 462,
+                "views": 753
+              },
+              {
+                "atbs": 1,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520920,
+                "orders": 0,
+                "shks": 0,
+                "sum": 0,
+                "sum_price": 0,
+                "views": 0
+              }
+            ],
+            "orders": 1,
+            "shks": 1,
+            "sum": 231.56,
+            "sum_price": 462,
+            "views": 753
+          },
+          {
+            "appType": 1,
+            "atbs": 0,
+            "canceled": 0,
+            "clicks": 0,
+            "cpc": 0,
+            "cr": 0,
+            "ctr": 0,
+            "nms": [
+              {
+                "atbs": 0,
+                "canceled": 0,
+                "clicks": 0,
+                "cpc": 0,
+                "cr": 0,
+                "ctr": 0,
+                "name": "Пенал школьный плюшевый",
+                "nmId": 473520918,
+                "orders": 0,
+                "shks": 0,
+                "sum": 30.98,
+                "sum_price": 0,
+                "views": 89
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 30.98,
+            "sum_price": 0,
+            "views": 89
+          }
+        ],
+        "atbs": 10,
+        "canceled": 0,
+        "clicks": 57,
+        "cpc": 10.95,
+        "cr": 1.75,
+        "ctr": 2.66,
+        "date": "2025-09-29T00:00:00Z",
+        "orders": 1,
+        "shks": 1,
+        "sum": 624.03,
+        "sum_price": 462,
+        "views": 2140
+      }
+    ],
+    "orders": 4,
+    "shks": 4,
+    "sum": 2914.77,
+    "sum_price": 1719,
+    "views": 15837
+  }
+]

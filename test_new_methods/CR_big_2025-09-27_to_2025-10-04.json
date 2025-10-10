@@ -1,0 +1,1061 @@
+{
+  "data": {
+    "page": 1,
+    "isNextPage": false,
+    "cards": [
+      {
+        "nmID": 507758935,
+        "vendorCode": "korzina_svetlaya",
+        "brandName": "ПоСебестоимости",
+        "object": {
+          "id": 1181,
+          "name": "Корзины для белья"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-09-27 00:00:00",
+            "end": "2025-10-04 12:18:03",
+            "openCardCount": 1666,
+            "addToCartCount": 109,
+            "ordersCount": 17,
+            "ordersSumRub": 23316,
+            "buyoutsCount": 7,
+            "buyoutsSumRub": 9483,
+            "cancelCount": 1,
+            "cancelSumRub": 1392,
+            "avgPriceRub": 1372,
+            "avgOrdersCountPerDay": 2.1,
+            "conversions": {
+              "addToCartPercent": 7,
+              "cartToOrderPercent": 16,
+              "buyoutsPercent": 88
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-09-19 11:41:56",
+            "end": "2025-09-26 23:59:59",
+            "openCardCount": 1076,
+            "addToCartCount": 88,
+            "ordersCount": 25,
+            "ordersSumRub": 31234,
+            "buyoutsCount": 19,
+            "buyoutsSumRub": 23433,
+            "cancelCount": 5,
+            "cancelSumRub": 6467,
+            "avgPriceRub": 1249,
+            "avgOrdersCountPerDay": 3.1,
+            "conversions": {
+              "addToCartPercent": 8,
+              "cartToOrderPercent": 28,
+              "buyoutsPercent": 79
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": 55,
+            "addToCartDynamics": 24,
+            "ordersCountDynamics": -32,
+            "ordersSumRubDynamics": -25,
+            "buyoutsCountDynamics": -63,
+            "buyoutsSumRubDynamics": -60,
+            "cancelCountDynamics": -80,
+            "cancelSumRubDynamics": -78,
+            "avgOrdersCountPerDayDynamics": -32,
+            "avgPriceRubDynamics": 10,
+            "conversions": {
+              "addToCartPercent": -13,
+              "cartToOrderPercent": -43,
+              "buyoutsPercent": 11
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 43
+        }
+      },
+      {
+        "nmID": 467207049,
+        "vendorCode": "korzina_big",
+        "brandName": "ПоСебестоимости",
+        "object": {
+          "id": 1181,
+          "name": "Корзины для белья"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-09-27 00:00:00",
+            "end": "2025-10-04 12:18:03",
+            "openCardCount": 1306,
+            "addToCartCount": 88,
+            "ordersCount": 8,
+            "ordersSumRub": 13224,
+            "buyoutsCount": 2,
+            "buyoutsSumRub": 3306,
+            "cancelCount": 1,
+            "cancelSumRub": 1653,
+            "avgPriceRub": 1653,
+            "avgOrdersCountPerDay": 1,
+            "conversions": {
+              "addToCartPercent": 7,
+              "cartToOrderPercent": 9,
+              "buyoutsPercent": 67
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-09-19 11:41:56",
+            "end": "2025-09-26 23:59:59",
+            "openCardCount": 871,
+            "addToCartCount": 45,
+            "ordersCount": 4,
+            "ordersSumRub": 5945,
+            "buyoutsCount": 2,
+            "buyoutsSumRub": 3045,
+            "cancelCount": 2,
+            "cancelSumRub": 2900,
+            "avgPriceRub": 1486,
+            "avgOrdersCountPerDay": 0.5,
+            "conversions": {
+              "addToCartPercent": 5,
+              "cartToOrderPercent": 9,
+              "buyoutsPercent": 50
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": 50,
+            "addToCartDynamics": 96,
+            "ordersCountDynamics": 100,
+            "ordersSumRubDynamics": 122,
+            "buyoutsCountDynamics": 0,
+            "buyoutsSumRubDynamics": 9,
+            "cancelCountDynamics": -50,
+            "cancelSumRubDynamics": -43,
+            "avgOrdersCountPerDayDynamics": 100,
+            "avgPriceRubDynamics": 11,
+            "conversions": {
+              "addToCartPercent": 40,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 34
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 80
+        }
+      },
+      {
+        "nmID": 467102886,
+        "vendorCode": "korzina_tiger",
+        "brandName": "ПоСебестоимости",
+        "object": {
+          "id": 1181,
+          "name": "Корзины для белья"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-09-27 00:00:00",
+            "end": "2025-10-04 12:18:03",
+            "openCardCount": 1273,
+            "addToCartCount": 94,
+            "ordersCount": 26,
+            "ordersSumRub": 37944,
+            "buyoutsCount": 9,
+            "buyoutsSumRub": 12912,
+            "cancelCount": 1,
+            "cancelSumRub": 1440,
+            "avgPriceRub": 1459,
+            "avgOrdersCountPerDay": 3.3,
+            "conversions": {
+              "addToCartPercent": 7,
+              "cartToOrderPercent": 28,
+              "buyoutsPercent": 90
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-09-19 11:41:56",
+            "end": "2025-09-26 23:59:59",
+            "openCardCount": 763,
+            "addToCartCount": 67,
+            "ordersCount": 19,
+            "ordersSumRub": 24048,
+            "buyoutsCount": 16,
+            "buyoutsSumRub": 20112,
+            "cancelCount": 1,
+            "cancelSumRub": 1392,
+            "avgPriceRub": 1266,
+            "avgOrdersCountPerDay": 2.4,
+            "conversions": {
+              "addToCartPercent": 9,
+              "cartToOrderPercent": 28,
+              "buyoutsPercent": 94
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": 67,
+            "addToCartDynamics": 40,
+            "ordersCountDynamics": 37,
+            "ordersSumRubDynamics": 58,
+            "buyoutsCountDynamics": -44,
+            "buyoutsSumRubDynamics": -36,
+            "cancelCountDynamics": 0,
+            "cancelSumRubDynamics": 3,
+            "avgOrdersCountPerDayDynamics": 38,
+            "avgPriceRubDynamics": 15,
+            "conversions": {
+              "addToCartPercent": -22,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": -4
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 58
+        }
+      },
+      {
+        "nmID": 467102887,
+        "vendorCode": "korzina_mini",
+        "brandName": "ПоСебестоимости",
+        "object": {
+          "id": 1181,
+          "name": "Корзины для белья"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-09-27 00:00:00",
+            "end": "2025-10-04 12:18:03",
+            "openCardCount": 1059,
+            "addToCartCount": 46,
+            "ordersCount": 6,
+            "ordersSumRub": 6764,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 1,
+            "cancelSumRub": 1121,
+            "avgPriceRub": 1127,
+            "avgOrdersCountPerDay": 0.8,
+            "conversions": {
+              "addToCartPercent": 4,
+              "cartToOrderPercent": 13,
+              "buyoutsPercent": 0
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-09-19 11:41:56",
+            "end": "2025-09-26 23:59:59",
+            "openCardCount": 729,
+            "addToCartCount": 50,
+            "ordersCount": 17,
+            "ordersSumRub": 16720,
+            "buyoutsCount": 8,
+            "buyoutsSumRub": 7695,
+            "cancelCount": 5,
+            "cancelSumRub": 4940,
+            "avgPriceRub": 984,
+            "avgOrdersCountPerDay": 2.1,
+            "conversions": {
+              "addToCartPercent": 7,
+              "cartToOrderPercent": 34,
+              "buyoutsPercent": 62
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": 45,
+            "addToCartDynamics": -8,
+            "ordersCountDynamics": -65,
+            "ordersSumRubDynamics": -60,
+            "buyoutsCountDynamics": -100,
+            "buyoutsSumRubDynamics": -100,
+            "cancelCountDynamics": -80,
+            "cancelSumRubDynamics": -77,
+            "avgOrdersCountPerDayDynamics": -62,
+            "avgPriceRubDynamics": 15,
+            "conversions": {
+              "addToCartPercent": -43,
+              "cartToOrderPercent": -62,
+              "buyoutsPercent": -100
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 10
+        }
+      },
+      {
+        "nmID": 473520918,
+        "vendorCode": "penal_bezh_plush",
+        "brandName": "ПоСебестоимости",
+        "object": {
+          "id": 311,
+          "name": "Пеналы"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-09-27 00:00:00",
+            "end": "2025-10-04 12:18:03",
+            "openCardCount": 694,
+            "addToCartCount": 167,
+            "ordersCount": 8,
+            "ordersSumRub": 3521,
+            "buyoutsCount": 3,
+            "buyoutsSumRub": 1482,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 440,
+            "avgOrdersCountPerDay": 1,
+            "conversions": {
+              "addToCartPercent": 24,
+              "cartToOrderPercent": 5,
+              "buyoutsPercent": 100
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-09-19 11:41:56",
+            "end": "2025-09-26 23:59:59",
+            "openCardCount": 401,
+            "addToCartCount": 44,
+            "ordersCount": 3,
+            "ordersSumRub": 1245,
+            "buyoutsCount": 3,
+            "buyoutsSumRub": 1245,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 415,
+            "avgOrdersCountPerDay": 0.4,
+            "conversions": {
+              "addToCartPercent": 11,
+              "cartToOrderPercent": 7,
+              "buyoutsPercent": 100
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": 73,
+            "addToCartDynamics": 280,
+            "ordersCountDynamics": 167,
+            "ordersSumRubDynamics": 183,
+            "buyoutsCountDynamics": 0,
+            "buyoutsSumRubDynamics": 19,
+            "cancelCountDynamics": 0,
+            "cancelSumRubDynamics": 0,
+            "avgOrdersCountPerDayDynamics": 150,
+            "avgPriceRubDynamics": 6,
+            "conversions": {
+              "addToCartPercent": 118,
+              "cartToOrderPercent": -29,
+              "buyoutsPercent": 0
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 133
+        }
+      },
+      {
+        "nmID": 467207051,
+        "vendorCode": "korzina_grey",
+        "brandName": "ПоСебестоимости",
+        "object": {
+          "id": 1181,
+          "name": "Корзины для белья"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-09-27 00:00:00",
+            "end": "2025-10-04 12:18:03",
+            "openCardCount": 650,
+            "addToCartCount": 36,
+            "ordersCount": 5,
+            "ordersSumRub": 8265,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 1653,
+            "avgOrdersCountPerDay": 0.6,
+            "conversions": {
+              "addToCartPercent": 6,
+              "cartToOrderPercent": 14,
+              "buyoutsPercent": 0
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-09-19 11:41:56",
+            "end": "2025-09-26 23:59:59",
+            "openCardCount": 549,
+            "addToCartCount": 21,
+            "ordersCount": 6,
+            "ordersSumRub": 8845,
+            "buyoutsCount": 6,
+            "buyoutsSumRub": 8845,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 1474,
+            "avgOrdersCountPerDay": 0.8,
+            "conversions": {
+              "addToCartPercent": 4,
+              "cartToOrderPercent": 29,
+              "buyoutsPercent": 100
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": 18,
+            "addToCartDynamics": 71,
+            "ordersCountDynamics": -17,
+            "ordersSumRubDynamics": -7,
+            "buyoutsCountDynamics": -100,
+            "buyoutsSumRubDynamics": -100,
+            "cancelCountDynamics": 0,
+            "cancelSumRubDynamics": 0,
+            "avgOrdersCountPerDayDynamics": -25,
+            "avgPriceRubDynamics": 12,
+            "conversions": {
+              "addToCartPercent": 50,
+              "cartToOrderPercent": -52,
+              "buyoutsPercent": -100
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 0
+        }
+      },
+      {
+        "nmID": 467207055,
+        "vendorCode": "korzina_pink",
+        "brandName": "ПоСебестоимости",
+        "object": {
+          "id": 1181,
+          "name": "Корзины для белья"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-09-27 00:00:00",
+            "end": "2025-10-04 12:18:03",
+            "openCardCount": 274,
+            "addToCartCount": 0,
+            "ordersCount": 0,
+            "ordersSumRub": 0,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 0,
+            "avgOrdersCountPerDay": 0,
+            "conversions": {
+              "addToCartPercent": 0,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-09-19 11:41:56",
+            "end": "2025-09-26 23:59:59",
+            "openCardCount": 232,
+            "addToCartCount": 3,
+            "ordersCount": 2,
+            "ordersSumRub": 2900,
+            "buyoutsCount": 2,
+            "buyoutsSumRub": 2900,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 1450,
+            "avgOrdersCountPerDay": 0.3,
+            "conversions": {
+              "addToCartPercent": 1,
+              "cartToOrderPercent": 67,
+              "buyoutsPercent": 100
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": 18,
+            "addToCartDynamics": -100,
+            "ordersCountDynamics": -100,
+            "ordersSumRubDynamics": -100,
+            "buyoutsCountDynamics": -100,
+            "buyoutsSumRubDynamics": -100,
+            "cancelCountDynamics": 0,
+            "cancelSumRubDynamics": 0,
+            "avgOrdersCountPerDayDynamics": -100,
+            "avgPriceRubDynamics": -100,
+            "conversions": {
+              "addToCartPercent": -100,
+              "cartToOrderPercent": -100,
+              "buyoutsPercent": -100
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 0
+        }
+      },
+      {
+        "nmID": 473520920,
+        "vendorCode": "penal_braun_plush",
+        "brandName": "ПоСебестоимости",
+        "object": {
+          "id": 311,
+          "name": "Пеналы"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-09-27 00:00:00",
+            "end": "2025-10-04 12:18:03",
+            "openCardCount": 267,
+            "addToCartCount": 31,
+            "ordersCount": 3,
+            "ordersSumRub": 1397,
+            "buyoutsCount": 1,
+            "buyoutsSumRub": 473,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 466,
+            "avgOrdersCountPerDay": 0.4,
+            "conversions": {
+              "addToCartPercent": 12,
+              "cartToOrderPercent": 10,
+              "buyoutsPercent": 100
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-09-19 11:41:56",
+            "end": "2025-09-26 23:59:59",
+            "openCardCount": 289,
+            "addToCartCount": 38,
+            "ordersCount": 4,
+            "ordersSumRub": 1613,
+            "buyoutsCount": 3,
+            "buyoutsSumRub": 1198,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 403,
+            "avgOrdersCountPerDay": 0.5,
+            "conversions": {
+              "addToCartPercent": 13,
+              "cartToOrderPercent": 11,
+              "buyoutsPercent": 100
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": -8,
+            "addToCartDynamics": -18,
+            "ordersCountDynamics": -25,
+            "ordersSumRubDynamics": -13,
+            "buyoutsCountDynamics": -67,
+            "buyoutsSumRubDynamics": -61,
+            "cancelCountDynamics": 0,
+            "cancelSumRubDynamics": 0,
+            "avgOrdersCountPerDayDynamics": -20,
+            "avgPriceRubDynamics": 15,
+            "conversions": {
+              "addToCartPercent": -8,
+              "cartToOrderPercent": -9,
+              "buyoutsPercent": 0
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 88
+        }
+      },
+      {
+        "nmID": 473520914,
+        "vendorCode": "penal_black_cat",
+        "brandName": "ПоСебестоимости",
+        "object": {
+          "id": 311,
+          "name": "Пеналы"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-09-27 00:00:00",
+            "end": "2025-10-04 12:18:03",
+            "openCardCount": 140,
+            "addToCartCount": 10,
+            "ordersCount": 4,
+            "ordersSumRub": 1619,
+            "buyoutsCount": 1,
+            "buyoutsSumRub": 452,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 405,
+            "avgOrdersCountPerDay": 0.5,
+            "conversions": {
+              "addToCartPercent": 7,
+              "cartToOrderPercent": 40,
+              "buyoutsPercent": 100
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-09-19 11:41:56",
+            "end": "2025-09-26 23:59:59",
+            "openCardCount": 182,
+            "addToCartCount": 6,
+            "ordersCount": 2,
+            "ordersSumRub": 795,
+            "buyoutsCount": 2,
+            "buyoutsSumRub": 795,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 398,
+            "avgOrdersCountPerDay": 0.3,
+            "conversions": {
+              "addToCartPercent": 3,
+              "cartToOrderPercent": 33,
+              "buyoutsPercent": 100
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": -23,
+            "addToCartDynamics": 67,
+            "ordersCountDynamics": 100,
+            "ordersSumRubDynamics": 104,
+            "buyoutsCountDynamics": -50,
+            "buyoutsSumRubDynamics": -43,
+            "cancelCountDynamics": 0,
+            "cancelSumRubDynamics": 0,
+            "avgOrdersCountPerDayDynamics": 67,
+            "avgPriceRubDynamics": 2,
+            "conversions": {
+              "addToCartPercent": 133,
+              "cartToOrderPercent": 21,
+              "buyoutsPercent": 0
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 211
+        }
+      },
+      {
+        "nmID": 473520915,
+        "vendorCode": "penal_blue_cat",
+        "brandName": "ПоСебестоимости",
+        "object": {
+          "id": 311,
+          "name": "Пеналы"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-09-27 00:00:00",
+            "end": "2025-10-04 12:18:03",
+            "openCardCount": 104,
+            "addToCartCount": 7,
+            "ordersCount": 4,
+            "ordersSumRub": 1376,
+            "buyoutsCount": 2,
+            "buyoutsSumRub": 688,
+            "cancelCount": 1,
+            "cancelSumRub": 304,
+            "avgPriceRub": 344,
+            "avgOrdersCountPerDay": 0.5,
+            "conversions": {
+              "addToCartPercent": 7,
+              "cartToOrderPercent": 57,
+              "buyoutsPercent": 67
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-09-19 11:41:56",
+            "end": "2025-09-26 23:59:59",
+            "openCardCount": 142,
+            "addToCartCount": 7,
+            "ordersCount": 0,
+            "ordersSumRub": 0,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 0,
+            "avgOrdersCountPerDay": 0,
+            "conversions": {
+              "addToCartPercent": 5,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": -27,
+            "addToCartDynamics": 0,
+            "ordersCountDynamics": 100,
+            "ordersSumRubDynamics": 100,
+            "buyoutsCountDynamics": 100,
+            "buyoutsSumRubDynamics": 100,
+            "cancelCountDynamics": 100,
+            "cancelSumRubDynamics": 100,
+            "avgOrdersCountPerDayDynamics": 100,
+            "avgPriceRubDynamics": 100,
+            "conversions": {
+              "addToCartPercent": 40,
+              "cartToOrderPercent": 100,
+              "buyoutsPercent": 100
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 6
+        }
+      },
+      {
+        "nmID": 473520919,
+        "vendorCode": "penal_black_plush",
+        "brandName": "ПоСебестоимости",
+        "object": {
+          "id": 311,
+          "name": "Пеналы"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-09-27 00:00:00",
+            "end": "2025-10-04 12:18:03",
+            "openCardCount": 102,
+            "addToCartCount": 3,
+            "ordersCount": 1,
+            "ordersSumRub": 466,
+            "buyoutsCount": 1,
+            "buyoutsSumRub": 466,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 466,
+            "avgOrdersCountPerDay": 0.1,
+            "conversions": {
+              "addToCartPercent": 3,
+              "cartToOrderPercent": 33,
+              "buyoutsPercent": 100
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-09-19 11:41:56",
+            "end": "2025-09-26 23:59:59",
+            "openCardCount": 144,
+            "addToCartCount": 8,
+            "ordersCount": 0,
+            "ordersSumRub": 0,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 0,
+            "avgOrdersCountPerDay": 0,
+            "conversions": {
+              "addToCartPercent": 6,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": -29,
+            "addToCartDynamics": -63,
+            "ordersCountDynamics": 100,
+            "ordersSumRubDynamics": 100,
+            "buyoutsCountDynamics": 100,
+            "buyoutsSumRubDynamics": 100,
+            "cancelCountDynamics": 0,
+            "cancelSumRubDynamics": 0,
+            "avgOrdersCountPerDayDynamics": 100,
+            "avgPriceRubDynamics": 100,
+            "conversions": {
+              "addToCartPercent": -50,
+              "cartToOrderPercent": 100,
+              "buyoutsPercent": 100
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 0
+        }
+      },
+      {
+        "nmID": 473520916,
+        "vendorCode": "penal_pink_cat",
+        "brandName": "ПоСебестоимости",
+        "object": {
+          "id": 311,
+          "name": "Пеналы"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-09-27 00:00:00",
+            "end": "2025-10-04 12:18:03",
+            "openCardCount": 94,
+            "addToCartCount": 4,
+            "ordersCount": 2,
+            "ordersSumRub": 832,
+            "buyoutsCount": 1,
+            "buyoutsSumRub": 416,
+            "cancelCount": 1,
+            "cancelSumRub": 416,
+            "avgPriceRub": 416,
+            "avgOrdersCountPerDay": 0.3,
+            "conversions": {
+              "addToCartPercent": 4,
+              "cartToOrderPercent": 50,
+              "buyoutsPercent": 50
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-09-19 11:41:56",
+            "end": "2025-09-26 23:59:59",
+            "openCardCount": 86,
+            "addToCartCount": 28,
+            "ordersCount": 1,
+            "ordersSumRub": 392,
+            "buyoutsCount": 1,
+            "buyoutsSumRub": 392,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 392,
+            "avgOrdersCountPerDay": 0.1,
+            "conversions": {
+              "addToCartPercent": 33,
+              "cartToOrderPercent": 4,
+              "buyoutsPercent": 100
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": 9,
+            "addToCartDynamics": -86,
+            "ordersCountDynamics": 100,
+            "ordersSumRubDynamics": 112,
+            "buyoutsCountDynamics": 0,
+            "buyoutsSumRubDynamics": 6,
+            "cancelCountDynamics": 100,
+            "cancelSumRubDynamics": 100,
+            "avgOrdersCountPerDayDynamics": 200,
+            "avgPriceRubDynamics": 6,
+            "conversions": {
+              "addToCartPercent": -88,
+              "cartToOrderPercent": 1150,
+              "buyoutsPercent": -50
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 105
+        }
+      },
+      {
+        "nmID": 473520917,
+        "vendorCode": "penal_white_plush",
+        "brandName": "ПоСебестоимости",
+        "object": {
+          "id": 311,
+          "name": "Пеналы"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-09-27 00:00:00",
+            "end": "2025-10-04 12:18:03",
+            "openCardCount": 90,
+            "addToCartCount": 0,
+            "ordersCount": 0,
+            "ordersSumRub": 0,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 0,
+            "avgOrdersCountPerDay": 0,
+            "conversions": {
+              "addToCartPercent": 0,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-09-19 11:41:56",
+            "end": "2025-09-26 23:59:59",
+            "openCardCount": 78,
+            "addToCartCount": 0,
+            "ordersCount": 0,
+            "ordersSumRub": 0,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 0,
+            "avgOrdersCountPerDay": 0,
+            "conversions": {
+              "addToCartPercent": 0,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": 15,
+            "addToCartDynamics": 0,
+            "ordersCountDynamics": 0,
+            "ordersSumRubDynamics": 0,
+            "buyoutsCountDynamics": 0,
+            "buyoutsSumRubDynamics": 0,
+            "cancelCountDynamics": 0,
+            "cancelSumRubDynamics": 0,
+            "avgOrdersCountPerDayDynamics": 0,
+            "avgPriceRubDynamics": 0,
+            "conversions": {
+              "addToCartPercent": 0,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 0
+        }
+      },
+      {
+        "nmID": 472859758,
+        "vendorCode": "holder_pink",
+        "brandName": "ПоСебестоимости",
+        "object": {
+          "id": 797,
+          "name": "Подставки канцелярские"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-09-27 00:00:00",
+            "end": "2025-10-04 12:18:03",
+            "openCardCount": 7,
+            "addToCartCount": 0,
+            "ordersCount": 0,
+            "ordersSumRub": 0,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 0,
+            "avgOrdersCountPerDay": 0,
+            "conversions": {
+              "addToCartPercent": 0,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-09-19 11:41:56",
+            "end": "2025-09-26 23:59:59",
+            "openCardCount": 56,
+            "addToCartCount": 8,
+            "ordersCount": 2,
+            "ordersSumRub": 950,
+            "buyoutsCount": 2,
+            "buyoutsSumRub": 950,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 475,
+            "avgOrdersCountPerDay": 0.3,
+            "conversions": {
+              "addToCartPercent": 14,
+              "cartToOrderPercent": 25,
+              "buyoutsPercent": 100
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": -88,
+            "addToCartDynamics": -100,
+            "ordersCountDynamics": -100,
+            "ordersSumRubDynamics": -100,
+            "buyoutsCountDynamics": -100,
+            "buyoutsSumRubDynamics": -100,
+            "cancelCountDynamics": 0,
+            "cancelSumRubDynamics": 0,
+            "avgOrdersCountPerDayDynamics": -100,
+            "avgPriceRubDynamics": -100,
+            "conversions": {
+              "addToCartPercent": -100,
+              "cartToOrderPercent": -100,
+              "buyoutsPercent": -100
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 0
+        }
+      },
+      {
+        "nmID": 472859760,
+        "vendorCode": "holder_big",
+        "brandName": "ПоСебестоимости",
+        "object": {
+          "id": 797,
+          "name": "Подставки канцелярские"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-09-27 00:00:00",
+            "end": "2025-10-04 12:18:03",
+            "openCardCount": 3,
+            "addToCartCount": 0,
+            "ordersCount": 0,
+            "ordersSumRub": 0,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 0,
+            "avgOrdersCountPerDay": 0,
+            "conversions": {
+              "addToCartPercent": 0,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-09-19 11:41:56",
+            "end": "2025-09-26 23:59:59",
+            "openCardCount": 15,
+            "addToCartCount": 0,
+            "ordersCount": 0,
+            "ordersSumRub": 0,
+            "buyoutsCount": 0,
+            "buyoutsSumRub": 0,
+            "cancelCount": 0,
+            "cancelSumRub": 0,
+            "avgPriceRub": 0,
+            "avgOrdersCountPerDay": 0,
+            "conversions": {
+              "addToCartPercent": 0,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": -80,
+            "addToCartDynamics": 0,
+            "ordersCountDynamics": 0,
+            "ordersSumRubDynamics": 0,
+            "buyoutsCountDynamics": 0,
+            "buyoutsSumRubDynamics": 0,
+            "cancelCountDynamics": 0,
+            "cancelSumRubDynamics": 0,
+            "avgOrdersCountPerDayDynamics": 0,
+            "avgPriceRubDynamics": 0,
+            "conversions": {
+              "addToCartPercent": 0,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 0,
+          "stocksWb": 0
+        }
+      }
+    ]
+  },
+  "error": false,
+  "errorText": "",
+  "additionalErrors": null
+}

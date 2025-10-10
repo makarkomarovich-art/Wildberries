@@ -1,0 +1,107 @@
+{
+  "data": [
+    {
+      "history": [
+        {
+          "dt": "2025-09-27",
+          "openCardCount": 939,
+          "addToCartCount": 74,
+          "ordersCount": 10,
+          "ordersSumRub": 10768,
+          "buyoutsCount": 8,
+          "buyoutsSumRub": 8811,
+          "buyoutPercent": 89,
+          "addToCartConversion": 8,
+          "cartToOrderConversion": 14
+        },
+        {
+          "dt": "2025-09-28",
+          "openCardCount": 1152,
+          "addToCartCount": 85,
+          "ordersCount": 14,
+          "ordersSumRub": 13302,
+          "buyoutsCount": 8,
+          "buyoutsSumRub": 5792,
+          "buyoutPercent": 80,
+          "addToCartConversion": 7,
+          "cartToOrderConversion": 16
+        },
+        {
+          "dt": "2025-09-29",
+          "openCardCount": 1310,
+          "addToCartCount": 145,
+          "ordersCount": 10,
+          "ordersSumRub": 12960,
+          "buyoutsCount": 4,
+          "buyoutsSumRub": 5732,
+          "buyoutPercent": 80,
+          "addToCartConversion": 11,
+          "cartToOrderConversion": 7
+        },
+        {
+          "dt": "2025-09-30",
+          "openCardCount": 1019,
+          "addToCartCount": 65,
+          "ordersCount": 15,
+          "ordersSumRub": 19849,
+          "buyoutsCount": 5,
+          "buyoutsSumRub": 6367,
+          "buyoutPercent": 71,
+          "addToCartConversion": 6,
+          "cartToOrderConversion": 23
+        },
+        {
+          "dt": "2025-10-01",
+          "openCardCount": 1025,
+          "addToCartCount": 59,
+          "ordersCount": 8,
+          "ordersSumRub": 10677,
+          "buyoutsCount": 1,
+          "buyoutsSumRub": 1488,
+          "buyoutPercent": 100,
+          "addToCartConversion": 6,
+          "cartToOrderConversion": 14
+        },
+        {
+          "dt": "2025-10-02",
+          "openCardCount": 1081,
+          "addToCartCount": 74,
+          "ordersCount": 11,
+          "ordersSumRub": 16006,
+          "buyoutsCount": 1,
+          "buyoutsSumRub": 1488,
+          "buyoutPercent": 100,
+          "addToCartConversion": 7,
+          "cartToOrderConversion": 15
+        },
+        {
+          "dt": "2025-10-03",
+          "openCardCount": 932,
+          "addToCartCount": 69,
+          "ordersCount": 12,
+          "ordersSumRub": 10309,
+          "buyoutsCount": 0,
+          "buyoutsSumRub": 0,
+          "buyoutPercent": 0,
+          "addToCartConversion": 7,
+          "cartToOrderConversion": 17
+        },
+        {
+          "dt": "2025-10-04",
+          "openCardCount": 279,
+          "addToCartCount": 25,
+          "ordersCount": 4,
+          "ordersSumRub": 4853,
+          "buyoutsCount": 0,
+          "buyoutsSumRub": 0,
+          "buyoutPercent": 0,
+          "addToCartConversion": 9,
+          "cartToOrderConversion": 16
+        }
+      ]
+    }
+  ],
+  "error": false,
+  "errorText": "",
+  "additionalErrors": null
+}

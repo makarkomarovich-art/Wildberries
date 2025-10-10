@@ -1,0 +1,98 @@
+{
+  "data": [
+    {
+      "nmID": 467102886,
+      "imtName": "Плетеная корзина для белья",
+      "vendorCode": "korzina_tiger",
+      "history": [
+        {
+          "dt": "2025-09-28",
+          "openCardCount": 156,
+          "addToCartCount": 16,
+          "ordersCount": 4,
+          "ordersSumRub": 5760,
+          "buyoutsCount": 1,
+          "buyoutsSumRub": 1440,
+          "buyoutPercent": 100,
+          "addToCartConversion": 10,
+          "cartToOrderConversion": 25
+        },
+        {
+          "dt": "2025-09-29",
+          "openCardCount": 202,
+          "addToCartCount": 14,
+          "ordersCount": 2,
+          "ordersSumRub": 2880,
+          "buyoutsCount": 1,
+          "buyoutsSumRub": 1440,
+          "buyoutPercent": 100,
+          "addToCartConversion": 7,
+          "cartToOrderConversion": 14
+        },
+        {
+          "dt": "2025-09-30",
+          "openCardCount": 171,
+          "addToCartCount": 12,
+          "ordersCount": 5,
+          "ordersSumRub": 7272,
+          "buyoutsCount": 2,
+          "buyoutsSumRub": 2880,
+          "buyoutPercent": 67,
+          "addToCartConversion": 7,
+          "cartToOrderConversion": 42
+        },
+        {
+          "dt": "2025-10-01",
+          "openCardCount": 194,
+          "addToCartCount": 11,
+          "ordersCount": 1,
+          "ordersSumRub": 1488,
+          "buyoutsCount": 1,
+          "buyoutsSumRub": 1488,
+          "buyoutPercent": 100,
+          "addToCartConversion": 6,
+          "cartToOrderConversion": 9
+        },
+        {
+          "dt": "2025-10-02",
+          "openCardCount": 195,
+          "addToCartCount": 11,
+          "ordersCount": 3,
+          "ordersSumRub": 4464,
+          "buyoutsCount": 1,
+          "buyoutsSumRub": 1488,
+          "buyoutPercent": 100,
+          "addToCartConversion": 6,
+          "cartToOrderConversion": 27
+        },
+        {
+          "dt": "2025-10-03",
+          "openCardCount": 160,
+          "addToCartCount": 15,
+          "ordersCount": 5,
+          "ordersSumRub": 7440,
+          "buyoutsCount": 0,
+          "buyoutsSumRub": 0,
+          "buyoutPercent": 0,
+          "addToCartConversion": 9,
+          "cartToOrderConversion": 33
+        },
+        {
+          "dt": "2025-10-04",
+          "openCardCount": 52,
+          "addToCartCount": 5,
+          "ordersCount": 3,
+          "ordersSumRub": 4464,
+          "buyoutsCount": 0,
+          "buyoutsSumRub": 0,
+          "buyoutPercent": 0,
+          "addToCartConversion": 10,
+          "cartToOrderConversion": 60
+        }
+      ]
+    }
+  ],
+  "error": false,
+  "errorText": "",
+  "additionalErrors": null
+}
