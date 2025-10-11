@@ -26,6 +26,7 @@ from excel_actions.cr_daily_stats_ea.supabase_writer import (
     enrich_with_product_ids,
     upsert_records
 )
+from excel_actions.cr_daily_stats_ea.data_validator import validate_inserted_data
 
 from supabase import create_client, Client
 import api_keys
@@ -101,6 +102,24 @@ def main():
     
     # Upsert записей за вчера (без stocks)
     count_yesterday = upsert_records(enriched_yesterday, supabase, "вчера")
+    
+    # 7. Валидация записанных данных
+    print("\n🔍 Шаг 7: Валидация записанных данных")
+    
+    # Вычисляем даты для валидации
+    from datetime import datetime, timedelta
+    try:
+        from zoneinfo import ZoneInfo
+    except ImportError:
+        from backports.zoneinfo import ZoneInfo
+    
+    tz = ZoneInfo("Europe/Moscow")
+    today_str = str(datetime.now(tz).date())
+    yesterday_str = str((datetime.now(tz).date() - timedelta(days=1)))
+    
+    # Валидируем данные
+    validate_inserted_data(enriched_today, today_str, supabase, "сегодня")
+    validate_inserted_data(enriched_yesterday, yesterday_str, supabase, "вчера")
     
     # Итоги
     print("\n" + "=" * 60)
