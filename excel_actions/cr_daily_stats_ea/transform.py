@@ -68,26 +68,9 @@ def calculate_order_price(period_data: dict) -> float | None:
     return None
 
 
-def calculate_buyout_price(period_data: dict) -> float | None:
-    """
-    Вычисляет среднюю цену выкупа: buyouts_sum_rub / buyouts_count
-    
-    Args:
-        period_data: Данные selectedPeriod или previousPeriod
-    
-    Returns:
-        Средняя цена выкупа или None если buyouts_count = 0/NULL
-    """
-    count = period_data.get('buyoutsCount')
-    sum_rub = period_data.get('buyoutsSumRub')
-    
-    if count and count > 0 and sum_rub is not None:
-        return round(sum_rub / count, 2)
-    return None
-
-
 def build_record(
     nm_id: int,
+    vendor_code: str,
     date: str,
     period_data: dict,
     stocks: dict | None = None
@@ -97,6 +80,7 @@ def build_record(
     
     Args:
         nm_id: Артикул WB
+        vendor_code: Артикул продавца
         date: Дата в формате 'YYYY-MM-DD' (date_of_period)
         period_data: Данные selectedPeriod или previousPeriod
         stocks: Данные stocks (включать только для сегодняшней записи!)
@@ -108,27 +92,24 @@ def build_record(
     
     record = {
         'nm_id': nm_id,
+        'vendor_code': vendor_code,
         'date_of_period': date,
         
         # Метрики: счетчики
         'open_card_count': period_data.get('openCardCount'),
         'add_to_cart_count': period_data.get('addToCartCount'),
         'orders_count': period_data.get('ordersCount'),
-        'buyouts_count': period_data.get('buyoutsCount'),
         'cancel_count': period_data.get('cancelCount'),
         
         # Метрики: суммы
         'orders_sum_rub': period_data.get('ordersSumRub'),
-        'buyouts_sum_rub': period_data.get('buyoutsSumRub'),
         
         # Конверсии
         'add_to_cart_percent': conversions.get('addToCartPercent'),
         'cart_to_order_percent': conversions.get('cartToOrderPercent'),
-        'buyouts_percent': conversions.get('buyoutsPercent'),
         
         # Агрегаты (вычисляем)
         'order_price': calculate_order_price(period_data),
-        'buyout_price': calculate_buyout_price(period_data),
     }
     
     # ВАЖНО: stocks добавляем ТОЛЬКО если переданы (только для today)
@@ -169,7 +150,9 @@ def extract_cr_stats_for_supabase(
     
     for card in cards:
         nm_id = card.get('nmID')
-        if not nm_id:
+        vendor_code = card.get('vendorCode')
+        
+        if not nm_id or not vendor_code:
             continue
         
         statistics = card.get('statistics', {})
@@ -180,6 +163,7 @@ def extract_cr_stats_for_supabase(
         if selected_period:
             record_today = build_record(
                 nm_id=nm_id,
+                vendor_code=vendor_code,
                 date=today_str,
                 period_data=selected_period,
                 stocks=stocks  # ✅ Включаем stocks
@@ -191,6 +175,7 @@ def extract_cr_stats_for_supabase(
         if previous_period:
             record_yesterday = build_record(
                 nm_id=nm_id,
+                vendor_code=vendor_code,
                 date=yesterday_str,
                 period_data=previous_period,
                 stocks=None  # ❌ НЕ включаем stocks

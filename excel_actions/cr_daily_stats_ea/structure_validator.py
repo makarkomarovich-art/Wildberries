@@ -95,6 +95,15 @@ def _validate_card_structure(card: dict, idx: int) -> bool:
     
     nm_id = card["nmID"]
     
+    # Проверка vendorCode
+    if "vendorCode" not in card:
+        print(f"❌ ОШИБКА: Карточка [{idx}] (nmID={nm_id}): отсутствует поле 'vendorCode'")
+        return False
+    
+    if not isinstance(card["vendorCode"], str):
+        print(f"❌ ОШИБКА: Карточка [{idx}] (nmID={nm_id}): vendorCode должен быть string, получен {type(card['vendorCode']).__name__}")
+        return False
+    
     # Проверка statistics
     if "statistics" not in card:
         print(f"❌ ОШИБКА: Карточка [{idx}] (nmID={nm_id}): отсутствует поле 'statistics'")
@@ -164,8 +173,6 @@ def _validate_period(period: dict, period_name: str, nm_id: int, idx: int) -> bo
         "addToCartCount",
         "ordersCount",
         "ordersSumRub",
-        "buyoutsCount",
-        "buyoutsSumRub",
         "cancelCount",
     ]
     
@@ -184,7 +191,7 @@ def _validate_period(period: dict, period_name: str, nm_id: int, idx: int) -> bo
         print(f"❌ ОШИБКА: Карточка [{idx}] (nmID={nm_id}): {period_name}.conversions должен быть объектом")
         return False
     
-    conv_fields = ["addToCartPercent", "cartToOrderPercent", "buyoutsPercent"]
+    conv_fields = ["addToCartPercent", "cartToOrderPercent"]
     for field in conv_fields:
         if field not in conversions:
             print(f"❌ ОШИБКА: Карточка [{idx}] (nmID={nm_id}): {period_name}.conversions.{field} отсутствует")
