@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WB Advertising Promotion Count Response Schema",
+  "description": "Validation schema for /adv/v1/promotion/count API response",
+  "type": "object",
+  "required": ["adverts", "all"],
+  "properties": {
+    "all": {
+      "type": "integer",
+      "description": "Total number of campaigns (all statuses and types)",
+      "minimum": 0
+    },
+    "adverts": {
+      "type": "array",
+      "description": "Campaign groups by type and status",
+      "items": {
+        "type": "object",
+        "required": ["type", "status", "count", "advert_list"],
+        "properties": {
+          "type": {
+            "type": "integer",
+            "description": "Campaign type (4-9)",
+            "enum": [4, 5, 6, 7, 8, 9]
+          },
+          "status": {
+            "type": "integer",
+            "description": "Campaign status: 7-completed, 8-unknown, 9-active, 11-paused",
+            "enum": [7, 8, 9, 11]
+          },
+          "count": {
+            "type": "integer",
+            "description": "Number of campaigns in this group",
+            "minimum": 0
+          },
+          "advert_list": {
+            "type": "array",
+            "description": "List of campaigns",
+            "items": {
+              "type": "object",
+              "required": ["advertId", "changeTime"],
+              "properties": {
+                "advertId": {
+                  "type": "integer",
+                  "description": "Campaign ID"
+                },
+                "changeTime": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "Last modification time"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

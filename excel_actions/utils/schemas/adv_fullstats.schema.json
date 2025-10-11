@@ -1,0 +1,190 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WB Advertising Fullstats Response Schema",
+  "description": "Validation schema for /adv/v3/fullstats API response",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["advertId", "clicks", "views", "ctr", "cpc", "sum", "atbs", "orders", "cr", "shks", "sum_price", "days"],
+    "properties": {
+      "advertId": {
+        "type": "integer",
+        "description": "Campaign ID"
+      },
+      "clicks": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Total clicks for entire period"
+      },
+      "views": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Total views for entire period"
+      },
+      "ctr": {
+        "type": "number",
+        "minimum": 0,
+        "description": "CTR (click-through rate) %"
+      },
+      "cpc": {
+        "type": "number",
+        "minimum": 0,
+        "description": "Average cost per click"
+      },
+      "sum": {
+        "type": "number",
+        "minimum": 0,
+        "description": "Total spending"
+      },
+      "atbs": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Add to basket count"
+      },
+      "orders": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Number of orders"
+      },
+      "cr": {
+        "type": "number",
+        "minimum": 0,
+        "description": "Conversion rate"
+      },
+      "shks": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Number of ordered items"
+      },
+      "sum_price": {
+        "type": "number",
+        "minimum": 0,
+        "description": "Total order amount"
+      },
+      "canceled": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Number of cancellations"
+      },
+      "boosterStats": {
+        "type": "array",
+        "description": "Position statistics (for campaigns with unified bid)"
+      },
+      "days": {
+        "type": "array",
+        "description": "Daily statistics breakdown",
+        "items": {
+          "type": "object",
+          "required": ["date", "views", "clicks", "cpc", "sum", "orders", "sum_price", "ctr", "cr", "shks", "atbs", "apps"],
+          "properties": {
+            "date": {
+              "type": "string",
+              "format": "date-time",
+              "description": "Date of statistics"
+            },
+            "views": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "clicks": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "cpc": {
+              "type": "number",
+              "minimum": 0
+            },
+            "sum": {
+              "type": "number",
+              "minimum": 0
+            },
+            "orders": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "sum_price": {
+              "type": "number",
+              "minimum": 0
+            },
+            "ctr": {
+              "type": "number",
+              "minimum": 0
+            },
+            "cr": {
+              "type": "number",
+              "minimum": 0
+            },
+            "shks": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "atbs": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "canceled": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "apps": {
+              "type": "array",
+              "description": "Platform breakdown",
+              "items": {
+                "type": "object",
+                "required": ["appType", "views", "clicks", "cpc", "sum", "orders", "sum_price", "ctr", "cr", "shks", "atbs", "nms"],
+                "properties": {
+                  "appType": {
+                    "type": "integer",
+                    "enum": [1, 32, 64],
+                    "description": "Platform: 1-web, 32-Android, 64-iOS"
+                  },
+                  "views": {"type": "integer", "minimum": 0},
+                  "clicks": {"type": "integer", "minimum": 0},
+                  "cpc": {"type": "number", "minimum": 0},
+                  "sum": {"type": "number", "minimum": 0},
+                  "orders": {"type": "integer", "minimum": 0},
+                  "sum_price": {"type": "number", "minimum": 0},
+                  "ctr": {"type": "number", "minimum": 0},
+                  "cr": {"type": "number", "minimum": 0},
+                  "shks": {"type": "integer", "minimum": 0},
+                  "atbs": {"type": "integer", "minimum": 0},
+                  "canceled": {"type": "integer", "minimum": 0},
+                  "nms": {
+                    "type": "array",
+                    "description": "Article (nmId) breakdown",
+                    "items": {
+                      "type": "object",
+                      "required": ["nmId", "name", "views", "clicks", "cpc", "sum", "orders", "sum_price", "ctr", "cr", "shks", "atbs"],
+                      "properties": {
+                        "nmId": {
+                          "type": "integer",
+                          "description": "WB article ID"
+                        },
+                        "name": {
+                          "type": "string",
+                          "description": "Article name"
+                        },
+                        "views": {"type": "integer", "minimum": 0},
+                        "clicks": {"type": "integer", "minimum": 0},
+                        "cpc": {"type": "number", "minimum": 0},
+                        "sum": {"type": "number", "minimum": 0},
+                        "orders": {"type": "integer", "minimum": 0},
+                        "sum_price": {"type": "number", "minimum": 0},
+                        "ctr": {"type": "number", "minimum": 0},
+                        "cr": {"type": "number", "minimum": 0},
+                        "shks": {"type": "integer", "minimum": 0},
+                        "atbs": {"type": "integer", "minimum": 0},
+                        "canceled": {"type": "integer", "minimum": 0}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

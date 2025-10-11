@@ -1,6 +1,16 @@
+-- ========================================================================
 -- Создание таблицы cr_daily_stats для статистики CR (Conversion Rate)
--- Объединенная миграция: создание с финальной структурой
+-- ========================================================================
+-- Включает:
+-- 1. Таблицу cr_daily_stats
+-- 2. Индексы
+-- 3. Триггер для автоматического обновления updated_at
+-- ========================================================================
 
+
+-- ========================================================================
+-- 1. Создание таблицы cr_daily_stats
+-- ========================================================================
 CREATE TABLE cr_daily_stats (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
 
@@ -47,3 +57,32 @@ CREATE INDEX idx_cr_nm_date ON cr_daily_stats (nm_id, date_of_period);
 CREATE INDEX idx_cr_date ON cr_daily_stats (date_of_period);
 CREATE INDEX idx_cr_product_id ON cr_daily_stats (product_id);
 CREATE INDEX idx_cr_vendor_code ON cr_daily_stats (vendor_code);
+
+
+-- ========================================================================
+-- 2. Создание функции для автоматического обновления updated_at
+-- ========================================================================
+CREATE OR REPLACE FUNCTION update_updated_at_column()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.updated_at = NOW();
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+COMMENT ON FUNCTION update_updated_at_column IS 'Автоматически обновляет поле updated_at при UPDATE';
+
+
+-- ========================================================================
+-- 3. Создание триггера для cr_daily_stats
+-- ========================================================================
+DROP TRIGGER IF EXISTS update_cr_daily_stats_updated_at ON cr_daily_stats;
+
+CREATE TRIGGER update_cr_daily_stats_updated_at
+    BEFORE UPDATE ON cr_daily_stats
+    FOR EACH ROW
+    EXECUTE FUNCTION update_updated_at_column();
+
+COMMENT ON TRIGGER update_cr_daily_stats_updated_at ON cr_daily_stats 
+IS 'Автоматически обновляет updated_at при UPDATE записи';
+
