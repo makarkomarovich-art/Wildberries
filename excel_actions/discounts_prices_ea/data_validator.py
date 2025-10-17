@@ -23,6 +23,7 @@ spec = importlib.util.spec_from_file_location("api_keys", str(api_keys_path))
 api_keys_module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(api_keys_module)
 GOOGLE_CREDENTIALS_FILE = api_keys_module.GOOGLE_CREDENTIALS_FILE
+GOOGLE_CREDENTIALS_INFO = api_keys_module.GOOGLE_CREDENTIALS_INFO
 GOOGLE_SHEET_ID_UNIT_ECONOMICS = api_keys_module.GOOGLE_SHEET_ID_UNIT_ECONOMICS
 GOOGLE_SHEET_NAME_DISCOUNTS_PRICES = getattr(api_keys_module, "GOOGLE_SHEET_NAME_DISCOUNTS_PRICES", "юнитка")
 
@@ -52,7 +53,13 @@ def _get_service():
     from googleapiclient.discovery import build
 
     scopes = ['https://www.googleapis.com/auth/spreadsheets']
-    credentials = Credentials.from_service_account_file(GOOGLE_CREDENTIALS_FILE, scopes=scopes)
+    
+    # Используем inline credentials если файл не указан
+    if GOOGLE_CREDENTIALS_INFO:
+        credentials = Credentials.from_service_account_info(GOOGLE_CREDENTIALS_INFO, scopes=scopes)
+    else:
+        credentials = Credentials.from_service_account_file(GOOGLE_CREDENTIALS_FILE, scopes=scopes)
+    
     return build('sheets', 'v4', credentials=credentials)
 
 

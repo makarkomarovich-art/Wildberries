@@ -129,11 +129,12 @@ CREATE TRIGGER update_adv_campaign_daily_stats_updated_at
     FOR EACH ROW
     EXECUTE FUNCTION update_updated_at_column();
 
--- Триггер для adv_params
-CREATE TRIGGER update_adv_params_updated_at
-    BEFORE UPDATE ON adv_params
-    FOR EACH ROW
-    EXECUTE FUNCTION update_updated_at_column();
+-- Триггер для adv_params (ОТКЛЮЧЕН - updated_at управляется в aggregate_adv_params)
+-- Причина: триггер перезаписывает логику условного обновления в ON CONFLICT
+-- CREATE TRIGGER update_adv_params_updated_at
+--     BEFORE UPDATE ON adv_params
+--     FOR EACH ROW
+--     EXECUTE FUNCTION update_updated_at_column();
 
 
 -- ========================================================================
@@ -205,7 +206,18 @@ BEGIN
     ctr = EXCLUDED.ctr,
     orders = EXCLUDED.orders,
     orders_sum = EXCLUDED.orders_sum,
-    updated_at = NOW();
+    -- Обновляем updated_at ТОЛЬКО если данные реально изменились
+    updated_at = CASE 
+      WHEN (
+        adv_params.views IS DISTINCT FROM EXCLUDED.views OR
+        adv_params.clicks IS DISTINCT FROM EXCLUDED.clicks OR
+        adv_params.sum IS DISTINCT FROM EXCLUDED.sum OR
+        adv_params.orders IS DISTINCT FROM EXCLUDED.orders OR
+        adv_params.orders_sum IS DISTINCT FROM EXCLUDED.orders_sum
+      )
+      THEN NOW()
+      ELSE adv_params.updated_at
+    END;
   
   -- Возвращаем количество обработанных записей
   GET DIAGNOSTICS inserted_count = ROW_COUNT;
