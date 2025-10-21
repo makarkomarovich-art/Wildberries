@@ -69,7 +69,7 @@ def get_supabase_client() -> Client:
 def main(
     begin_date: date | None = None,
     end_date: date | None = None,
-    min_views_threshold: int = 50,
+    min_views_threshold: int = 1,  # Фильтр: только артикулы с views > 0 (отсекаем склейку)
     use_rpc_aggregation: bool = True  # По умолчанию RPC (правильная обработка timestamps)
 ):
     """
@@ -423,7 +423,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Загрузка рекламной статистики WB в Supabase")
     parser.add_argument("--begin", type=str, help="Начальная дата (YYYY-MM-DD)")
     parser.add_argument("--end", type=str, help="Конечная дата (YYYY-MM-DD)")
-    parser.add_argument("--min-views", type=int, default=50, help="Минимум просмотров (по умолчанию: 50)")
+    parser.add_argument("--min-views", type=int, default=1, help="Минимум просмотров (по умолчанию: 1)")
     parser.add_argument("--no-rpc", action="store_true", help="Не использовать RPC для агрегации")
     
     args = parser.parse_args()

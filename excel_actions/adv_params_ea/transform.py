@@ -5,7 +5,7 @@
 Логика:
 1. Парсим каждую кампанию -> день -> платформа -> артикул
 2. Агрегируем метрики артикула по всем платформам (сумма views/clicks/sum)
-3. Фильтруем: только артикулы с views > 50
+3. Фильтруем: только артикулы с views > 0 (отсекаем склейку с нулевыми просмотрами)
 4. Берем orders/sum_price из уровня дня (включает склейку)
 5. Вычисляем производные метрики (CPM, CTR)
 """
@@ -74,7 +74,7 @@ def transform_fullstats_to_campaign_daily(
     fullstats_response: List[Dict[str, Any]],
     vendor_code_map: Dict[int, str],
     *,
-    min_views_threshold: int = 50
+    min_views_threshold: int = 1
 ) -> List[CampaignDailyStats]:
     """
     Трансформировать ответ API fullstats в записи для adv_campaign_daily_stats.
