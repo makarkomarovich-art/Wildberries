@@ -84,10 +84,24 @@ def upsert_to_supabase(
     """
     print(f"\n📤 Запись в Supabase...")
     
-    # 1. Upsert products
+    # 1. Upsert products (по nm_id, обновляем существующие)
     if products_data:
         print(f"   Товаров для upsert: {len(products_data)}")
         try:
+            # Сначала проверяем существующие записи по nm_id
+            nm_ids = [p['nm_id'] for p in products_data]
+            existing = supabase.table('products').select('nm_id, vendor_code').in_('nm_id', nm_ids).execute()
+            existing_nm_ids = {row['nm_id']: row['vendor_code'] for row in existing.data}
+            
+            # Логируем изменения vendor_code
+            for product in products_data:
+                nm_id = product['nm_id']
+                new_vendor_code = product['vendor_code']
+                if nm_id in existing_nm_ids:
+                    old_vendor_code = existing_nm_ids[nm_id]
+                    if old_vendor_code != new_vendor_code:
+                        print(f"   🔄 Обновление vendor_code для nm_id={nm_id}: '{old_vendor_code}' → '{new_vendor_code}'")
+            
             result = supabase.table('products').upsert(
                 products_data,
                 on_conflict='nm_id'

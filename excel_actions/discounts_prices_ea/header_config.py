@@ -12,12 +12,12 @@ DISCOUNTS_PRICES_HEADER_ALIASES: Dict[str, Tuple[str, ...]] = {
     "nmID": ("nmID", "Артикул WB"),
     "prices": ("prices", "Цена продавца"),
     "discount": ("discount", "Скидка продавца"),
-    "discountedPrices": ("discountedPrices", "Цена розничная"),
+    "discountedPrices": ("discountedPrices"), # не используется
     "discountOnSite": ("discountOnSite", "СПП"),
-    "priceafterSPP": ("priceafterSPP"),
-    "competitivePrice": ("competitivePrice", "Привлекательная цена"),
-    "isCompetitivePrice": ("isCompetitivePrice", "Статус привлекательной цены"),
-    "hasPromotions": ("hasPromotions", "Наличие промо"),
+    "priceafterSPP": ("priceafterSPP"), # не используется
+    "competitivePrice": ("competitivePrice", "Привлекательная цена"), # не используется
+    "isCompetitivePrice": ("isCompetitivePrice", "Статус привлекательной цены"), # не используется
+    "hasPromotions": ("hasPromotions", "Наличие промо"),# не используется 
 }
 
 # Порядок полей для записи / чтения.
