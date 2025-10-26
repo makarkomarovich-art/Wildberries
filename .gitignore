@@ -29,7 +29,6 @@ coverage.xml
 .tox/
 
 # Backups and temporary files
-*.sql
 backup_*.sql
 *.bak
 *.tmp
