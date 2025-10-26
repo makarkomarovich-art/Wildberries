@@ -264,6 +264,44 @@ def apply_fallback_delivery_expr(records: list, supabase) -> list:
     return updated_records
 
 
+def enrich_with_existing_delivery_expr(records: list, existing: dict) -> list:
+    """
+    Обогащает записи существующими delivery_expr из БД.
+    
+    Args:
+        records: Список записей для обогащения
+        existing: Словарь существующих записей из БД
+        
+    Returns:
+        list: Обогащенные записи
+    """
+    print("🔄 Обогащение записей существующими delivery_expr из БД...")
+    
+    enriched_count = 0
+    
+    for record in records:
+        income_id = record['income_id']
+        nm_id = record['nm_id']
+        key = (income_id, nm_id)
+        
+        # Если у записи уже есть delivery_expr, пропускаем
+        if record.get("delivery_and_storage_expr") is not None:
+            continue
+            
+        # Если запись есть в БД и у неё есть delivery_expr
+        if key in existing and existing[key]['has_delivery_expr']:
+            # Получаем delivery_expr из БД
+            from excel_actions.supplies_to_warehouses_ea.supabase_writer import get_existing_delivery_expr
+            existing_expr = get_existing_delivery_expr(existing, key)
+            if existing_expr is not None:
+                record["delivery_and_storage_expr"] = existing_expr
+                enriched_count += 1
+                print(f"✅ Обогащен delivery_expr: {existing_expr} для income_id {income_id}, nm_id {nm_id}")
+    
+    print(f"✅ Обогащено записей существующими delivery_expr: {enriched_count}")
+    return records
+
+
 if __name__ == "__main__":
     """Тестовый запуск трансформера"""
     import json

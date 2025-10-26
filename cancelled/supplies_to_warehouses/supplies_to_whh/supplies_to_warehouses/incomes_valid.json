@@ -1,0 +1,32 @@
+[
+  {
+    "incomeId": 33604958,
+    "number": "",
+    "date": "2025-10-21T00:00:00",
+    "lastChangeDate": "2025-10-23T12:10:34",
+    "supplierArticle": "album_big_hearts",
+    "techSize": "0",
+    "barcode": "2046540126600",
+    "quantity": 20,
+    "totalPrice": 0,
+    "dateClose": "2025-10-23T00:00:00",
+    "warehouseName": "Электросталь",
+    "nmId": 558118822,
+    "status": "Принято"
+  },
+  {
+    "incomeId": 33623427,
+    "number": "WB-GI-123456",
+    "date": "2025-10-20T00:00:00",
+    "lastChangeDate": "2025-10-22T15:30:21",
+    "supplierArticle": "album_serdechki",
+    "techSize": "S",
+    "barcode": "2046540126601",
+    "quantity": 15,
+    "totalPrice": 1500,
+    "dateClose": "2025-10-22T00:00:00",
+    "warehouseName": "Тула",
+    "nmId": 555528176,
+    "status": "Принято"
+  }
+]

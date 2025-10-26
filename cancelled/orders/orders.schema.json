@@ -1,0 +1,52 @@
+{
+  "item_structure": {
+    "date": "str",
+    "lastChangeDate": "str",
+    "warehouseName": "str",
+    "warehouseType": "str",
+    "countryName": "str",
+    "oblastOkrugName": "str",
+    "regionName": "str",
+    "supplierArticle": "str",
+    "nmId": "int",
+    "barcode": "str",
+    "category": "str",
+    "subject": "str",
+    "brand": "str",
+    "techSize": "str",
+    "incomeID": "int",
+    "isSupply": "bool",
+    "isRealization": "bool",
+    "totalPrice": "int",
+    "discountPercent": "int",
+    "spp": "int_or_float",
+    "finishedPrice": "int_or_float",
+    "priceWithDisc": "int",
+    "isCancel": "bool",
+    "cancelDate": "str",
+    "sticker": "str",
+    "gNumber": "str",
+    "srid": "str"
+  },
+  "critical_fields": [
+    "date",
+    "lastChangeDate",
+    "warehouseName",
+    "nmId",
+    "barcode",
+    "incomeID",
+    "srid"
+  ],
+  "optional_fields": [
+    "warehouseType",
+    "countryName",
+    "oblastOkrugName",
+    "regionName",
+    "category",
+    "subject",
+    "brand",
+    "techSize",
+    "totalPrice",
+    "finishedPrice"
+  ]
+}

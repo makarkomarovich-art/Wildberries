@@ -1,0 +1,24 @@
+{
+  "id": "json-rpc_28",
+  "jsonrpc": "2.0",
+  "result": {
+    "totalCount": 22,
+    "itemsQuantity": 572,
+    "supply": {
+      "preorderId": null,
+      "supplyId": 33604958,
+      "deliveryAndStorage": {
+        "deliveryAndStorageExpr": "170",
+        "storageVolumeCut": "1",
+        "deliveryValueBase": "78,2",
+        "deliveryValueLiter": "23,8",
+        "storageValue": "0,14",
+        "storageLiter": "0,14",
+        "storageCoef": "170",
+        "deliveryCoef": "170"
+      },
+      "volume": 1191,
+      "acceptanceCost": 0
+    }
+  }
+}

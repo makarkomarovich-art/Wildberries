@@ -70,7 +70,7 @@ def get_existing_supplies(supabase: Client) -> dict:
     
     try:
         response = supabase.table("supplies_to_warehouses").select(
-            "income_id, nm_id, last_change_date, delivery_and_storage_expr"
+            "income_id, nm_id, last_change_date, delivery_and_storage_expr, quantity, warehouse_name, supplier_article, barcode, tech_size, number"
         ).execute()
         
         existing = {}
@@ -78,7 +78,14 @@ def get_existing_supplies(supabase: Client) -> dict:
             key = (record["income_id"], record["nm_id"])
             existing[key] = {
                 "last_change_date": record["last_change_date"],
-                "has_delivery_expr": record["delivery_and_storage_expr"] is not None
+                "has_delivery_expr": record["delivery_and_storage_expr"] is not None,
+                "delivery_expr": record["delivery_and_storage_expr"],
+                "quantity": record["quantity"],
+                "warehouse_name": record["warehouse_name"],
+                "supplier_article": record["supplier_article"],
+                "barcode": record["barcode"],
+                "tech_size": record["tech_size"],
+                "number": record["number"]
             }
         
         print(f"✅ Загружено существующих записей: {len(existing)}")
@@ -114,6 +121,22 @@ def get_incomes_without_delivery_expr(supabase: Client) -> Set[int]:
     except Exception as e:
         print(f"❌ Ошибка поиска поставок без delivery_expr: {e}")
         return set()
+
+
+def get_existing_delivery_expr(existing: dict, key: tuple) -> float | None:
+    """
+    Получает существующий delivery_expr из кэша.
+    
+    Args:
+        existing: Словарь существующих записей
+        key: Ключ (income_id, nm_id)
+        
+    Returns:
+        float | None: Значение delivery_expr или None
+    """
+    if key in existing and existing[key]['has_delivery_expr']:
+        return existing[key]['delivery_expr']
+    return None
 
 
 def find_fallback_delivery_expr(supabase: Client, warehouse_name: str, nm_id: int, current_date: str) -> float | None:
@@ -153,6 +176,100 @@ def find_fallback_delivery_expr(supabase: Client, warehouse_name: str, nm_id: in
     except Exception as e:
         print(f"❌ Ошибка поиска fallback delivery_expr: {e}")
         return None
+
+
+def smart_upsert_records(records: list, existing: dict, supabase: Client) -> Tuple[int, int]:
+    """
+    Выполняет умный upsert записей в БД - обновляет только измененные записи.
+    
+    Args:
+        records: Список записей для записи
+        existing: Словарь существующих записей из БД
+        supabase: Клиент Supabase
+        
+    Returns:
+        Tuple[int, int]: (количество новых, количество обновленных)
+    """
+    print("🔄 Умная запись данных в БД...")
+    
+    if not records:
+        print("⚠️  Нет записей для записи")
+        return 0, 0
+    
+    new_records = []
+    updated_records = []
+    
+    for record in records:
+        income_id = record['income_id']
+        nm_id = record['nm_id']
+        key = (income_id, nm_id)
+        
+        if key not in existing:
+            # Новая запись
+            new_records.append(record)
+        else:
+            # Существующая запись - проверяем изменения
+            existing_record = existing[key]
+            if _has_changes(record, existing_record):
+                updated_records.append(record)
+            else:
+                print(f"⏭️  Пропущена запись без изменений: income_id {income_id}, nm_id {nm_id}")
+    
+    print(f"📊 Новых записей: {len(new_records)}")
+    print(f"📊 Измененных записей: {len(updated_records)}")
+    
+    # Записываем только новые и измененные записи
+    records_to_write = new_records + updated_records
+    
+    if not records_to_write:
+        print("✅ Нет записей для записи - все данные актуальны")
+        return 0, 0
+    
+    try:
+        response = supabase.table("supplies_to_warehouses").upsert(
+            records_to_write,
+            on_conflict="income_id,nm_id"
+        ).execute()
+        
+        total_count = len(response.data)
+        print(f"✅ Записано записей в БД: {total_count}")
+        
+        return len(new_records), len(updated_records)
+        
+    except Exception as e:
+        print(f"❌ Ошибка записи в БД: {e}")
+        raise
+
+
+def _has_changes(record: dict, existing: dict) -> bool:
+    """
+    Проверяет, есть ли изменения в записи по сравнению с существующей.
+    
+    Args:
+        record: Новая запись
+        existing: Существующая запись из БД
+        
+    Returns:
+        bool: True если есть изменения
+    """
+    # Сравниваем ключевые поля
+    fields_to_compare = [
+        'last_change_date',
+        'delivery_and_storage_expr',
+        'quantity',
+        'warehouse_name',
+        'supplier_article',
+        'barcode',
+        'tech_size',
+        'number'
+    ]
+    
+    for field in fields_to_compare:
+        if field in record and field in existing:
+            if record[field] != existing.get(field):
+                return True
+    
+    return False
 
 
 def upsert_records(records: list, supabase: Client) -> Tuple[int, int]:
