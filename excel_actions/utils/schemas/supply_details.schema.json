@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WB Supply Details - deliveryAndStorageExpr only",
+  "description": "Validation schema for deliveryAndStorageExpr field only",
+  "type": "object",
+  "required": ["result"],
+  "properties": {
+    "result": {
+      "type": "object",
+      "required": ["supply"],
+      "properties": {
+        "supply": {
+          "type": "object",
+          "required": ["deliveryAndStorage"],
+          "properties": {
+            "deliveryAndStorage": {
+              "type": "object",
+              "required": ["deliveryAndStorageExpr"],
+              "properties": {
+                "deliveryAndStorageExpr": {
+                  "type": ["string", "null"],
+                  "description": "Коэффициент логистики (строка или null)"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

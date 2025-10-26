@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WB Incomes API Response Schema",
+  "description": "Validation schema for Wildberries /api/v1/supplier/incomes API response",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "incomeId",
+      "date", 
+      "lastChangeDate",
+      "supplierArticle",
+      "barcode",
+      "quantity",
+      "warehouseName",
+      "nmId",
+      "status",
+      "number",
+      "techSize"
+    ],
+    "properties": {
+      "incomeId": {
+        "type": "integer",
+        "description": "Номер поставки"
+      },
+      "number": {
+        "type": "string",
+        "description": "Номер УПД (может быть пустым)"
+      },
+      "date": {
+        "type": "string",
+        "description": "Дата поступления"
+      },
+      "lastChangeDate": {
+        "type": "string", 
+        "description": "Дата последнего изменения"
+      },
+      "supplierArticle": {
+        "type": "string",
+        "description": "Артикул продавца"
+      },
+      "techSize": {
+        "type": "string",
+        "description": "Размер товара"
+      },
+      "barcode": {
+        "type": "string",
+        "description": "Баркод товара"
+      },
+      "quantity": {
+        "type": "integer",
+        "description": "Количество товара"
+      },
+      "totalPrice": {
+        "type": "integer",
+        "description": "Цена из УПД"
+      },
+      "dateClose": {
+        "type": "string",
+        "description": "Дата принятия"
+      },
+      "warehouseName": {
+        "type": "string",
+        "description": "Название склада"
+      },
+      "nmId": {
+        "type": "integer",
+        "description": "Артикул WB"
+      },
+      "status": {
+        "type": "string",
+        "description": "Статус поставки"
+      }
+    }
+  }
+}
