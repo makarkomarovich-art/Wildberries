@@ -135,8 +135,8 @@
                 "properties": {
                   "appType": {
                     "type": "integer",
-                    "enum": [1, 32, 64],
-                    "description": "Platform: 1-web, 32-Android, 64-iOS"
+                    "enum": [0, 1, 32, 64],
+                    "description": "Platform: 0-unknown, 1-web, 32-Android, 64-iOS"
                   },
                   "views": {"type": "integer", "minimum": 0},
                   "clicks": {"type": "integer", "minimum": 0},
