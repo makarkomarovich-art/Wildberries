@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Week Stats CURL API Validation Schema",
+  "description": "Schema for validating aggregated fields from CURL API",
+  "type": "object",
+  "properties": {
+    "totalSale": {
+      "type": "number",
+      "description": "Общая сумма продаж"
+    },
+    "forPay": {
+      "type": "number",
+      "description": "К перечислению продавцу"
+    },
+    "deliveryRub": {
+      "type": "number",
+      "description": "Услуги по доставке"
+    },
+    "paidStorageSum": {
+      "type": "number",
+      "description": "Плата за хранение"
+    },
+    "paidAcceptanceSum": {
+      "type": "number",
+      "description": "Плата за приемку"
+    },
+    "bankPaymentSum": {
+      "type": "number",
+      "description": "Сумма банковского платежа"
+    },
+    "penalty": {
+      "type": "number",
+      "description": "Штрафы"
+    },
+    "paidWithholdingSum": {
+      "type": "number",
+      "description": "Плата за удержания"
+    }
+  },
+  "required": [
+    "totalSale",
+    "forPay",
+    "deliveryRub"
+  ]
+}

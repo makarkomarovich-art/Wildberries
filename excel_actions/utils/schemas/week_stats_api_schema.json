@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Week Stats API Report Detail Validation Schema",
+  "description": "Schema for validating aggregated fields from reportDetailByPeriod API",
+  "type": "object",
+  "properties": {
+    "retail_amount": {
+      "type": "number",
+      "description": "Сумма retail_amount"
+    },
+    "ppvz_for_pay": {
+      "type": "number",
+      "description": "К перечислению продавцу"
+    },
+    "delivery_rub": {
+      "type": "number",
+      "description": "Услуги по доставке"
+    },
+    "penalty": {
+      "type": "number",
+      "description": "Штрафы"
+    },
+    "storage_fee": {
+      "type": "number",
+      "description": "Хранение"
+    },
+    "deduction": {
+      "type": "number",
+      "description": "Удержания"
+    },
+    "acceptance": {
+      "type": "number",
+      "description": "Платная приемка"
+    }
+  },
+  "required": [
+    "retail_amount",
+    "ppvz_for_pay",
+    "delivery_rub"
+  ]
+}
