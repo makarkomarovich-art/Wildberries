@@ -12,6 +12,7 @@ Main скрипт для загрузки CR Daily Stats из WB API в Supabase
 """
 
 import sys
+from datetime import datetime, timedelta, date
 from pathlib import Path
 
 # Add project root to path
@@ -20,6 +21,7 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from wb_api.cr_daily_stats.cr_daily_stats import fetch_cr_daily_stats
+import wb_api.cr_daily_stats.cr_daily_stats as cr_api
 from excel_actions.cr_daily_stats_ea.structure_validator import validate_cr_daily_stats_structure
 from excel_actions.cr_daily_stats_ea.transform import extract_cr_stats_for_supabase
 from excel_actions.cr_daily_stats_ea.supabase_writer import (
@@ -52,6 +54,41 @@ def main():
     print("CR Daily Stats → Supabase")
     print("=" * 60)
     
+    # ------------------------------------------------------------------
+    # MANUAL DATE OVERRIDE — EDIT HERE IF NEEDED (как в paid_storage)
+    # Пример:
+    # manual_begin = date(2025, 10, 19)
+    # manual_end = None  # один день
+    manual_begin: date | None = date(2025, 10, 21)  # ← установите date(...) чтобы переопределить
+    manual_end: date | None = date(2025, 10, 21)    # ← установите date(...) чтобы переопределить
+    # ------------------------------------------------------------------
+
+    # 0. Период: ручной блок или дефолт (сегодня 00:00 → сейчас)
+    try:
+        from zoneinfo import ZoneInfo
+    except ImportError:
+        from backports.zoneinfo import ZoneInfo
+    tz = ZoneInfo("Europe/Moscow")
+    now_local = datetime.now(tz).replace(microsecond=0)
+
+    if manual_begin is None and manual_end is None:
+        # дефолт: сегодня 00:00 → сейчас
+        begin_dt = now_local.replace(hour=0, minute=0, second=0)
+        end_dt = now_local
+        print(f"📅 Период (дефолт): {begin_dt.date()} → {end_dt.date()} (today)")
+    else:
+        # если задана только одна дата — считаем одним днём
+        if manual_begin is None:
+            manual_begin = manual_end
+        if manual_end is None:
+            manual_end = manual_begin
+        begin_dt = datetime(manual_begin.year, manual_begin.month, manual_begin.day, 0, 0, 0, tzinfo=tz)
+        end_dt = datetime(manual_end.year, manual_end.month, manual_end.day, 23, 59, 59, tzinfo=tz)
+        print(f"📅 Период (ручной): {manual_begin} → {manual_end}")
+
+    cr_api.payload["period"]["begin"] = cr_api.to_api_datetime(begin_dt)
+    cr_api.payload["period"]["end"] = cr_api.to_api_datetime(end_dt)
+
     # 1. Запрос API
     print("\n📡 Шаг 1: Запрос данных из API")
     api_response = fetch_cr_daily_stats()
@@ -105,21 +142,17 @@ def main():
     
     # 7. Валидация записанных данных
     print("\n🔍 Шаг 7: Валидация записанных данных")
-    
-    # Вычисляем даты для валидации
-    from datetime import datetime, timedelta
-    try:
-        from zoneinfo import ZoneInfo
-    except ImportError:
-        from backports.zoneinfo import ZoneInfo
-    
-    tz = ZoneInfo("Europe/Moscow")
-    today_str = str(datetime.now(tz).date())
-    yesterday_str = str((datetime.now(tz).date() - timedelta(days=1)))
-    
-    # Валидируем данные
-    validate_inserted_data(enriched_today, today_str, supabase, "сегодня")
-    validate_inserted_data(enriched_yesterday, yesterday_str, supabase, "вчера")
+    # Определяем даты из самих записей (надёжно при ручном периоде)
+    def _pick_date(records):
+        return str(records[0]["date_of_period"]) if records else None
+
+    date_today = _pick_date(enriched_today)
+    date_yesterday = _pick_date(enriched_yesterday)
+
+    if date_today:
+        validate_inserted_data(enriched_today, date_today, supabase, "сегодня")
+    if date_yesterday:
+        validate_inserted_data(enriched_yesterday, date_yesterday, supabase, "вчера")
     
     # Итоги
     print("\n" + "=" * 60)

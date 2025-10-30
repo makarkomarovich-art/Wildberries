@@ -6,10 +6,10 @@
 
 1. date_of_period (DATE) - бизнес-дата:
    - К какому дню относятся метрики (2025-10-10, 2025-10-09)
-   - Вычисляется в Python по timezone Europe/Moscow:
-     * selectedPeriod → today (datetime.now(tz).date())
-     * previousPeriod → yesterday (today - timedelta(1))
-   - НЕ парсим из API begin/end!
+   - Определяется так:
+     * selectedPeriod → используем begin из API (дата Europe/Moscow)
+     * previousPeriod → строго на 1 день раньше, чем selectedPeriod.begin
+   - Если begin недоступен, делаем fallback: now() и now()-1 день
 
 2. created_at, updated_at (TIMESTAMPTZ) - технические метки:
    - Управляются автоматически PostgreSQL (DEFAULT NOW())
@@ -37,7 +37,7 @@
 """
 
 from __future__ import annotations
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 from typing import Any, Dict, List, Tuple
 
 try:
@@ -136,12 +136,20 @@ def extract_cr_stats_for_supabase(
     Returns:
         Кортеж (records_today, records_yesterday)
     """
-    # Вычисляем даты по Europe/Moscow
-    today = datetime.now(TZ).date()
-    yesterday = today - timedelta(days=1)
-    
-    today_str = str(today)
-    yesterday_str = str(yesterday)
+    # Базовая дата из API: data.summary.selectedPeriod.begin (YYYY-MM-DD HH:MM:SS)
+    base_selected: date | None = None
+    try:
+        sel_begin = api_response.get('data', {}).get('summary', {}).get('selectedPeriod', {}).get('begin')
+        if isinstance(sel_begin, str) and len(sel_begin) >= 10:
+            base_selected = date.fromisoformat(sel_begin[:10])
+    except Exception:
+        base_selected = None
+
+    if base_selected is None:
+        base_selected = datetime.now(TZ).date()
+
+    today_str = str(base_selected)
+    yesterday_str = str(base_selected - timedelta(days=1))
     
     records_today = []
     records_yesterday = []
@@ -158,8 +166,18 @@ def extract_cr_stats_for_supabase(
         statistics = card.get('statistics', {})
         stocks = card.get('stocks', {})
         
-        # Запись за СЕГОДНЯ (с stocks)
         selected_period = statistics.get('selectedPeriod', {})
+        # Фильтр "нулевых" карточек: если в selected всё нули/None — пропускаем карточку целиком
+        if selected_period:
+            oc = selected_period.get('openCardCount') or 0
+            ac = selected_period.get('addToCartCount') or 0
+            od = selected_period.get('ordersCount') or 0
+            os = selected_period.get('ordersSumRub') or 0
+            cc = selected_period.get('cancelCount') or 0
+            if oc == 0 and ac == 0 and od == 0 and os == 0 and cc == 0:
+                continue
+
+        # Запись за СЕГОДНЯ (с stocks)
         if selected_period:
             record_today = build_record(
                 nm_id=nm_id,

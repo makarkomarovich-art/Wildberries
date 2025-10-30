@@ -36,3 +36,5 @@ backup_*.sql
 
 # Keep JSON files (as requested)
 # *.json
+
+loading_data/
