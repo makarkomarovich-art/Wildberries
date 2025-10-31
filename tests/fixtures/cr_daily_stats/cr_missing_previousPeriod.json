@@ -1,0 +1,29 @@
+{
+  "data": {
+    "cards": [
+      {
+        "nmID": 456770543,
+        "vendorCode": "test_vendor",
+        "statistics": {
+          "selectedPeriod": {
+            "openCardCount": 100,
+            "addToCartCount": 20,
+            "ordersCount": 10,
+            "ordersSumRub": 3000.00,
+            "cancelCount": 1,
+            "conversions": {
+              "addToCartPercent": 20,
+              "cartToOrderPercent": 50
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 10,
+          "stocksWb": 20
+        }
+      }
+    ]
+  }
+}
+
+

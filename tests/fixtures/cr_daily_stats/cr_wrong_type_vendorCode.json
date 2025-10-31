@@ -1,0 +1,40 @@
+{
+  "data": {
+    "cards": [
+      {
+        "nmID": 456770543,
+        "vendorCode": 12345,
+        "statistics": {
+          "selectedPeriod": {
+            "openCardCount": 100,
+            "addToCartCount": 20,
+            "ordersCount": 10,
+            "ordersSumRub": 3000.00,
+            "cancelCount": 1,
+            "conversions": {
+              "addToCartPercent": 20,
+              "cartToOrderPercent": 50
+            }
+          },
+          "previousPeriod": {
+            "openCardCount": 90,
+            "addToCartCount": 18,
+            "ordersCount": 9,
+            "ordersSumRub": 2700.00,
+            "cancelCount": 1,
+            "conversions": {
+              "addToCartPercent": 20,
+              "cartToOrderPercent": 50
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 10,
+          "stocksWb": 20
+        }
+      }
+    ]
+  }
+}
+
+

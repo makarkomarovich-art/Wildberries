@@ -1,0 +1,32 @@
+[run]
+# Директории для измерения coverage
+source = excel_actions
+         wb_api
+         main_function
+
+# Игнорируем папки
+omit = 
+    */tests/*
+    */__pycache__/*
+    */venv/*
+    */cancelled/*
+    */test_*
+    */tests/*
+
+[report]
+# Показывать все файлы, даже если они не были импортированы
+precision = 2
+show_missing = True
+skip_covered = False
+skip_empty = False
+
+# Исключения для отчёта
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    raise AssertionError
+    raise NotImplementedError
+    if __name__ == .__main__.:
+    if TYPE_CHECKING:
+    @abstractmethod
+

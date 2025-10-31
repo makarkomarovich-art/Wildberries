@@ -1,0 +1,80 @@
+{
+  "data": {
+    "page": 1,
+    "isNextPage": false,
+    "cards": [
+      {
+        "nmID": 456770543,
+        "vendorCode": "test_vendor_001",
+        "brandName": "ТестБренд",
+        "object": {
+          "id": 1181,
+          "name": "Тестовая категория"
+        },
+        "statistics": {
+          "selectedPeriod": {
+            "begin": "2025-10-16 00:00:00",
+            "end": "2025-10-16 08:00:00",
+            "openCardCount": 1500,
+            "addToCartCount": 300,
+            "ordersCount": 150,
+            "ordersSumRub": 45000.50,
+            "buyoutsCount": 140,
+            "buyoutsSumRub": 42000.00,
+            "cancelCount": 10,
+            "cancelSumRub": 3000.50,
+            "avgPriceRub": 300.00,
+            "avgOrdersCountPerDay": 150,
+            "conversions": {
+              "addToCartPercent": 20,
+              "cartToOrderPercent": 50,
+              "buyoutsPercent": 93
+            }
+          },
+          "previousPeriod": {
+            "begin": "2025-10-15 00:00:00",
+            "end": "2025-10-15 23:59:59",
+            "openCardCount": 1400,
+            "addToCartCount": 280,
+            "ordersCount": 140,
+            "ordersSumRub": 42000.00,
+            "buyoutsCount": 130,
+            "buyoutsSumRub": 39000.00,
+            "cancelCount": 10,
+            "cancelSumRub": 3000.00,
+            "avgPriceRub": 300.00,
+            "avgOrdersCountPerDay": 140,
+            "conversions": {
+              "addToCartPercent": 20,
+              "cartToOrderPercent": 50,
+              "buyoutsPercent": 93
+            }
+          },
+          "periodComparison": {
+            "openCardDynamics": 7,
+            "addToCartDynamics": 7,
+            "ordersCountDynamics": 7,
+            "ordersSumRubDynamics": 7,
+            "buyoutsCountDynamics": 8,
+            "buyoutsSumRubDynamics": 8,
+            "cancelCountDynamics": 0,
+            "cancelSumRubDynamics": 0,
+            "avgOrdersCountPerDayDynamics": 7,
+            "avgPriceRubDynamics": 0,
+            "conversions": {
+              "addToCartPercent": 0,
+              "cartToOrderPercent": 0,
+              "buyoutsPercent": 0
+            }
+          }
+        },
+        "stocks": {
+          "stocksMp": 50,
+          "stocksWb": 100
+        }
+      }
+    ]
+  }
+}
+
+

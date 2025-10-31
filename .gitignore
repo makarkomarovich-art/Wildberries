@@ -16,17 +16,17 @@ env/
 *.log
 
 # Testing
-tests/
-test_*.py
-*_test.py
-.pytest_cache/
-pytest.ini
-pytest_with_logs.ini
-.coverage
-.coveragerc
-htmlcov/
-coverage.xml
-.tox/
+#tests/
+#test_*.py
+#*_test.py
+#.pytest_cache/
+#pytest.ini
+#pytest_with_logs.ini
+#.coverage
+#.coveragerc
+#htmlcov/
+#coverage.xml
+#.tox/
 
 # Backups and temporary files
 backup_*.sql
@@ -37,4 +37,4 @@ backup_*.sql
 # Keep JSON files (as requested)
 # *.json
 
-loading_data/
+# loading_data/

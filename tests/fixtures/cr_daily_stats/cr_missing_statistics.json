@@ -1,0 +1,16 @@
+{
+  "data": {
+    "cards": [
+      {
+        "nmID": 456770543,
+        "vendorCode": "test_vendor",
+        "stocks": {
+          "stocksMp": 10,
+          "stocksWb": 20
+        }
+      }
+    ]
+  }
+}
+
+

@@ -1,0 +1,22 @@
+{
+  "adverts": [
+    {
+      "type": 9,
+      "status": 11,
+      "count": 2,
+      "advert_list": [
+        {
+          "advertId": 27114105,
+          "changeTime": "2025-10-11T17:50:38Z"
+        },
+        {
+          "advertId": 27114115,
+          "changeTime": "2025-10-11T18:00:00Z"
+        }
+      ]
+    }
+  ],
+  "all": 2
+}
+
+

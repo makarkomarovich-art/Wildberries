@@ -1,0 +1,9 @@
+{
+  "data": {
+    "page": 1,
+    "isNextPage": false,
+    "cards": "это строка, а не массив"
+  }
+}
+
+

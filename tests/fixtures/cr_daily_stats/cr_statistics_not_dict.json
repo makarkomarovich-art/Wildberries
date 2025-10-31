@@ -1,0 +1,17 @@
+{
+  "data": {
+    "cards": [
+      {
+        "nmID": 456770543,
+        "vendorCode": "test_vendor",
+        "statistics": "это строка, а не объект",
+        "stocks": {
+          "stocksMp": 10,
+          "stocksWb": 20
+        }
+      }
+    ]
+  }
+}
+
+

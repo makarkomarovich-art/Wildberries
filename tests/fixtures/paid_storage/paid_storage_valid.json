@@ -1,0 +1,43 @@
+[
+  {
+    "date": "2025-10-28",
+    "nmId": 123456,
+    "vendorCode": "test_article_1",
+    "warehousePrice": 10.5,
+    "giId": 100,
+    "barcode": "2000123456789",
+    "officeId": 117501,
+    "warehouse": "Санкт-Петербург"
+  },
+  {
+    "date": "2025-10-28",
+    "nmId": 123456,
+    "vendorCode": "test_article_1",
+    "warehousePrice": 5.3,
+    "giId": 101,
+    "barcode": "2000123456789",
+    "officeId": 117501,
+    "warehouse": "Санкт-Петербург"
+  },
+  {
+    "date": "2025-10-28",
+    "nmId": 789012,
+    "vendorCode": "test_article_2",
+    "warehousePrice": 20.0,
+    "giId": 200,
+    "barcode": "2000987654321",
+    "officeId": 117501,
+    "warehouse": "Санкт-Петербург"
+  },
+  {
+    "date": "2025-10-29",
+    "nmId": 123456,
+    "vendorCode": "test_article_1",
+    "warehousePrice": 15.0,
+    "giId": 102,
+    "barcode": "2000123456789",
+    "officeId": 117501,
+    "warehouse": "Санкт-Петербург"
+  }
+]
+

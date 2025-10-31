@@ -1,0 +1,49 @@
+# ============================================================================
+# Coverage конфигурация
+# ============================================================================
+# Настройки для анализа покрытия кода тестами
+# ============================================================================
+
+[run]
+# Какие модули анализировать (относительно tests/)
+source = 
+    ../excel_actions
+    ../wb_api
+    ../main_function
+
+# Что исключить из анализа
+omit = 
+    */tests/*
+    */venv/*
+    */__pycache__/*
+    */migrations/*
+    */.venv/*
+
+[report]
+# Показывать номера непокрытых строк
+show_missing = True
+
+# Точность процентов (например: 84.23%)
+precision = 2
+
+# Не пропускать файлы с 100% покрытием
+skip_covered = False
+
+# Исключить из подсчёта покрытия (строки которые можно не тестировать)
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    if __name__ == .__main__.:
+    raise AssertionError
+    raise NotImplementedError
+    if TYPE_CHECKING:
+    @abstractmethod
+
+[html]
+# Директория для HTML отчёта (в tests/)
+directory = htmlcov
+
+# Название отчёта
+title = Coverage Report - Only Wildberries
+
+

@@ -1,0 +1,39 @@
+[
+  {
+    "count": 100,
+    "giCreateDate": "2025-08-09",
+    "incomeId": 1001,
+    "nmID": 123456,
+    "shkCreateDate": "2025-08-09",
+    "subjectName": "Холдер",
+    "total": 373.00
+  },
+  {
+    "count": 20,
+    "giCreateDate": "2025-08-09",
+    "incomeId": 1002,
+    "nmID": 789012,
+    "shkCreateDate": "2025-08-09",
+    "subjectName": "Холдер",
+    "total": 204.00
+  },
+  {
+    "count": 51,
+    "giCreateDate": "2025-08-09",
+    "incomeId": 1003,
+    "nmID": 123456,
+    "shkCreateDate": "2025-08-09",
+    "subjectName": "Пенал",
+    "total": 127.50
+  },
+  {
+    "count": 30,
+    "giCreateDate": "2025-08-15",
+    "incomeId": 1004,
+    "nmID": 789012,
+    "shkCreateDate": "2025-08-15",
+    "subjectName": "Пенал",
+    "total": 150.00
+  }
+]
+

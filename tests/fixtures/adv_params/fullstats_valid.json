@@ -1,0 +1,68 @@
+[
+  {
+    "advertId": 27114105,
+    "clicks": 150,
+    "views": 3000,
+    "ctr": 5.0,
+    "cpc": 10.50,
+    "sum": 1575.00,
+    "atbs": 75,
+    "orders": 50,
+    "cr": 1.67,
+    "shks": 50,
+    "sum_price": 15000.00,
+    "canceled": 5,
+    "boosterStats": [],
+    "days": [
+      {
+        "date": "2025-10-10T00:00:00Z",
+        "views": 1500,
+        "clicks": 75,
+        "cpc": 10.50,
+        "sum": 787.50,
+        "orders": 25,
+        "sum_price": 7500.00,
+        "ctr": 5.0,
+        "cr": 1.67,
+        "shks": 25,
+        "atbs": 38,
+        "canceled": 2,
+        "apps": [
+          {
+            "appType": 32,
+            "views": 1500,
+            "clicks": 75,
+            "cpc": 10.50,
+            "sum": 787.50,
+            "orders": 25,
+            "sum_price": 7500.00,
+            "ctr": 5.0,
+            "cr": 1.67,
+            "shks": 25,
+            "atbs": 38,
+            "canceled": 2,
+            "nms": [
+              {
+                "nmId": 456770543,
+                "name": "Тестовый товар",
+                "views": 1500,
+                "clicks": 75,
+                "sum": 787.50,
+                "cpc": 10.50,
+                "ctr": 5.0,
+                "orders": 25,
+                "sum_price": 7500.00,
+                "cr": 1.67,
+                "shks": 25,
+                "atbs": 38,
+                "canceled": 2
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
+
+
