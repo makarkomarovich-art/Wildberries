@@ -39,7 +39,7 @@ UPDATE_TIMESTAMP_CELL = 'E2'
 # Названия колонок для автоматического поиска
 ARTICLE_HEADER_NAME = "Артикул"
 ATTRIBUTES_HEADER_NAME = "Атрибуты"
-FIRST_DATE_COLUMN_INDEX = 6 # E - Индекс первой колонки с датой (нумерация с 1)
+FIRST_DATE_COLUMN_INDEX = 6 # F - Индекс первой колонки с датой (нумерация с 1)
 
 # Структура блока одного товара
 ATTRIBUTES_PER_ITEM = 16
@@ -49,6 +49,15 @@ ATTRIBUTE_ORDER = [
     "CPM", "Рекламные просмотры", "Рекламные клики", "CTR", "CPC",
     "Остатки WB", "Цена одного заказа", "Журнал изменений",
 ]
+
+
+def column_number_to_letter(n: int) -> str:
+    """Преобразует номер столбца (1-based) в буквенное обозначение (A1 нотация)."""
+    result = ""
+    while n > 0:
+        n, remainder = divmod(n - 1, 26)
+        result = chr(65 + remainder) + result
+    return result
 
 def get_google_sheets_service():
     """Инициализирует и возвращает сервис для работы с Google Sheets API."""
@@ -74,7 +83,7 @@ def read_and_validate_structure(service, spreadsheet_id, sheet_name):
     """
     logging.info(f"Начало чтения и валидации структуры листа '{sheet_name}'...")
 
-    sheet_range = f"'{sheet_name}'!A:Z"
+    sheet_range = f"'{sheet_name}'!A:ZZ"
     result = service.spreadsheets().values().get(spreadsheetId=spreadsheet_id, range=sheet_range).execute()
     values = result.get('values', [])
     if not values:
@@ -312,6 +321,7 @@ def compare_and_update(service, spreadsheet_id, sheet_name, sheet_data, validate
     update_requests = []
     inserted_cells_count = 0
     updated_cells_count = 0
+    batch_update_values_data = []
     
     # Добавляем запрос на создание новой колонки, если он есть
     if add_column_req:
@@ -319,18 +329,12 @@ def compare_and_update(service, spreadsheet_id, sheet_name, sheet_data, validate
         # И сразу добавляем запрос на запись даты в заголовок новой колонки
         tomorrow = datetime.now().date() + timedelta(days=1)
         last_date_col_index = max(date_columns.values())
-        
-        update_requests.append({
-            "updateCells": {
-                "rows": [{
-                    "values": [{
-                        "userEnteredValue": {"stringValue": tomorrow.strftime('%d.%m.%Y')},
-                        "userEnteredFormat": {"horizontalAlignment": "CENTER"}
-                    }]
-                }],
-                "start": {"sheetId": add_column_req['appendDimension']['sheetId'], "rowIndex": 0, "columnIndex": last_date_col_index},
-                "fields": "userEnteredValue,userEnteredFormat"
-            }
+        new_date_col_index = last_date_col_index + 1
+        new_date_col_letter = column_number_to_letter(new_date_col_index)
+
+        batch_update_values_data.append({
+            'range': f"'{sheet_name}'!{new_date_col_letter}1",
+            'values': [[tomorrow.strftime('%d.%m.%y')]]
         })
         logging.info(f"Запрос на запись даты {tomorrow.strftime('%d.%m.%Y')} в новый столбец добавлен в батч.")
 
@@ -338,8 +342,6 @@ def compare_and_update(service, spreadsheet_id, sheet_name, sheet_data, validate
     checkable_attributes_count = len([attr for attr in ATTRIBUTE_ORDER if attr not in ["ДРР", "Журнал изменений"]])
     total_cells_to_check = len(validated_articles) * checkable_attributes_count * len(date_columns)
     logging.info(f"Всего ячеек для проверки (артикулы * атрибуты * даты): {total_cells_to_check}")
-
-    batch_update_values_data = []
 
     for nm_id, article_info in validated_articles.items():
         for attr_name, row_num in article_info['attributes'].items():
@@ -444,7 +446,7 @@ def final_validation(service, spreadsheet_id, sheet_name, validated_articles, da
     
     # 1. Повторное чтение данных из GS
     try:
-        sheet_range = f"'{sheet_name}'!A:Z"
+        sheet_range = f"'{sheet_name}'!A:ZZ"
         result = service.spreadsheets().values().get(spreadsheetId=spreadsheet_id, range=sheet_range).execute()
         sheet_data = result.get('values', [])
         if not sheet_data:
