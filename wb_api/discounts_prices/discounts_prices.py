@@ -14,6 +14,8 @@ from __future__ import annotations
 
 import json
 import time
+import logging
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -34,6 +36,24 @@ AUTHORIZEV3_TOKEN, COOKIES, USER_AGENT = (
     _api_keys.USER_AGENT,
 )
 
+
+# Локальная настройка логгера для модуля, если он запускается отдельно
+_logger = logging.getLogger(__name__)
+if not _logger.handlers:
+    _logger.setLevel(logging.INFO)
+    try:
+        _root_dir = Path(__file__).resolve().parents[2]
+        _log_path = _root_dir / 'discounts_prices.log'
+        _fh = logging.FileHandler(_log_path, encoding='utf-8')
+        _sh = logging.StreamHandler()
+        _fmt = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+        _fh.setFormatter(_fmt)
+        _sh.setFormatter(_fmt)
+        _logger.addHandler(_fh)
+        _logger.addHandler(_sh)
+    except Exception:
+        # В случае ошибок с файловой системой — не блокируем выполнение
+        pass
 
 class WBDiscountsPricesClient:
     """Клиент для получения данных о товарах с фильтрацией по скидкам и ценам."""
@@ -228,12 +248,55 @@ class WBDiscountsPricesClient:
         print(f"🎉 Загрузка завершена: {page_count} страниц, {len(all_goods)} товаров")
         return all_goods
 
-    def save_response_to_file(self, response_data: Dict[str, Any], filename: str) -> None:
-        """Сохраняет ответ API в JSON файл."""
-        output_path = Path(__file__).resolve().parents[1] / filename
+    def save_response_to_file(self, response_data: Dict[str, Any], filename: Optional[str] = None) -> None:
+        """Сохраняет ответ API в JSON файл в папку данного модуля.
+
+        Если filename не указан, формирует имя вида
+        discounts_prices_response_YYYYMMDD_HHMMSS.json.
+        """
+        module_dir = Path(__file__).resolve().parent
+        if not filename:
+            filename = f"discounts_prices_response_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        output_path = module_dir / filename
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(response_data, f, ensure_ascii=False, indent=2)
-        print(f"Ответ сохранен в файл: {output_path}")
+        logging.getLogger(__name__).info(f"💾 JSON ответ сохранен: {output_path}")
+
+    def log_spp_stats(self, goods: List[Dict[str, Any]]) -> None:
+        """Логирует информацию по СПП: список товаров с СПП, min и max СПП.
+
+        Ожидается, что поле СПП приходит в goods как discountOnSite (в процентах).
+        """
+        logger = logging.getLogger(__name__)
+        items_with_spp = []
+        for item in goods:
+            try:
+                nm_id = item.get('nmID')
+                spp = item.get('discountOnSite')
+                spp_val = float(spp) if spp is not None else 0.0
+                if spp_val > 0:
+                    items_with_spp.append((nm_id, spp_val))
+            except Exception:
+                continue
+
+        count_with_spp = len(items_with_spp)
+        if count_with_spp == 0:
+            logger.info("🏷️ СПП отсутствует у всех товаров (discountOnSite <= 0)")
+            return
+
+        spp_values = [v for _, v in items_with_spp]
+        min_spp = min(spp_values)
+        max_spp = max(spp_values)
+
+        logger.info(f"🏷️ Товаров со СПП > 0: {count_with_spp}")
+        logger.info(f"   ▸ Минимальное СПП: {min_spp:.2f}%")
+        logger.info(f"   ▸ Максимальное СПП: {max_spp:.2f}%")
+
+        # Список товаров с СПП: nmID(СПП%)
+        items_preview = ", ".join([
+            f"{nm}({spp:.2f}%)" for nm, spp in items_with_spp
+        ])
+        logger.info(f"   ▸ У каких товаров есть СПП: {items_preview}")
 
 
 def test_pagination():
@@ -251,6 +314,22 @@ def test_pagination():
             page_size=50,
             sleep_seconds=1.0
         )
+
+        # Логирование по СПП
+        client.log_spp_stats(all_goods)
+
+        # Сохранение агрегированного ответа в JSON рядом с модулем
+        response_data = {
+            "data": {"listGoods": all_goods},
+            "error": False,
+            "errorText": "",
+            "metadata": {
+                "retrieved_at": datetime.now().isoformat(),
+                "total_goods": len(all_goods),
+                "api_endpoint": client.base_url if hasattr(client, 'base_url') else ""
+            }
+        }
+        client.save_response_to_file(response_data, filename="")
         
         print("\n" + "=" * 60)
         print("📊 СТАТИСТИКА ПАГИНАЦИИ")

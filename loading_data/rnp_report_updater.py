@@ -39,7 +39,7 @@ UPDATE_TIMESTAMP_CELL = 'E2'
 # Названия колонок для автоматического поиска
 ARTICLE_HEADER_NAME = "Артикул"
 ATTRIBUTES_HEADER_NAME = "Атрибуты"
-FIRST_DATE_COLUMN_INDEX = 5 # E - Индекс первой колонки с датой (нумерация с 1)
+FIRST_DATE_COLUMN_INDEX = 6 # E - Индекс первой колонки с датой (нумерация с 1)
 
 # Структура блока одного товара
 ATTRIBUTES_PER_ITEM = 16

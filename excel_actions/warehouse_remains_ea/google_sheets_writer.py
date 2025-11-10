@@ -494,9 +494,9 @@ def write_warehouse_remains_to_sheets(spreadsheet_url: str, sheet_name: str, agg
     except Exception:
         pass
 
-    # Проставляем отметку времени последнего обновления в A1
+    # Проставляем отметку времени последнего обновления в A2
     try:
-        write_last_updated(spreadsheet_id, sheet_name, cell="A1", prefix="Обновлено: ")
+        write_last_updated(spreadsheet_id, sheet_name, cell="A2", prefix="Обновлено: ")
     except Exception as e:
         print(f"⚠️ Не удалось записать отметку обновления: {e}")
     

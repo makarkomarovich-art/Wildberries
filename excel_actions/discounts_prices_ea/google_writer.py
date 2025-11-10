@@ -33,6 +33,7 @@ import importlib.util
 import logging
 import sys
 import time
+from datetime import datetime
 
 logger = logging.getLogger(__name__)
 
@@ -390,6 +391,18 @@ def write_discounts_prices_to_sheet(
                     ).execute()
     except Exception as e:
         logger.warning(f"Не удалось применить формат процентов: {e}")
+
+    # Записываем дату и время выполнения в ячейку A2
+    try:
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        service.spreadsheets().values().update(
+            spreadsheetId=spreadsheet_id,
+            range=f"{sheet_name}!A2",
+            valueInputOption="RAW",
+            body={"values": [[timestamp]]},
+        ).execute()
+    except Exception as e:
+        logger.warning(f"Не удалось записать метку времени в A2: {e}")
 
     return {
         "processed_rows": processed_rows,

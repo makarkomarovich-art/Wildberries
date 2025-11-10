@@ -59,7 +59,7 @@ def main():
     # Пример:
     # manual_begin = date(2025, 10, 19)
     # manual_end = None  # один день
-    manual_begin: date | None = None  # ← установите date(...) чтобы переопределить
+    manual_begin: date | None = None # ← установите date(...) чтобы переопределить
     manual_end: date | None = None    # ← установите date(...) чтобы переопределить
     # ------------------------------------------------------------------
 
