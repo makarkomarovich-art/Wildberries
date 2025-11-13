@@ -40,12 +40,15 @@ import importlib.util
 # Настройка логирования
 def setup_logging():
     """Настройка системы логирования."""
+    log_dir = Path(__file__).resolve().parents[2] / 'logs'
+    log_dir.mkdir(parents=True, exist_ok=True)  # Создаём папку logs
+    
     logging.basicConfig(
         level=logging.INFO,
         format='%(asctime)s - %(levelname)s - %(message)s',
         handlers=[
             logging.StreamHandler(sys.stdout),
-            logging.FileHandler('discounts_prices.log', encoding='utf-8')
+            logging.FileHandler(log_dir / 'discounts_prices.log', encoding='utf-8')
         ]
     )
     return logging.getLogger(__name__)

@@ -45,12 +45,15 @@ REPORT_DATE_TO = "2025-10-19"    # Конечная дата отчета
 
 def setup_logging():
     """Настройка системы логирования."""
+    log_dir = Path(__file__).resolve().parents[2] / 'logs'
+    log_dir.mkdir(parents=True, exist_ok=True)  # Создаём папку logs
+    
     logging.basicConfig(
         level=logging.INFO,
         format='%(message)s',
         handlers=[
             logging.StreamHandler(sys.stdout),
-            logging.FileHandler('week_stats.log', encoding='utf-8')
+            logging.FileHandler(log_dir / 'week_stats.log', encoding='utf-8')
         ]
     )
     return logging.getLogger(__name__)

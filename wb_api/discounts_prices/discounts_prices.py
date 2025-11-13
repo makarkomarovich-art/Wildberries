@@ -43,7 +43,8 @@ if not _logger.handlers:
     _logger.setLevel(logging.INFO)
     try:
         _root_dir = Path(__file__).resolve().parents[2]
-        _log_path = _root_dir / 'discounts_prices.log'
+        _log_path = _root_dir / 'logs' / 'discounts_prices.log'
+        _log_path.parent.mkdir(parents=True, exist_ok=True)  # Создаём папку logs
         _fh = logging.FileHandler(_log_path, encoding='utf-8')
         _sh = logging.StreamHandler()
         _fmt = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
