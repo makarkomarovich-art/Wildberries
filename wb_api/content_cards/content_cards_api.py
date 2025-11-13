@@ -4,21 +4,24 @@ Client for WB Content API: /content/v2/get/cards/list
 POST https://content-api.wildberries.ru/content/v2/get/cards/list
 Auth: Authorization header (token with Content/Promotion category)
 
-Minimal test run when executed as a script: fetch first page and print brief info.
+When executed directly: saves response to wb_api/content_cards/
+When called from main: saves response to caller's directory
 """
 
 from __future__ import annotations
 
+import json
 import time
 from pathlib import Path
 from typing import Any, Dict, List, Optional
-
 import importlib.util
 import requests
+import inspect
+from datetime import datetime
 
 
-# Load API key from api_keys.py (same pattern as other modules)
-BASE_DIR = Path(__file__).resolve().parents[1]
+# Load API key from api_keys.py
+BASE_DIR = Path(__file__).resolve().parents[2]
 api_keys_path = BASE_DIR / "api_keys.py"
 spec = importlib.util.spec_from_file_location("api_keys", str(api_keys_path))
 api_keys_module = importlib.util.module_from_spec(spec)
@@ -74,10 +77,16 @@ class WBContentCardsClient:
         locale: Optional[str] = "ru",
         sleep_seconds: float = 0.7,
         max_pages: Optional[int] = None,
+        save_response: bool = False,
+        output_dir: Optional[Path] = None,
     ) -> List[Dict[str, Any]]:
         """Fetch multiple pages using cursor until total < limit or no cards.
 
         Returns a flat list of cards (concatenated).
+        
+        Args:
+            save_response: Сохранить ответ в JSON файл
+            output_dir: Директория для сохранения (по умолчанию - папка вызывающего скрипта)
         """
         all_cards: List[Dict[str, Any]] = []
         updated_at: Optional[str] = None
@@ -119,6 +128,35 @@ class WBContentCardsClient:
 
             time.sleep(sleep_seconds)
 
+        # Сохранение ответа
+        if save_response:
+            if output_dir is None:
+                # Определяем папку вызывающего скрипта
+                frame = inspect.currentframe()
+                try:
+                    caller_frame = frame.f_back
+                    while caller_frame:
+                        caller_file = caller_frame.f_globals.get('__file__')
+                        if caller_file and not caller_file.endswith('content_cards_api.py'):
+                            output_dir = Path(caller_file).parent
+                            break
+                        caller_frame = caller_frame.f_back
+                    else:
+                        # Fallback: папка текущего скрипта
+                        output_dir = Path(__file__).parent
+                finally:
+                    del frame
+            
+            output_dir.mkdir(parents=True, exist_ok=True)
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            filename = f"content_cards_response_{timestamp}.json"
+            filepath = output_dir / filename
+            
+            with open(filepath, 'w', encoding='utf-8') as f:
+                json.dump(all_cards, f, ensure_ascii=False, indent=2)
+            
+            print(f"💾 Ответ сохранен: {filepath}")
+
         return all_cards
 
 
@@ -135,29 +173,24 @@ def _example_run() -> None:
     print(f"API key (masked): {_mask(API_KEY)}")
 
     try:
-        data = client.fetch_cards_page(limit=100, with_photo=-1, locale="ru")
+        cards = client.iterate_all_cards(
+            limit=100, 
+            with_photo=-1, 
+            locale="ru",
+            save_response=True
+        )
+        print(f"cards count: {len(cards)}")
+        if cards:
+            sample = cards[0]
+            print("sample keys:", sorted(sample.keys()))
     except requests.HTTPError as e:
         print("HTTP error:", e)
         if e.response is not None:
             print("Response:", e.response.text[:500])
-        return
     except Exception as e:
         print("Error:", type(e).__name__, str(e)[:500])
-        return
-
-    cards = data.get("cards", []) if isinstance(data, dict) else []
-    total = data.get("total") if isinstance(data, dict) else None
-    cursor = data.get("cursor") if isinstance(data, dict) else None
-
-    print(f"cards count (this page): {len(cards)}; total: {total}")
-    if isinstance(cursor, dict):
-        print("cursor:", {k: cursor.get(k) for k in ("updatedAt", "nmID")})
-    if cards:
-        sample = cards[0]
-        print("sample keys:", sorted(sample.keys()))
 
 
 if __name__ == "__main__":
     _example_run()
-
 

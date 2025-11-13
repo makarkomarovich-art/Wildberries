@@ -1,27 +1,10 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
-import os
 import subprocess
-import sys
-from pathlib import Path
 from typing import Sequence
 
-
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-
-
-def resolve_python_executable() -> str:
-    override = os.environ.get("ONLYWB_PYTHON")
-    if override and Path(override).is_file():
-        return override
-
-    current = sys.executable
-    if current and Path(current).is_file():
-        return current
-
-    fallback = PROJECT_ROOT / "venv" / "bin" / "python"
-    return str(fallback)
+from .utils import PROJECT_ROOT, resolve_python_executable
 
 
 def run_command(args: Sequence[str]) -> None:

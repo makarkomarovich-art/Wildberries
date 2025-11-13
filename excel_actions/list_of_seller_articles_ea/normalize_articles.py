@@ -123,12 +123,21 @@ def extract_data_for_supabase(cards: Iterable[Dict[str, Any]]) -> Tuple[List[Dic
                 print(f"⚠️ WARNING: Товар nmID={nm_id} не имеет subjectName, пропускаем")
                 continue
             
+            # Извлекаем главное фото (photos[0].big)
+            photos = card.get('photos', [])
+            main_photo_url = ''
+            if isinstance(photos, list) and len(photos) > 0:
+                first_photo = photos[0]
+                if isinstance(first_photo, dict):
+                    main_photo_url = str(first_photo.get('big', '')).strip()
+            
             products_data.append({
                 'nm_id': nm_id,
                 'imt_id': int(imt_id),
                 'vendor_code': vendor_code,
                 'title': title,
-                'category_wb': category_wb
+                'category_wb': category_wb,
+                'main_photo_url': main_photo_url
             })
         
         # Данные для product_sizes (все баркоды)

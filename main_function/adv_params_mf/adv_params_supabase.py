@@ -67,8 +67,8 @@ def get_supabase_client() -> Client:
 
 
 def main(
-    begin_date: date | None = None,
-    end_date: date | None = None,
+    begin_date: date | None = date(2025, 10, 15),
+    end_date: date | None = date(2025, 11, 13),
     min_views_threshold: int = 1,  # Фильтр: только артикулы с views > 0 (отсекаем склейку)
     use_rpc_aggregation: bool = True  # По умолчанию RPC (правильная обработка timestamps)
 ):
@@ -76,8 +76,8 @@ def main(
     Main entry point.
     
     Args:
-        begin_date: Начало периода (по умолчанию: 7 дней назад)
-        end_date: Конец периода (по умолчанию: вчера)
+        begin_date: Начало периода (по умолчанию: позавчера, т.е. последние 3 дня включая сегодня)
+        end_date: Конец периода (по умолчанию: сегодня)
         min_views_threshold: Минимум просмотров для включения артикула
         use_rpc_aggregation: Использовать RPC функцию для агрегации (или Python)
     """
@@ -428,13 +428,18 @@ if __name__ == "__main__":
     
     args = parser.parse_args()
     
-    begin = datetime.strptime(args.begin, "%Y-%m-%d").date() if args.begin else None
-    end = datetime.strptime(args.end, "%Y-%m-%d").date() if args.end else None
+    # Формируем параметры для main()
+    # Если аргументы командной строки не переданы, используем значения по умолчанию из сигнатуры функции
+    main_kwargs = {
+        'min_views_threshold': args.min_views,
+        'use_rpc_aggregation': not args.no_rpc
+    }
     
-    main(
-        begin_date=begin,
-        end_date=end,
-        min_views_threshold=args.min_views,
-        use_rpc_aggregation=not args.no_rpc
-    )
+    # Передаем begin_date и end_date только если они заданы через командную строку
+    if args.begin:
+        main_kwargs['begin_date'] = datetime.strptime(args.begin, "%Y-%m-%d").date()
+    if args.end:
+        main_kwargs['end_date'] = datetime.strptime(args.end, "%Y-%m-%d").date()
+    
+    main(**main_kwargs)
 

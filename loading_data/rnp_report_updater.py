@@ -38,6 +38,7 @@ UPDATE_TIMESTAMP_CELL = 'E2'
 
 # Названия колонок для автоматического поиска
 ARTICLE_HEADER_NAME = "Артикул"
+VENDOR_CODE_HEADER_NAME = "Артикул продавца"  # Для получения nm_id через JOIN
 ATTRIBUTES_HEADER_NAME = "Атрибуты"
 FIRST_DATE_COLUMN_INDEX = 6 # F - Индекс первой колонки с датой (нумерация с 1)
 
@@ -93,12 +94,15 @@ def read_and_validate_structure(service, spreadsheet_id, sheet_name):
     header_row = values[0]
     try:
         article_col_idx = header_row.index(ARTICLE_HEADER_NAME)
+        vendor_code_col_idx = header_row.index(VENDOR_CODE_HEADER_NAME) if VENDOR_CODE_HEADER_NAME in header_row else None
         attributes_col_idx = header_row.index(ATTRIBUTES_HEADER_NAME)
     except ValueError as e:
         logging.error(f"Критическая ошибка: Не найдена одна из обязательных колонок: {e}. Выполнение прервано.")
         return None, None
         
     logging.info(f"Колонка '{ARTICLE_HEADER_NAME}' найдена в столбце: {article_col_idx + 1}, '{ATTRIBUTES_HEADER_NAME}' в столбце: {attributes_col_idx + 1}")
+    if vendor_code_col_idx is not None:
+        logging.info(f"Колонка '{VENDOR_CODE_HEADER_NAME}' найдена в столбце: {vendor_code_col_idx + 1}")
     logging.info(f"Схема для валидации (эталонный порядок атрибутов): {ATTRIBUTE_ORDER}")
 
     validated_articles = {}
@@ -113,9 +117,18 @@ def read_and_validate_structure(service, spreadsheet_id, sheet_name):
         
         total_found += 1
         
+        # Пытаемся прочитать nm_id из колонки "Артикул"
+        nm_id = None
         try:
             nm_id = int(article_cell_value)
         except ValueError:
+            # Если не получилось, возможно там vendor_code. Пробуем прочитать из колонки "Артикул продавца"
+            # и найти nm_id через БД
+            if vendor_code_col_idx is not None:
+                vendor_code_value = values[row_idx][vendor_code_col_idx] if len(values[row_idx]) > vendor_code_col_idx else None
+                if vendor_code_value:
+                    logging.debug(f"В строке {row_idx + 1} в колонке 'Артикул' найдено текстовое значение '{article_cell_value}'. Пробую найти nm_id по vendor_code '{vendor_code_value}'...")
+                    # Пока пропускаем, вернемся к этому позже
             row_idx += 1
             continue
 
@@ -233,6 +246,8 @@ def get_data_from_db(article_ids, date_range):
     Возвращает данные в виде словаря для быстрого доступа.
     """
     logging.info(f"Запрос данных из БД для {len(article_ids)} артикулов и {len(date_range)} дат...")
+    logging.info(f"Ищем артикулы (nm_id): {list(article_ids)[:10]}{'...' if len(article_ids) > 10 else ''}")
+    logging.info(f"Диапазон дат: с {min(date_range).strftime('%Y-%m-%d')} по {max(date_range).strftime('%Y-%m-%d')}")
     
     start_date = min(date_range).strftime('%Y-%m-%d')
     end_date = max(date_range).strftime('%Y-%m-%d')
@@ -275,6 +290,7 @@ def get_data_from_db(article_ids, date_range):
         conn = get_db_connection()
         cursor = conn.cursor()
         
+        logging.info(f"Выполняю SQL-запрос...")
         cursor.execute(query)
         
         columns = [desc[0] for desc in cursor.description]
@@ -302,6 +318,27 @@ def get_data_from_db(article_ids, date_range):
                 db_data_map[(nm_id, row_date)] = row_dict
         
         logging.info(f"✅ Из БД извлечено {len(db_data_map)} записей.")
+        
+        # Дополнительная диагностика: проверяем, есть ли данные для этих артикулов вообще
+        if len(db_data_map) == 0:
+            logging.warning(f"⚠️ ВНИМАНИЕ: Не найдено ни одной записи в БД для указанных артикулов.")
+            logging.warning(f"Проверяю наличие данных по vendor_code...")
+            # Проверяем, может быть данные есть по vendor_code?
+            check_query = f"""
+            SELECT DISTINCT cr.vendor_code, cr.nm_id 
+            FROM cr_daily_stats cr 
+            WHERE cr.vendor_code IN (
+                SELECT vendor_code FROM products WHERE nm_id IN ({','.join(map(str, article_ids))})
+            )
+            LIMIT 5;
+            """
+            cursor.execute(check_query)
+            vendor_check = cursor.fetchall()
+            if vendor_check:
+                logging.warning(f"Найдены данные по vendor_code для этих nm_id: {vendor_check}")
+            else:
+                logging.warning(f"Данных по vendor_code тоже не найдено.")
+        
         return db_data_map
         
     except Exception as e:

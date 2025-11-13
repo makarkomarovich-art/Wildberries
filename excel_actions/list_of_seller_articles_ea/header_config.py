@@ -47,6 +47,32 @@ ALIASES: Dict[str, Tuple[str, ...]] = {
         "размеры",
         "Размеры",
     ),
+    # imtID (Номер склейки)
+    "imt": (
+        "номер склейки",
+        "Номер склейки",
+        "imt id",
+        "imtid",
+        "imt",
+    ),
+    # subjectName / category_wb (Предмет)
+    "category": (
+        "предмет",
+        "Предмет",
+        "категория",
+        "Категория",
+        "subjectname",
+        "subject name",
+    ),
+    # main_photo_url (Фото)
+    "photo": (
+        "фото",
+        "Фото",
+        "photo",
+        "image",
+        "изображение",
+        "Изображение",
+    ),
 }
 
 

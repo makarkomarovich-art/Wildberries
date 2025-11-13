@@ -38,3 +38,4 @@ backup_*.sql
 # *.json
 
 # loading_data/
+auto_launching/

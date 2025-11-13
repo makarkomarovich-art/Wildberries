@@ -32,7 +32,7 @@ def _col_index_to_label(index_1based: int) -> str:
     return label
 
 
-def read_existing_keys(spreadsheet_id: str, sheet_name: str, start_row: int = 2) -> List[Tuple[int, str, str, str]]:
+def read_existing_keys(spreadsheet_id: str, sheet_name: str, start_row: int = 2) -> List[Tuple[int, str, str, str, int, str, str]]:
     from google.oauth2.service_account import Credentials
     from googleapiclient.discovery import build
 
@@ -57,6 +57,8 @@ def read_existing_keys(spreadsheet_id: str, sheet_name: str, start_row: int = 2)
         'barcode': [],
         'vendor': [],
         'size': [],
+        'imt': [],
+        'category': [],
     }
     for idx0, title in enumerate(headers):
         t = _norm(title)
@@ -70,7 +72,7 @@ def read_existing_keys(spreadsheet_id: str, sheet_name: str, start_row: int = 2)
         print(f"⚠️ Отсутствуют колонки: {', '.join(missing)}")
     # Получаем данные по первым найденным колонкам
     cols_order = []
-    for k in ('article', 'barcode', 'vendor', 'size'):
+    for k in ('article', 'barcode', 'vendor', 'size', 'imt', 'category'):
         if name_to_indices[k]:
             col_letter = _col_index_to_label(name_to_indices[k][0] + 1)
             cols_order.append(f"{sheet_name}!{col_letter}{start_row}:{col_letter}")
@@ -99,15 +101,22 @@ def read_existing_keys(spreadsheet_id: str, sheet_name: str, start_row: int = 2)
             row.append(c[i][0] if i < len(c) and c[i] else '')
         values.append(row)
 
-    out: List[Tuple[int, str, str, str]] = []
+    out: List[Tuple[int, str, str, str, int, str, str]] = []
     for row in values:
         nm = int(row[0]) if len(row) > 0 and str(row[0]).strip() else None
         bc = str(row[1]).strip() if len(row) > 1 else ""
         sa = str(row[2]).strip() if len(row) > 2 else ""
         size = str(row[3]).strip() if len(row) > 3 else ""
+        imt_raw = row[4] if len(row) > 4 else ""
+        try:
+            imt = int(imt_raw) if str(imt_raw).strip() else 0
+        except Exception:
+            imt = 0
+        category = str(row[5]).strip() if len(row) > 5 else ""
+        photo = str(row[6]).strip() if len(row) > 6 else ""
         if nm is None:
             continue
-        out.append((nm, bc, sa, size))
+        out.append((nm, bc, sa, size, imt, category, photo))
     return out
 
 

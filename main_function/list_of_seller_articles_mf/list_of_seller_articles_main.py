@@ -1,7 +1,7 @@
 """
 Main: сбор базы артикулов из Content API (cards list) и запись в Supabase.
 
-Поля для products: nmID, imtID, vendorCode, title, subjectName
+Поля для products: nmID, imtID, vendorCode, title, subjectName, main_photo_url
 Поля для product_sizes: barcode, size (techSize)
 
 Логика:
@@ -10,6 +10,7 @@ Main: сбор базы артикулов из Content API (cards list) и за
 3. Нормализация данных для Supabase
 4. Применение исключений (excluded_nm_ids)
 5. Upsert в Supabase (products + product_sizes)
+6. Запись данных в Google Sheets (по колонкам с алиасами)
 """
 
 from __future__ import annotations
@@ -26,8 +27,8 @@ BASE_DIR = Path(__file__).resolve().parents[2]
 # ========================================
 
 # WB API Client
-content_api_path = BASE_DIR / 'wb_api' / 'content_cards.py'
-spec = importlib.util.spec_from_file_location('content_cards', str(content_api_path))
+content_api_path = BASE_DIR / 'wb_api' / 'content_cards' / 'content_cards_api.py'
+spec = importlib.util.spec_from_file_location('content_cards_api', str(content_api_path))
 content_mod = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(content_mod)
 WBContentCardsClient = content_mod.WBContentCardsClient
@@ -54,6 +55,20 @@ spec_norm = importlib.util.spec_from_file_location('normalize_articles', str(nor
 norm_mod = importlib.util.module_from_spec(spec_norm)
 spec_norm.loader.exec_module(norm_mod)
 extract_data_for_supabase = norm_mod.extract_data_for_supabase
+extract_triples_from_content_cards = norm_mod.extract_triples_from_content_cards
+
+# Google Sheets I/O (чтение/запись)
+gs_read_path = BASE_DIR / 'excel_actions' / 'list_of_seller_articles_ea' / 'gs_read_existing.py'
+spec_gs_read = importlib.util.spec_from_file_location('gs_read_existing', str(gs_read_path))
+gs_read_mod = importlib.util.module_from_spec(spec_gs_read)
+spec_gs_read.loader.exec_module(gs_read_mod)
+read_existing_keys = gs_read_mod.read_existing_keys
+
+gs_upsert_path = BASE_DIR / 'excel_actions' / 'list_of_seller_articles_ea' / 'gs_upsert_append.py'
+spec_gs_upsert = importlib.util.spec_from_file_location('gs_upsert_append', str(gs_upsert_path))
+gs_upsert_mod = importlib.util.module_from_spec(spec_gs_upsert)
+spec_gs_upsert.loader.exec_module(gs_upsert_mod)
+upsert_articles_to_gs = gs_upsert_mod.upsert_articles
 
 # Исключения
 excluded_path = BASE_DIR / 'main_function' / 'list_of_seller_articles_mf' / 'excluded_nm_ids.py'
@@ -220,6 +235,64 @@ def main() -> None:
         return
     
     print("\n✅ Готово! База артикулов обновлена в Supabase")
+
+    # 7. Запись в Google Sheets (по колонкам с алиасами)
+    try:
+        print("\n📝 Запись данных в Google Sheets...")
+        # Подготовка записей по колонкам:
+        # (nmID, barcode, vendorCode, size, imtID, subjectName, main_photo_url)
+        rows_for_gs: List[Tuple[int, str, str, str, int, str, str]] = []
+        filtered_excluded = 0
+        for card in cards:
+            try:
+                nm = int(card.get('nmID'))
+            except Exception:
+                continue
+            # Пропускаем исключённые nmID при записи в Google Sheets
+            if nm in EXCLUDED_NM_IDS:
+                filtered_excluded += 1
+                continue
+            imt = int(card.get('imtID')) if str(card.get('imtID', '')).strip() else 0
+            vendor = str(card.get('vendorCode', '')).strip()
+            category = str(card.get('subjectName', '')).strip()
+            # Главное фото (big)
+            photo_url = ''
+            photos = card.get('photos') or []
+            if isinstance(photos, list) and photos and isinstance(photos[0], dict):
+                photo_url = str(photos[0].get('big', '')).strip()
+            sizes = card.get('sizes') or []
+            for s in sizes:
+                if not isinstance(s, dict):
+                    continue
+                size = str(s.get('techSize', '') or s.get('wbSize', '') or '').strip() or 'Без размера'
+                skus = s.get('skus') or []
+                for sku in skus:
+                    bc = sku if isinstance(sku, str) else (str(sku.get('barcode', '')).strip() if isinstance(sku, dict) else '')
+                    if not bc:
+                        continue
+                    rows_for_gs.append((nm, bc, vendor, size, imt, category, photo_url))
+        print(f"   Подготовлено записей для GS: {len(rows_for_gs)} (исключено по excluded_nm_ids: {filtered_excluded})")
+
+        # Конфигурация таблицы (ID берём из api_keys, имя листа — по умолчанию)
+        spreadsheet_id = getattr(ak, "GOOGLE_SHEET_ID_ARTICLES", "")
+        sheet_name = "База артикулов"
+        start_row = 2
+        if not spreadsheet_id:
+            print("   ⚠️ GOOGLE_SHEET_ID_ARTICLES не задан в api_keys.py — пропускаем запись в GS")
+        else:
+            # Читает существующие ключи из листа
+            existing = read_existing_keys(spreadsheet_id, sheet_name, start_row=start_row)
+            # Пишет новые значения/обновляет существующие
+            upsert_articles_to_gs(
+                spreadsheet_id=spreadsheet_id,
+                sheet_name=sheet_name,
+                start_row=start_row,
+                existing=existing,
+                new_items=rows_for_gs,
+            )
+            print("   ✅ Запись в Google Sheets завершена")
+    except Exception as e:
+        print(f"   ❌ ОШИБКА при записи в Google Sheets: {e}")
 
 
 if __name__ == "__main__":
