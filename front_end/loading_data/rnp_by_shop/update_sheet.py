@@ -2,7 +2,7 @@ import sys
 from pathlib import Path
 
 # Добавляем корень проекта в sys.path для импорта api_keys
-project_root = Path(__file__).resolve().parents[1]
+project_root = Path(__file__).resolve().parents[3]
 sys.path.append(str(project_root))
 
 from api_keys import (
@@ -14,11 +14,16 @@ from api_keys import (
 
 import logging
 from datetime import datetime, timedelta
-import decimal
 
 from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
-import psycopg2
+
+# Поддержка как запуска модулем, так и прямого запуска
+try:
+    from .aggregate_data import get_data_by_shop
+except ImportError:
+    # Прямой запуск - импортируем через абсолютный путь
+    from front_end.loading_data.rnp_by_shop.aggregate_data import get_data_by_shop
 
 
 # ==================================
@@ -32,23 +37,17 @@ logging.basicConfig(
 
 
 # ==================================
-#        НАСТРОЙКИ ОТЧЕТА "РНП"
+#        НАСТРОЙКИ ОТЧЕТА "РНП Магазин"
 # ==================================
-UPDATE_TIMESTAMP_CELL = 'E2'
-
 # Названия колонок для автоматического поиска
-ARTICLE_HEADER_NAME = "Артикул"
-VENDOR_CODE_HEADER_NAME = "Артикул продавца"  # Для получения nm_id через JOIN
 ATTRIBUTES_HEADER_NAME = "Атрибуты"
-FIRST_DATE_COLUMN_INDEX = 6 # F - Индекс первой колонки с датой (нумерация с 1)
+FIRST_DATE_COLUMN_INDEX = 3 # С - Индекс первой колонки с датой (после Sparkline, нумерация с 1)
 
-# Структура блока одного товара
-ATTRIBUTES_PER_ITEM = 16
+# Структура блока магазина - 8 атрибутов (без метки времени)
+ATTRIBUTES_PER_ITEM = 8
 ATTRIBUTE_ORDER = [
     "Заказы", "Сумма заказов", "Расход на рекламу", "ДРР",
-    "Клики общие", "В корзину", "Конверсия в корзину", "Конверсия в заказ",
-    "CPM", "Рекламные просмотры", "Рекламные клики", "CTR", "CPC",
-    "Остатки WB", "Цена одного заказа", "Журнал изменений",
+    "Рекламные просмотры", "CPM", "Рекламные клики", "CPC"
 ]
 
 
@@ -71,16 +70,11 @@ def get_google_sheets_service():
     service = build('sheets', 'v4', credentials=credentials)
     return service
 
-def get_db_connection():
-    """Инициализирует и возвращает подключение к базе данных."""
-    conn = psycopg2.connect(SUPABASE_DB_URL)
-    return conn
-
 
 def read_and_validate_structure(service, spreadsheet_id, sheet_name):
     """
-    Читает структуру листа "РНП", находит ключевые колонки,
-    собирает информацию об артикулах и валидирует их структуру.
+    Читает структуру листа "РНП Магазин", находит колонку "Атрибуты",
+    валидирует структуру данных (один блок на весь магазин).
     """
     logging.info(f"Начало чтения и валидации структуры листа '{sheet_name}'...")
 
@@ -93,73 +87,39 @@ def read_and_validate_structure(service, spreadsheet_id, sheet_name):
 
     header_row = values[0]
     try:
-        article_col_idx = header_row.index(ARTICLE_HEADER_NAME)
-        vendor_code_col_idx = header_row.index(VENDOR_CODE_HEADER_NAME) if VENDOR_CODE_HEADER_NAME in header_row else None
         attributes_col_idx = header_row.index(ATTRIBUTES_HEADER_NAME)
     except ValueError as e:
-        logging.error(f"Критическая ошибка: Не найдена одна из обязательных колонок: {e}. Выполнение прервано.")
+        logging.error(f"Критическая ошибка: Не найдена колонка '{ATTRIBUTES_HEADER_NAME}': {e}. Выполнение прервано.")
         return None, None
         
-    logging.info(f"Колонка '{ARTICLE_HEADER_NAME}' найдена в столбце: {article_col_idx + 1}, '{ATTRIBUTES_HEADER_NAME}' в столбце: {attributes_col_idx + 1}")
-    if vendor_code_col_idx is not None:
-        logging.info(f"Колонка '{VENDOR_CODE_HEADER_NAME}' найдена в столбце: {vendor_code_col_idx + 1}")
+    logging.info(f"Колонка '{ATTRIBUTES_HEADER_NAME}' найдена в столбце: {attributes_col_idx + 1}")
     logging.info(f"Схема для валидации (эталонный порядок атрибутов): {ATTRIBUTE_ORDER}")
 
-    validated_articles = {}
-    total_found = 0
+    # Для магазина ожидаем один блок атрибутов, начинающийся со строки 2
     row_idx = 1
-    while row_idx < len(values):
-        article_cell_value = values[row_idx][article_col_idx] if len(values[row_idx]) > article_col_idx else None
-        
-        if not article_cell_value:
-            row_idx += 1
-            continue
-        
-        total_found += 1
-        
-        # Пытаемся прочитать nm_id из колонки "Артикул"
-        nm_id = None
-        try:
-            nm_id = int(article_cell_value)
-        except ValueError:
-            # Если не получилось, возможно там vendor_code. Пробуем прочитать из колонки "Артикул продавца"
-            # и найти nm_id через БД
-            if vendor_code_col_idx is not None:
-                vendor_code_value = values[row_idx][vendor_code_col_idx] if len(values[row_idx]) > vendor_code_col_idx else None
-                if vendor_code_value:
-                    logging.debug(f"В строке {row_idx + 1} в колонке 'Артикул' найдено текстовое значение '{article_cell_value}'. Пробую найти nm_id по vendor_code '{vendor_code_value}'...")
-                    # Пока пропускаем, вернемся к этому позже
-            row_idx += 1
-            continue
+    if row_idx + ATTRIBUTES_PER_ITEM > len(values):
+        logging.error("Недостаточно строк для блока атрибутов магазина.")
+        return None, None
 
-        if row_idx + ATTRIBUTES_PER_ITEM > len(values):
-            row_idx += 1
-            continue
+    current_attributes = [
+        values[row_idx + i][attributes_col_idx] if len(values[row_idx + i]) > attributes_col_idx else None
+        for i in range(ATTRIBUTES_PER_ITEM)
+    ]
+    
+    if current_attributes != ATTRIBUTE_ORDER:
+        logging.error(f"Атрибуты в листе не соответствуют ожидаемому порядку. Найдено: {current_attributes}")
+        return None, None
 
-        current_attributes = [
-            values[row_idx + i][attributes_col_idx] if len(values[row_idx + i]) > attributes_col_idx else None
-            for i in range(ATTRIBUTES_PER_ITEM)
-        ]
-        if current_attributes != ATTRIBUTE_ORDER:
-            row_idx += ATTRIBUTES_PER_ITEM
-            continue
-        
-        if nm_id in validated_articles:
-            logging.warning(f"ВНИМАНИЕ: Артикул {nm_id} (строка {row_idx + 1}) является дубликатом и перезапишет предыдущие данные.")
-
-        validated_articles[nm_id] = {
+    # Используем фиксированный ключ "Магазин"
+    validated_items = {
+        "Магазин": {
             "start_row": row_idx + 1,
             "attributes": {attr: row_idx + 1 + i for i, attr in enumerate(ATTRIBUTE_ORDER)}
         }
-        row_idx += ATTRIBUTES_PER_ITEM
+    }
 
-    logging.info(f"Найдено кандидатов в колонке артикулов: {total_found}")
-    logging.info(f"Количество уникальных артикулов, прошедших валидацию: {len(validated_articles)}")
-    if not validated_articles:
-        logging.warning("Не найдено ни одного валидного артикула. Дальнейшая работа невозможна.")
-        return None, None
-
-    return validated_articles, values
+    logging.info(f"✅ Блок атрибутов для магазина найден и провалидирован (строки {row_idx + 1}-{row_idx + ATTRIBUTES_PER_ITEM})")
+    return validated_items, values
 
 
 def get_and_validate_dates(service, spreadsheet_id, sheet_name, header_row):
@@ -240,113 +200,6 @@ def get_and_validate_dates(service, spreadsheet_id, sheet_name, header_row):
     return date_columns, add_column_request
 
 
-def get_data_from_db(article_ids, date_range):
-    """
-    Извлекает данные из БД для заданных артикулов и диапазона дат.
-    Возвращает данные в виде словаря для быстрого доступа.
-    """
-    logging.info(f"Запрос данных из БД для {len(article_ids)} артикулов и {len(date_range)} дат...")
-    logging.info(f"Ищем артикулы (nm_id): {list(article_ids)[:10]}{'...' if len(article_ids) > 10 else ''}")
-    logging.info(f"Диапазон дат: с {min(date_range).strftime('%Y-%m-%d')} по {max(date_range).strftime('%Y-%m-%d')}")
-    
-    start_date = min(date_range).strftime('%Y-%m-%d')
-    end_date = max(date_range).strftime('%Y-%m-%d')
-    
-    query = f"""
-    SELECT
-        COALESCE(cr.nm_id, adv.nm_id) AS nm_id,
-        COALESCE(cr.date_of_period, adv.date) AS "date",
-        
-        -- Метрики из cr_daily_stats
-        cr.open_card_count AS "Клики общие",
-        cr.add_to_cart_count AS "В корзину",
-        cr.orders_count AS "Заказы",
-        cr.orders_sum_rub AS "Сумма заказов",
-        cr.stocks_wb AS "Остатки WB",
-        cr.add_to_cart_percent AS "Конверсия в корзину",
-        cr.cart_to_order_percent AS "Конверсия в заказ",
-        cr.order_price AS "Цена одного заказа",
-        
-        -- Метрики из adv_params
-        adv.views AS "Рекламные просмотры",
-        adv.clicks AS "Рекламные клики",
-        adv.sum AS "Расход на рекламу",
-        adv.cpc AS "CPC",
-        adv.cpm AS "CPM",
-        adv.ctr AS "CTR"
-        
-    FROM cr_daily_stats cr
-    FULL OUTER JOIN adv_params adv 
-        ON cr.nm_id = adv.nm_id AND cr.date_of_period = adv.date
-    WHERE 
-        COALESCE(cr.nm_id, adv.nm_id) IN ({','.join(map(str, article_ids))})
-    AND 
-        COALESCE(cr.date_of_period, adv.date) BETWEEN '{start_date}' AND '{end_date}';
-    """
-    
-    db_data_map = {}
-    conn = None
-    try:
-        conn = get_db_connection()
-        cursor = conn.cursor()
-        
-        logging.info(f"Выполняю SQL-запрос...")
-        cursor.execute(query)
-        
-        columns = [desc[0] for desc in cursor.description]
-        
-        for row in cursor.fetchall():
-            row_dict = {}
-            nm_id = None
-            row_date = None
-            
-            for i, value in enumerate(row):
-                col_name = columns[i]
-                
-                # Конвертация Decimal в float
-                if isinstance(value, decimal.Decimal):
-                    value = float(value)
-                
-                if col_name == 'nm_id':
-                    nm_id = value
-                elif col_name == 'date':
-                    row_date = value
-                else:
-                    row_dict[col_name] = value if value is not None else 0
-
-            if nm_id and row_date:
-                db_data_map[(nm_id, row_date)] = row_dict
-        
-        logging.info(f"✅ Из БД извлечено {len(db_data_map)} записей.")
-        
-        # Дополнительная диагностика: проверяем, есть ли данные для этих артикулов вообще
-        if len(db_data_map) == 0:
-            logging.warning(f"⚠️ ВНИМАНИЕ: Не найдено ни одной записи в БД для указанных артикулов.")
-            logging.warning(f"Проверяю наличие данных по vendor_code...")
-            # Проверяем, может быть данные есть по vendor_code?
-            check_query = f"""
-            SELECT DISTINCT cr.vendor_code, cr.nm_id 
-            FROM cr_daily_stats cr 
-            WHERE cr.vendor_code IN (
-                SELECT vendor_code FROM products WHERE nm_id IN ({','.join(map(str, article_ids))})
-            )
-            LIMIT 5;
-            """
-            cursor.execute(check_query)
-            vendor_check = cursor.fetchall()
-            if vendor_check:
-                logging.warning(f"Найдены данные по vendor_code для этих nm_id: {vendor_check}")
-            else:
-                logging.warning(f"Данных по vendor_code тоже не найдено.")
-        
-        return db_data_map
-        
-    except Exception as e:
-        logging.error(f"❌ Ошибка при работе с БД: {e}")
-        return None
-    finally:
-        if conn:
-            conn.close()
 
 
 def compare_and_update(service, spreadsheet_id, sheet_name, sheet_data, validated_articles, date_columns, db_data, add_column_req):
@@ -368,22 +221,42 @@ def compare_and_update(service, spreadsheet_id, sheet_name, sheet_data, validate
         last_date_col_index = max(date_columns.values())
         new_date_col_index = last_date_col_index + 1
         new_date_col_letter = column_number_to_letter(new_date_col_index)
+        last_date_col_letter = column_number_to_letter(last_date_col_index)
 
         batch_update_values_data.append({
             'range': f"'{sheet_name}'!{new_date_col_letter}1",
             'values': [[tomorrow.strftime('%d.%m.%y')]]
         })
         logging.info(f"Запрос на запись даты {tomorrow.strftime('%d.%m.%Y')} в новый столбец добавлен в батч.")
+        
+        # Копируем формулы ДРР из предыдущей колонки в новую
+        for item_id, item_info in validated_articles.items():
+            drr_row = item_info['attributes'].get('ДРР')
+            if drr_row:
+                # Используем формулу, которая ссылается на ячейки в новой колонке
+                # Формат: =ЕСЛИ(новая_колонка_сумма_заказов=0;0;новая_колонка_расход/новая_колонка_сумма_заказов)
+                orders_sum_row = item_info['attributes'].get('Сумма заказов')
+                adv_cost_row = item_info['attributes'].get('Расход на рекламу')
+                
+                if orders_sum_row and adv_cost_row:
+                    # Формула ДРР: Расход на рекламу / Сумма заказов
+                    drr_formula = f'=ЕСЛИ({new_date_col_letter}{orders_sum_row}=0;0;{new_date_col_letter}{adv_cost_row}/{new_date_col_letter}{orders_sum_row})'
+                    batch_update_values_data.append({
+                        'range': f"'{sheet_name}'!{new_date_col_letter}{drr_row}",
+                        'values': [[drr_formula]]
+                    })
+        
+        logging.info(f"Добавлены формулы ДРР для новой колонки.")
 
     
-    checkable_attributes_count = len([attr for attr in ATTRIBUTE_ORDER if attr not in ["ДРР", "Журнал изменений"]])
+    checkable_attributes_count = len([attr for attr in ATTRIBUTE_ORDER if attr not in ["ДРР"]])
     total_cells_to_check = len(validated_articles) * checkable_attributes_count * len(date_columns)
-    logging.info(f"Всего ячеек для проверки (артикулы * атрибуты * даты): {total_cells_to_check}")
+    logging.info(f"Всего ячеек для проверки (склейки * атрибуты * даты): {total_cells_to_check}")
 
     for nm_id, article_info in validated_articles.items():
         for attr_name, row_num in article_info['attributes'].items():
-            if attr_name == "ДРР" or attr_name == "Журнал изменений":
-                continue # Пропускаем вычисляемые и нетрогаемые поля
+            if attr_name == "ДРР":
+                continue # Пропускаем вычисляемое поле
 
             for date_obj, col_num in date_columns.items():
                 
@@ -430,17 +303,10 @@ def compare_and_update(service, spreadsheet_id, sheet_name, sheet_data, validate
                         'values': [[new_value]]
                     })
 
-    # Добавляем ячейку с временем последнего обновления
-    timestamp_str = datetime.now().strftime('%d.%m.%Y %H:%M:%S')
-    batch_update_values_data.append({
-        'range': f"'{sheet_name}'!{UPDATE_TIMESTAMP_CELL}",
-        'values': [[f"Последнее обновление: {timestamp_str}"]]
-    })
-
     logging.info(f"Найдено ячеек для вставки (inserted): {inserted_cells_count}")
     logging.info(f"Найдено ячеек для обновления (updated): {updated_cells_count}")
     total_changes = updated_cells_count + inserted_cells_count
-    logging.info(f"Общее количество ячеек в batch-запросе (включая метку времени): {total_changes + 1}")
+    logging.info(f"Общее количество ячеек в batch-запросе: {total_changes}")
 
     if not batch_update_values_data and not update_requests:
         # Эта ветка теперь вряд ли будет достигнута, т.к. метка времени всегда есть
@@ -497,7 +363,7 @@ def final_validation(service, spreadsheet_id, sheet_name, validated_articles, da
     mismatched_cells = []
     for nm_id, article_info in validated_articles.items():
         for attr_name, row_num in article_info['attributes'].items():
-            if attr_name == "ДРР" or attr_name == "Журнал изменений":
+            if attr_name == "ДРР":
                 continue
 
             for date_obj, col_num in date_columns.items():
@@ -521,7 +387,8 @@ def final_validation(service, spreadsheet_id, sheet_name, validated_articles, da
                 except (ValueError, TypeError):
                     gs_value = gs_value_str
 
-                if not isinstance(gs_value, str) and not abs(float(gs_value) - float(db_value)) < 1e-9:
+                # Увеличенный порог для учета округления Google Sheets (до 0.5 в копейках)
+                if not isinstance(gs_value, str) and not abs(float(gs_value) - float(db_value)) < 0.5:
                     mismatched_cells.append(f"Артикул {nm_id}, Атрибут '{attr_name}', Дата {date_obj.strftime('%d.%m.%Y')}: GS='{gs_value}', DB='{db_value}'")
 
     if not mismatched_cells:
@@ -535,18 +402,15 @@ def final_validation(service, spreadsheet_id, sheet_name, validated_articles, da
 
 
 def main():
-    """Главная функция для запуска процесса обновления отчета."""
-    logging.info("Запуск скрипта обновления отчета РНП...")
+    """Главная функция для запуска процесса обновления отчета РНП по магазину."""
+    logging.info("Запуск скрипта обновления отчета РНП по магазину...")
     
     service = get_google_sheets_service()
-    sheet_name = SHEET_NAMES.get(RNP_REPORT_ID)
-    if not sheet_name:
-        logging.error(f"Не найдено имя листа для ID таблицы {RNP_REPORT_ID}")
-        return
+    sheet_name = "РНП Магазин"
+    
+    validated_items, sheet_data = read_and_validate_structure(service, RNP_REPORT_ID, sheet_name)
 
-    validated_articles, sheet_data = read_and_validate_structure(service, RNP_REPORT_ID, sheet_name)
-
-    if not validated_articles:
+    if not validated_items:
         logging.info("Выполнение завершено из-за отсутствия валидных данных для обработки.")
         return
         
@@ -561,14 +425,14 @@ def main():
 
     logging.info("✅ Даты успешно просканированы и провалидированы.")
 
-    db_data = get_data_from_db(validated_articles.keys(), date_columns.keys())
+    db_data = get_data_by_shop(set(date_columns.keys()), SUPABASE_DB_URL)
     if db_data is None:
         logging.error("Выполнение прервано из-за ошибки при получении данных из БД.")
         return
 
     logging.info("✅ Данные из БД успешно получены.")
 
-    update_successful = compare_and_update(service, RNP_REPORT_ID, sheet_name, sheet_data, validated_articles, date_columns, db_data, add_column_req)
+    update_successful = compare_and_update(service, RNP_REPORT_ID, sheet_name, sheet_data, validated_items, date_columns, db_data, add_column_req)
 
     if not update_successful:
         logging.error("Выполнение прервано из-за ошибки на этапе обновления данных.")
@@ -576,7 +440,7 @@ def main():
 
     logging.info("✅ Данные в Google Sheets успешно обновлены.")
 
-    final_validation(service, RNP_REPORT_ID, sheet_name, validated_articles, date_columns, db_data)
+    final_validation(service, RNP_REPORT_ID, sheet_name, validated_items, date_columns, db_data)
 
 
 if __name__ == "__main__":
