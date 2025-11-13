@@ -67,8 +67,8 @@ def get_supabase_client() -> Client:
 
 
 def main(
-    begin_date: date | None = date(2025, 10, 15),
-    end_date: date | None = date(2025, 11, 13),
+    begin_date: date | None = None,
+    end_date: date | None = None,
     min_views_threshold: int = 1,  # Фильтр: только артикулы с views > 0 (отсекаем склейку)
     use_rpc_aggregation: bool = True  # По умолчанию RPC (правильная обработка timestamps)
 ):
