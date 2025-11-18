@@ -22,18 +22,7 @@
      * Запись за вчера → обновляется (если API вернёт другие данные)
 
 
-ЛОГИКА STOCKS (ОСТАТКИ НА СКЛАДАХ):
-====================================
-
-ВАЖНО: stocks записываем ТОЛЬКО для сегодняшней записи!
-
-- selectedPeriod (today) → включаем stocks_mp, stocks_wb
-- previousPeriod (yesterday) → НЕ включаем stocks вообще
-
-Причина: stocks - это актуальные остатки на момент запроса API.
-Если записать сегодняшние stocks для вчерашней даты, данные сдвинутся на день.
-При upsert вчерашней записи без полей stocks → PostgreSQL оставит значение,
-которое было записано вчера, когда тот день был "сегодня".
+Примечание: записи stocks и cancel_count больше не используются в резервном методе.
 """
 
 from __future__ import annotations
@@ -99,7 +88,6 @@ def build_record(
         'open_card_count': period_data.get('openCardCount'),
         'add_to_cart_count': period_data.get('addToCartCount'),
         'orders_count': period_data.get('ordersCount'),
-        'cancel_count': period_data.get('cancelCount'),
         
         # Метрики: суммы
         'orders_sum_rub': period_data.get('ordersSumRub'),
@@ -112,10 +100,7 @@ def build_record(
         'order_price': calculate_order_price(period_data),
     }
     
-    # ВАЖНО: stocks добавляем ТОЛЬКО если переданы (только для today)
-    if stocks is not None:
-        record['stocks_mp'] = stocks.get('stocksMp')
-        record['stocks_wb'] = stocks.get('stocksWb')
+    # stocks_* больше не пишем в резервной реализации
     
     return record
 
@@ -164,7 +149,7 @@ def extract_cr_stats_for_supabase(
             continue
         
         statistics = card.get('statistics', {})
-        stocks = card.get('stocks', {})
+        stocks = {}  # игнорируем stocks в резервной реализации
         
         selected_period = statistics.get('selectedPeriod', {})
         # Фильтр "нулевых" карточек: если в selected всё нули/None — пропускаем карточку целиком
@@ -173,8 +158,7 @@ def extract_cr_stats_for_supabase(
             ac = selected_period.get('addToCartCount') or 0
             od = selected_period.get('ordersCount') or 0
             os = selected_period.get('ordersSumRub') or 0
-            cc = selected_period.get('cancelCount') or 0
-            if oc == 0 and ac == 0 and od == 0 and os == 0 and cc == 0:
+            if oc == 0 and ac == 0 and od == 0 and os == 0:
                 continue
 
         # Запись за СЕГОДНЯ (с stocks)
@@ -184,7 +168,7 @@ def extract_cr_stats_for_supabase(
                 vendor_code=vendor_code,
                 date=today_str,
                 period_data=selected_period,
-                stocks=stocks  # ✅ Включаем stocks
+                stocks=None
             )
             records_today.append(record_today)
         
@@ -196,7 +180,7 @@ def extract_cr_stats_for_supabase(
                 vendor_code=vendor_code,
                 date=yesterday_str,
                 period_data=previous_period,
-                stocks=None  # ❌ НЕ включаем stocks
+                stocks=None
             )
             records_yesterday.append(record_yesterday)
     

@@ -8,7 +8,6 @@
   - statistics.selectedPeriod: объект с метриками (обязательно)
   - statistics.previousPeriod: объект с метриками (обязательно)
   - statistics.*.conversions: объект с процентами конверсий (обязательно)
-  - stocks.stocksMp, stocks.stocksWb: int (обязательно)
 """
 from __future__ import annotations
 import sys
@@ -130,24 +129,6 @@ def _validate_card_structure(card: dict, idx: int) -> bool:
     if not _validate_period(stats["previousPeriod"], "previousPeriod", nm_id, idx):
         return False
     
-    # Проверка stocks
-    if "stocks" not in card:
-        print(f"❌ ОШИБКА: Карточка [{idx}] (nmID={nm_id}): отсутствует поле 'stocks'")
-        return False
-    
-    stocks = card["stocks"]
-    if not isinstance(stocks, dict):
-        print(f"❌ ОШИБКА: Карточка [{idx}] (nmID={nm_id}): stocks должен быть объектом")
-        return False
-    
-    if "stocksMp" not in stocks:
-        print(f"❌ ОШИБКА: Карточка [{idx}] (nmID={nm_id}): отсутствует stocks.stocksMp")
-        return False
-    
-    if "stocksWb" not in stocks:
-        print(f"❌ ОШИБКА: Карточка [{idx}] (nmID={nm_id}): отсутствует stocks.stocksWb")
-        return False
-    
     return True
 
 
@@ -173,7 +154,6 @@ def _validate_period(period: dict, period_name: str, nm_id: int, idx: int) -> bo
         "addToCartCount",
         "ordersCount",
         "ordersSumRub",
-        "cancelCount",
     ]
     
     for field in required_fields:
