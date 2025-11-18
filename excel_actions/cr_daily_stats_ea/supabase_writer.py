@@ -63,7 +63,8 @@ def enrich_with_product_ids(
 def upsert_records(
     records: list[dict],
     supabase: Client,
-    label: str = ""
+    label: str = "",
+    table_name: str = "cr_daily_stats",
 ) -> int:
     """
     Выполняет upsert записей в таблицу cr_daily_stats.
@@ -80,10 +81,10 @@ def upsert_records(
         print(f"⚠️  Нет записей для upsert ({label})")
         return 0
     
-    print(f"🔄 Upsert в Supabase ({label})...")
+    print(f"🔄 Upsert в Supabase ({label}) → {table_name}...")
     
     try:
-        response = supabase.table('cr_daily_stats').upsert(
+        response = supabase.table(table_name).upsert(
             records,
             on_conflict='nm_id,date_of_period'
         ).execute()

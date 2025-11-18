@@ -130,7 +130,7 @@ def main():
 
     # 7. Delete → Insert
     print("\n💾 Шаг 7: Запись в cr_daily_stats_new (delete → insert)")
-    deleted, inserted = delete_then_insert(enriched, sb)
+    deleted, inserted = delete_then_insert(enriched, sb, table_name="cr_daily_stats")
 
     # 8. Post-validation
     print("\n🔍 Шаг 8: Пост-валидация записанных данных")

@@ -33,7 +33,7 @@ def enrich_with_product_ids(records: List[dict], supabase: Client) -> List[dict]
     return out
 
 
-def delete_then_insert(records: List[dict], supabase: Client) -> Tuple[int, int]:
+def delete_then_insert(records: List[dict], supabase: Client, table_name: str = "cr_daily_stats") -> Tuple[int, int]:
     """
     Deletes existing rows for incoming (nm_id, date_of_period) pairs, then inserts.
     Returns: (deleted_count, inserted_count)
@@ -48,23 +48,23 @@ def delete_then_insert(records: List[dict], supabase: Client) -> Tuple[int, int]
         nm_to_dates[r["nm_id"]].add(r["date_of_period"])
 
     total_deleted = 0
-    print("🗑️  Удаление старых записей (по nm_id, date_of_period)...")
+    print(f"🗑️  Удаление старых записей (по nm_id, date_of_period) → {table_name}...")
     for nm_id, dates in nm_to_dates.items():
         dates_list = list(dates)
         # Supabase python client: composite delete via eq + in_
-        resp = supabase.table("cr_daily_stats_new").delete().eq("nm_id", nm_id).in_("date_of_period", dates_list).execute()
+        resp = supabase.table(table_name).delete().eq("nm_id", nm_id).in_("date_of_period", dates_list).execute()
         deleted = getattr(resp, "count", None)
         # Some client versions don't return count; we log sizes heuristically
         total_deleted += deleted or 0
     print(f"✅ Удалено (по отчёту клиента): {total_deleted}")
 
-    print("💾 Вставка новых записей...")
+    print(f"💾 Вставка новых записей → {table_name}...")
     # Insert in batches to avoid payload limits
     batch_size = 1000
     inserted_total = 0
     for i in range(0, len(records), batch_size):
         chunk = records[i : i + batch_size]
-        resp = supabase.table("cr_daily_stats_new").insert(chunk).execute()
+        resp = supabase.table(table_name).insert(chunk).execute()
         inserted = len(resp.data) if resp.data is not None else len(chunk)
         inserted_total += inserted
         print(f"   ▸ Вставлено: {inserted}")

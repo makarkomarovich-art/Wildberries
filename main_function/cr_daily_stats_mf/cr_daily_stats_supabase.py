@@ -24,10 +24,8 @@ from wb_api.cr_daily_stats.cr_daily_stats import fetch_cr_daily_stats
 import wb_api.cr_daily_stats.cr_daily_stats as cr_api
 from excel_actions.cr_daily_stats_ea.structure_validator import validate_cr_daily_stats_structure
 from excel_actions.cr_daily_stats_ea.transform import extract_cr_stats_for_supabase
-from excel_actions.cr_daily_stats_ea.supabase_writer import (
-    enrich_with_product_ids,
-    upsert_records
-)
+from excel_actions.cr_daily_stats_ea.supabase_writer import enrich_with_product_ids
+from excel_actions.cr_daily_stats_ea_new.supabase_writer import delete_then_insert
 from excel_actions.cr_daily_stats_ea.data_validator import validate_inserted_data
 
 from supabase import create_client, Client
@@ -131,14 +129,11 @@ def main():
     enriched_today = [r for r in enriched_records if r in records_today]
     enriched_yesterday = [r for r in enriched_records if r in records_yesterday]
     
-    # 6. Upsert в БД
-    print("\n💾 Шаг 6: Загрузка в Supabase")
-    
-    # Upsert записей за сегодня (с stocks)
-    count_today = upsert_records(enriched_today, supabase, "сегодня")
-    
-    # Upsert записей за вчера (без stocks)
-    count_yesterday = upsert_records(enriched_yesterday, supabase, "вчера")
+    # 6. Delete → Insert в БД
+    print("\n💾 Шаг 6: Запись в Supabase (delete → insert)")
+    deleted, inserted = delete_then_insert(enriched_records, supabase, table_name="cr_daily_stats")
+    count_today = len(enriched_today)
+    count_yesterday = len(enriched_yesterday)
     
     # 7. Валидация записанных данных
     print("\n🔍 Шаг 7: Валидация записанных данных")
