@@ -55,8 +55,7 @@ HEADER_MAPPING = {
     
     "G": {
         "name": "ДРР",
-        "source": "calculated",
-        "calculation": "E / F",  # Вычисляется в Google Sheets как E/F
+        "source": "drr",
         "type": "metric",
         "aggregation": None,
     },
@@ -80,25 +79,22 @@ HEADER_MAPPING = {
     "J": {
         "name": "Конверсия в корзину",
         "source": "add_to_cart_percent",
-        "from_table": "cr_daily_stats",
         "type": "metric",
-        "aggregation": "AVG",
+        "aggregation": None,
     },
     
     "K": {
         "name": "Конверсия в заказ",
         "source": "cart_to_order_percent",
-        "from_table": "cr_daily_stats",
         "type": "metric",
-        "aggregation": "AVG",
+        "aggregation": None,
     },
     
     "L": {
         "name": "CPM",
         "source": "cpm",
-        "from_table": "adv_params",
         "type": "metric",
-        "aggregation": "CALCULATED",  # (SUM(adv.sum) / SUM(adv.views)) * 1000
+        "aggregation": None,
     },
     
     "M": {
@@ -120,17 +116,15 @@ HEADER_MAPPING = {
     "O": {
         "name": "CTR",
         "source": "ctr",
-        "from_table": "adv_params",
         "type": "metric",
-        "aggregation": "CALCULATED",  # (SUM(clicks) / SUM(views)) * 100
+        "aggregation": None,
     },
     
     "P": {
         "name": "CPC",
         "source": "cpc",
-        "from_table": "adv_params",
         "type": "metric",
-        "aggregation": "CALCULATED",  # SUM(sum) / SUM(clicks)
+        "aggregation": None,
     },
     
     "Q": {

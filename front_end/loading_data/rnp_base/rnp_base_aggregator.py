@@ -8,6 +8,13 @@ from datetime import date
 from typing import Dict, List, Tuple, Any
 
 
+def _round_percent(value: float, decimals: int = 2) -> float:
+    """Вспомогательная функция для округления процентов."""
+    if value is None or value == 0:
+        return 0
+    return round(value, decimals)
+
+
 def build_level_1_articulы(
     raw_data: Dict[Tuple[int, date], Dict[str, Any]]
 ) -> List[Dict[str, Any]]:
@@ -26,6 +33,16 @@ def build_level_1_articulы(
     rows = []
     
     for (nm_id, row_date), attrs in raw_data.items():
+        orders_sum = attrs.get('orders_sum_rub', 0)
+        adv_spend = attrs.get('sum', 0)  # Расход на рекламу
+        clicks = attrs.get('open_card_count', 0)  # Клики общие
+        add_to_cart = attrs.get('add_to_cart_count', 0)  # В корзину
+        orders = attrs.get('orders_count', 0)  # Заказы
+        
+        # ДРР = (Расход на рекламу / Сумма заказов) * 100
+        drr = (adv_spend / orders_sum * 100) if orders_sum > 0 else 0
+        drr = _round_percent(drr, 2)
+        
         row = {
             'date': row_date,
             'признак': 'Артикул',
@@ -35,6 +52,7 @@ def build_level_1_articulы(
             'orders_count': attrs.get('orders_count', 0),
             'orders_sum_rub': attrs.get('orders_sum_rub', 0),
             'sum': attrs.get('sum', 0),  # Расход на рекламу
+            'drr': drr,  # ДРР (вычислено)
             'open_card_count': attrs.get('open_card_count', 0),  # Клики общие
             'add_to_cart_count': attrs.get('add_to_cart_count', 0),
             'add_to_cart_percent': attrs.get('add_to_cart_percent', 0),
@@ -58,7 +76,7 @@ def build_level_2_предметы(
     """
     Построение LEVEL 2 (category_wb → "Предмет").
     GROUP BY (category_wb, date) уже сделана в fetch.
-    ТОЛЬКО: Заказы, Сумма заказов, Расход на рекламу, Клики общие, В корзину, Рекламные просмотры, Рекламные клики, CPM, CPC
+    ТОЛЬКО: Заказы, Сумма заказов, Расход на рекламу, Клики общие, В корзину, Рекламные просмотры, Рекламные клики, CPM, CPC, ДРР, Конверсия в корзину, Конверсия в заказ, CTR
     
     Returns:
         Список словарей
@@ -71,12 +89,32 @@ def build_level_2_предметы(
         sum_val = attrs.get('sum', 0)
         views_val = attrs.get('views', 0)
         clicks_val = attrs.get('clicks', 0)
+        orders_sum = attrs.get('orders_sum_rub', 0)
+        clicks_general = attrs.get('open_card_count', 0)  # Клики общие
+        add_to_cart = attrs.get('add_to_cart_count', 0)   # В корзину
+        orders = attrs.get('orders_count', 0)             # Заказы
         
         # Вычисляем CPM и CPC
         # CPM = (расходы / просмотры) * 1000
         cpm = (sum_val / views_val * 1000) if views_val > 0 else 0
         # CPC = расходы / клики
         cpc = (sum_val / clicks_val) if clicks_val > 0 else 0
+        
+        # ДРР = (Расход на рекламу / Сумма заказов) * 100
+        drr = (sum_val / orders_sum * 100) if orders_sum > 0 else 0
+        drr = _round_percent(drr, 2)
+        
+        # Конверсия в корзину = (В корзину / Клики общие) * 100
+        conv_to_cart = (add_to_cart / clicks_general * 100) if clicks_general > 0 else 0
+        conv_to_cart = _round_percent(conv_to_cart, 2)
+        
+        # Конверсия в заказ = (Заказы / В корзину) * 100
+        conv_to_order = (orders / add_to_cart * 100) if add_to_cart > 0 else 0
+        conv_to_order = _round_percent(conv_to_order, 2)
+        
+        # CTR = (Рекламные клики / Рекламные просмотры) * 100
+        ctr_val = (clicks_val / views_val * 100) if views_val > 0 else 0
+        ctr_val = _round_percent(ctr_val, 2)
         
         row = {
             'date': row_date,
@@ -87,11 +125,15 @@ def build_level_2_предметы(
             'orders_count': attrs.get('orders_count', 0),          # Заказы
             'orders_sum_rub': attrs.get('orders_sum_rub', 0),      # Сумма заказов
             'sum': attrs.get('sum', 0),                             # Расход на рекламу
+            'drr': drr,                                             # ДРР (вычислено)
             'open_card_count': attrs.get('open_card_count', 0),    # Клики общие
             'add_to_cart_count': attrs.get('add_to_cart_count', 0),# В корзину
+            'add_to_cart_percent': conv_to_cart,                    # Конверсия в корзину (вычислено)
+            'cart_to_order_percent': conv_to_order,                 # Конверсия в заказ (вычислено)
+            'cpm': cpm,                                             # CPM (вычислено)
             'views': attrs.get('views', 0),                         # Рекламные просмотры
             'clicks': attrs.get('clicks', 0),                       # Рекламные клики
-            'cpm': cpm,                                             # CPM (вычислено)
+            'ctr': ctr_val,                                         # CTR (вычислено)
             'cpc': cpc,                                             # CPC (вычислено)
         }
         rows.append(row)
@@ -106,7 +148,7 @@ def build_level_3_склейки(
     """
     Построение LEVEL 3 (imt_id → "Склейка").
     GROUP BY (imt_id, date) уже сделана в fetch.
-    ТОЛЬКО: Заказы, Сумма заказов, Расход на рекламу, Клики общие, В корзину, Рекламные просмотры, Рекламные клики, CPM, CPC
+    ТОЛЬКО: Заказы, Сумма заказов, Расход на рекламу, Клики общие, В корзину, Рекламные просмотры, Рекламные клики, CPM, CPC, ДРР, Конверсия в корзину, Конверсия в заказ, CTR
     
     Returns:
         Список словарей
@@ -119,12 +161,32 @@ def build_level_3_склейки(
         sum_val = attrs.get('sum', 0)
         views_val = attrs.get('views', 0)
         clicks_val = attrs.get('clicks', 0)
+        orders_sum = attrs.get('orders_sum_rub', 0)
+        clicks_general = attrs.get('open_card_count', 0)  # Клики общие
+        add_to_cart = attrs.get('add_to_cart_count', 0)   # В корзину
+        orders = attrs.get('orders_count', 0)             # Заказы
         
         # Вычисляем CPM и CPC
         # CPM = (расходы / просмотры) * 1000
         cpm = (sum_val / views_val * 1000) if views_val > 0 else 0
         # CPC = расходы / клики
         cpc = (sum_val / clicks_val) if clicks_val > 0 else 0
+        
+        # ДРР = (Расход на рекламу / Сумма заказов) * 100
+        drr = (sum_val / orders_sum * 100) if orders_sum > 0 else 0
+        drr = _round_percent(drr, 2)
+        
+        # Конверсия в корзину = (В корзину / Клики общие) * 100
+        conv_to_cart = (add_to_cart / clicks_general * 100) if clicks_general > 0 else 0
+        conv_to_cart = _round_percent(conv_to_cart, 2)
+        
+        # Конверсия в заказ = (Заказы / В корзину) * 100
+        conv_to_order = (orders / add_to_cart * 100) if add_to_cart > 0 else 0
+        conv_to_order = _round_percent(conv_to_order, 2)
+        
+        # CTR = (Рекламные клики / Рекламные просмотры) * 100
+        ctr_val = (clicks_val / views_val * 100) if views_val > 0 else 0
+        ctr_val = _round_percent(ctr_val, 2)
         
         row = {
             'date': row_date,
@@ -135,11 +197,15 @@ def build_level_3_склейки(
             'orders_count': attrs.get('orders_count', 0),          # Заказы
             'orders_sum_rub': attrs.get('orders_sum_rub', 0),      # Сумма заказов
             'sum': attrs.get('sum', 0),                             # Расход на рекламу
+            'drr': drr,                                             # ДРР (вычислено)
             'open_card_count': attrs.get('open_card_count', 0),    # Клики общие
             'add_to_cart_count': attrs.get('add_to_cart_count', 0),# В корзину
+            'add_to_cart_percent': conv_to_cart,                    # Конверсия в корзину (вычислено)
+            'cart_to_order_percent': conv_to_order,                 # Конверсия в заказ (вычислено)
+            'cpm': cpm,                                             # CPM (вычислено)
             'views': attrs.get('views', 0),                         # Рекламные просмотры
             'clicks': attrs.get('clicks', 0),                       # Рекламные клики
-            'cpm': cpm,                                             # CPM (вычислено)
+            'ctr': ctr_val,                                         # CTR (вычислено)
             'cpc': cpc,                                             # CPC (вычислено)
         }
         rows.append(row)
@@ -154,7 +220,7 @@ def build_level_4_магазин(
     """
     Построение LEVEL 4 (магазин).
     GROUP BY (date) уже сделана в fetch. Ключ = ('Магазин', date).
-    ТОЛЬКО: Заказы, Сумма заказов, Расход на рекламу, Клики общие, В корзину, Рекламные просмотры, Рекламные клики, CPM, CPC
+    ТОЛЬКО: Заказы, Сумма заказов, Расход на рекламу, Клики общие, В корзину, Рекламные просмотры, Рекламные клики, CPM, CPC, ДРР, Конверсия в корзину, Конверсия в заказ, CTR
     
     Returns:
         Список словарей (будет 90 строк)
@@ -167,12 +233,32 @@ def build_level_4_магазин(
         sum_val = attrs.get('sum', 0)
         views_val = attrs.get('views', 0)
         clicks_val = attrs.get('clicks', 0)
+        orders_sum = attrs.get('orders_sum_rub', 0)
+        clicks_general = attrs.get('open_card_count', 0)  # Клики общие
+        add_to_cart = attrs.get('add_to_cart_count', 0)   # В корзину
+        orders = attrs.get('orders_count', 0)             # Заказы
         
         # Вычисляем CPM и CPC
         # CPM = (расходы / просмотры) * 1000
         cpm = (sum_val / views_val * 1000) if views_val > 0 else 0
         # CPC = расходы / клики
         cpc = (sum_val / clicks_val) if clicks_val > 0 else 0
+        
+        # ДРР = (Расход на рекламу / Сумма заказов) * 100
+        drr = (sum_val / orders_sum * 100) if orders_sum > 0 else 0
+        drr = _round_percent(drr, 2)
+        
+        # Конверсия в корзину = (В корзину / Клики общие) * 100
+        conv_to_cart = (add_to_cart / clicks_general * 100) if clicks_general > 0 else 0
+        conv_to_cart = _round_percent(conv_to_cart, 2)
+        
+        # Конверсия в заказ = (Заказы / В корзину) * 100
+        conv_to_order = (orders / add_to_cart * 100) if add_to_cart > 0 else 0
+        conv_to_order = _round_percent(conv_to_order, 2)
+        
+        # CTR = (Рекламные клики / Рекламные просмотры) * 100
+        ctr_val = (clicks_val / views_val * 100) if views_val > 0 else 0
+        ctr_val = _round_percent(ctr_val, 2)
         
         row = {
             'date': row_date,
@@ -183,11 +269,15 @@ def build_level_4_магазин(
             'orders_count': attrs.get('orders_count', 0),          # Заказы
             'orders_sum_rub': attrs.get('orders_sum_rub', 0),      # Сумма заказов
             'sum': attrs.get('sum', 0),                             # Расход на рекламу
+            'drr': drr,                                             # ДРР (вычислено)
             'open_card_count': attrs.get('open_card_count', 0),    # Клики общие
             'add_to_cart_count': attrs.get('add_to_cart_count', 0),# В корзину
+            'add_to_cart_percent': conv_to_cart,                    # Конверсия в корзину (вычислено)
+            'cart_to_order_percent': conv_to_order,                 # Конверсия в заказ (вычислено)
+            'cpm': cpm,                                             # CPM (вычислено)
             'views': attrs.get('views', 0),                         # Рекламные просмотры
             'clicks': attrs.get('clicks', 0),                       # Рекламные клики
-            'cpm': cpm,                                             # CPM (вычислено)
+            'ctr': ctr_val,                                         # CTR (вычислено)
             'cpc': cpc,                                             # CPC (вычислено)
         }
         rows.append(row)
