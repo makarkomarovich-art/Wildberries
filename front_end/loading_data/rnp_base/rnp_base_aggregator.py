@@ -116,6 +116,10 @@ def build_level_2_предметы(
         ctr_val = (clicks_val / views_val * 100) if views_val > 0 else 0
         ctr_val = _round_percent(ctr_val, 2)
         
+        # Цена одного заказа = Сумма заказов / Заказы
+        order_price = (orders_sum / orders) if orders > 0 else 0
+        order_price = _round_percent(order_price, 2)
+        
         row = {
             'date': row_date,
             'признак': 'Предмет',
@@ -135,6 +139,7 @@ def build_level_2_предметы(
             'clicks': attrs.get('clicks', 0),                       # Рекламные клики
             'ctr': ctr_val,                                         # CTR (вычислено)
             'cpc': cpc,                                             # CPC (вычислено)
+            'order_price': order_price,                             # Цена одного заказа (вычислено)
         }
         rows.append(row)
     
@@ -188,6 +193,10 @@ def build_level_3_склейки(
         ctr_val = (clicks_val / views_val * 100) if views_val > 0 else 0
         ctr_val = _round_percent(ctr_val, 2)
         
+        # Цена одного заказа = Сумма заказов / Заказы
+        order_price = (orders_sum / orders) if orders > 0 else 0
+        order_price = _round_percent(order_price, 2)
+        
         row = {
             'date': row_date,
             'признак': 'Склейка',
@@ -207,6 +216,7 @@ def build_level_3_склейки(
             'clicks': attrs.get('clicks', 0),                       # Рекламные клики
             'ctr': ctr_val,                                         # CTR (вычислено)
             'cpc': cpc,                                             # CPC (вычислено)
+            'order_price': order_price,                             # Цена одного заказа (вычислено)
         }
         rows.append(row)
     
@@ -260,6 +270,10 @@ def build_level_4_магазин(
         ctr_val = (clicks_val / views_val * 100) if views_val > 0 else 0
         ctr_val = _round_percent(ctr_val, 2)
         
+        # Цена одного заказа = Сумма заказов / Заказы
+        order_price = (orders_sum / orders) if orders > 0 else 0
+        order_price = _round_percent(order_price, 2)
+        
         row = {
             'date': row_date,
             'признак': 'Магазин',
@@ -279,6 +293,7 @@ def build_level_4_магазин(
             'clicks': attrs.get('clicks', 0),                       # Рекламные клики
             'ctr': ctr_val,                                         # CTR (вычислено)
             'cpc': cpc,                                             # CPC (вычислено)
+            'order_price': order_price,                             # Цена одного заказа (вычислено)
         }
         rows.append(row)
     
