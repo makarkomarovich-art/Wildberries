@@ -23,9 +23,21 @@ logging.basicConfig(
 def run_all_rnp_updates():
     """Запускает все четыре функции обновления РНП последовательно."""
     
+    # 0. РНП BASE - единая база данных (4 уровня агрегации в одном листе)
+    logging.info("=" * 60)
+    logging.info("0/5: Запуск обновления РНП BASE (база данных)")
+    logging.info("=" * 60)
+    try:
+        from front_end.loading_data.rnp_base.rnp_base_orchestrator import main as rnp_base_main
+        rnp_base_main()
+        logging.info("✅ РНП BASE завершено успешно\n")
+    except Exception as e:
+        logging.error(f"❌ Ошибка в РНП BASE: {e}")
+        raise
+    
     # 1. РНП по артикулам (основной, с 16 атрибутами и меткой времени)
     logging.info("=" * 60)
-    logging.info("1/4: Запуск обновления РНП по артикулам")
+    logging.info("1/5: Запуск обновления РНП по артикулам")
     logging.info("=" * 60)
     try:
         from front_end.loading_data.rnp_by_article.update_sheet import main as rnp_article_main
@@ -37,7 +49,7 @@ def run_all_rnp_updates():
     
     # 2. РНП по склейкам (8 атрибутов, без метки времени)
     logging.info("\n" + "=" * 60)
-    logging.info("2/4: Запуск обновления РНП по склейкам")
+    logging.info("2/5: Запуск обновления РНП по склейкам")
     logging.info("=" * 60)
     try:
         from front_end.loading_data.rnp_by_imt.update_sheet import main as rnp_imt_main
@@ -49,7 +61,7 @@ def run_all_rnp_updates():
     
     # 3. РНП по предметам (8 атрибутов, без метки времени)
     logging.info("\n" + "=" * 60)
-    logging.info("3/4: Запуск обновления РНП по предметам")
+    logging.info("3/5: Запуск обновления РНП по предметам")
     logging.info("=" * 60)
     try:
         from front_end.loading_data.rnp_by_category.update_sheet import main as rnp_category_main
@@ -61,7 +73,7 @@ def run_all_rnp_updates():
     
     # 4. РНП по магазину (8 атрибутов, без метки времени)
     logging.info("\n" + "=" * 60)
-    logging.info("4/4: Запуск обновления РНП по магазину")
+    logging.info("4/5: Запуск обновления РНП по магазину")
     logging.info("=" * 60)
     try:
         from front_end.loading_data.rnp_by_shop.update_sheet import main as rnp_shop_main
@@ -72,7 +84,7 @@ def run_all_rnp_updates():
         raise
     
     logging.info("\n" + "=" * 60)
-    logging.info("🎉 ВСЕ ЧЕТЫРЕ ФУНКЦИИ РНП УСПЕШНО ЗАВЕРШЕНЫ")
+    logging.info("🎉 ВСЕ ПЯТЬ ФУНКЦИЙ РНП УСПЕШНО ЗАВЕРШЕНЫ")
     logging.info("=" * 60)
 
 

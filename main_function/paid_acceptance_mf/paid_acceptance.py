@@ -54,8 +54,8 @@ def main() -> None:
     # Example:
     # manual_begin = date(2025, 2, 28)
     # manual_end = date(2025, 3, 21)
-    manual_begin = date(2025, 8, 1)  # ← set to date(...) to override
-    manual_end = date(2025, 8, 31)   # ← set to date(...) to override
+    manual_begin = date(2025, 11, 1)  # ← set to date(...) to override
+    manual_end = date(2025, 11, 12)   # ← set to date(...) to override
     # ------------------------------------------------------------------
 
     if manual_begin and manual_end:

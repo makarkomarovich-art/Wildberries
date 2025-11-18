@@ -76,7 +76,7 @@ def main(
     Main entry point.
     
     Args:
-        begin_date: Начало периода (по умолчанию: позавчера, т.е. последние 3 дня включая сегодня)
+        begin_date: Начало периода (по умолчанию: 9 дней назад, т.е. последние 10 дней включая сегодня)
         end_date: Конец периода (по умолчанию: сегодня)
         min_views_threshold: Минимум просмотров для включения артикула
         use_rpc_aggregation: Использовать RPC функцию для агрегации (или Python)
@@ -89,7 +89,7 @@ def main(
     if end_date is None:
         end_date = date.today()  # сегодня
     if begin_date is None:
-        begin_date = date.today() - timedelta(days=2)  # позавчера (последние 3 дня включая сегодня)
+        begin_date = date.today() - timedelta(days=9)  # 9 дней назад (последние 10 дней включая сегодня)
     
     print(f"📅 Период: {begin_date} → {end_date}")
     print(f"👁️  Минимум просмотров: {min_views_threshold}")
