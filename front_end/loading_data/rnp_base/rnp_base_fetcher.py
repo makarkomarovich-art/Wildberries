@@ -61,7 +61,6 @@ def fetch_raw_data_for_level_1(
         cr.add_to_cart_count,
         cr.add_to_cart_percent,
         cr.cart_to_order_percent,
-        cr.stocks_wb,
         cr.order_price,
         
         -- Из adv_params

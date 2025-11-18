@@ -48,12 +48,12 @@ ATTRIBUTES_HEADER_NAME = "Атрибуты"
 FIRST_DATE_COLUMN_INDEX = 6 # F - Индекс первой колонки с датой (нумерация с 1)
 
 # Структура блока одного товара
-ATTRIBUTES_PER_ITEM = 16
+ATTRIBUTES_PER_ITEM = 15
 ATTRIBUTE_ORDER = [
     "Заказы", "Сумма заказов", "Расход на рекламу", "ДРР",
     "Клики общие", "В корзину", "Конверсия в корзину", "Конверсия в заказ",
     "CPM", "Рекламные просмотры", "Рекламные клики", "CTR", "CPC",
-    "Остатки WB", "Цена одного заказа", "Журнал изменений",
+    "Цена одного заказа", "Журнал изменений",
 ]
 
 
@@ -318,8 +318,9 @@ def compare_and_update(service, spreadsheet_id, sheet_name, sheet_data, validate
                     else:
                         updated_cells_count += 1
                     
+                    col_letter = column_number_to_letter(col_num)
                     batch_update_values_data.append({
-                        'range': f"'{sheet_name}'!R{row_num}C{col_num}",
+                        'range': f"'{sheet_name}'!{col_letter}{row_num}",
                         'values': [[new_value]]
                     })
 

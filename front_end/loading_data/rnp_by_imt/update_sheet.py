@@ -365,8 +365,9 @@ def compare_and_update(service, spreadsheet_id, sheet_name, sheet_data, validate
                     else:
                         updated_cells_count += 1
                     
+                    col_letter = column_number_to_letter(col_num)
                     batch_update_values_data.append({
-                        'range': f"'{sheet_name}'!R{row_num}C{col_num}",
+                        'range': f"'{sheet_name}'!{col_letter}{row_num}",
                         'values': [[new_value]]
                     })
 
@@ -493,8 +494,9 @@ def main():
         for imt_id, item_info in validated_items.items():
             vendor_codes = imt_vendor_map.get(imt_id, [])
             vendor_list_str = ", ".join(vendor_codes) if vendor_codes else ""
+            col_letter = column_number_to_letter(item_info['vendor_code_col'])
             vendor_updates.append({
-                'range': f"'{sheet_name}'!R{item_info['start_row']}C{item_info['vendor_code_col']}",
+                'range': f"'{sheet_name}'!{col_letter}{item_info['start_row']}",
                 'values': [[vendor_list_str]]
             })
         

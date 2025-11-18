@@ -134,14 +134,6 @@ HEADER_MAPPING = {
     },
     
     "Q": {
-        "name": "Остатки WB",
-        "source": "stocks_wb",
-        "from_table": "cr_daily_stats",
-        "type": "metric",
-        "aggregation": None,  # NULL для уровней 2, 3, 4; AS IS для 1
-    },
-    
-    "R": {
         "name": "Цена одного заказа",
         "source": "order_price",
         "from_table": "cr_daily_stats",

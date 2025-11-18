@@ -44,7 +44,6 @@ def build_level_1_articulы(
             'clicks': attrs.get('clicks', 0),  # Рекламные клики
             'ctr': attrs.get('ctr', 0),
             'cpc': attrs.get('cpc', 0),
-            'stocks_wb': attrs.get('stocks_wb', 0),
             'order_price': attrs.get('order_price', 0),
         }
         rows.append(row)

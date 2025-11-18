@@ -44,7 +44,6 @@ def get_data_by_articles(article_ids: Set[int], date_range: Set[date], db_url: s
         cr.add_to_cart_count AS "В корзину",
         cr.orders_count AS "Заказы",
         cr.orders_sum_rub AS "Сумма заказов",
-        cr.stocks_wb AS "Остатки WB",
         cr.add_to_cart_percent AS "Конверсия в корзину",
         cr.cart_to_order_percent AS "Конверсия в заказ",
         cr.order_price AS "Цена одного заказа",

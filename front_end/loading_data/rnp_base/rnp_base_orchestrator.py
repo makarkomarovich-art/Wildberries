@@ -55,6 +55,7 @@ from front_end.loading_data.rnp_base.rnp_base_writer import (
     write_data_rows,
     format_date_column,
     create_backup,
+    write_update_timestamp,
 )
 
 
@@ -268,9 +269,22 @@ def main():
         print()
         
         # ====================================================================
-        # ШАГ 13: Итоговый отчёт
+        # ШАГ 13: Запись времени обновления
         # ====================================================================
-        logging.info("📊 ШАГ 13: Итоговый отчёт")
+        logging.info("⏰ ШАГ 13: Запись времени обновления")
+        logging.info("-" * 80)
+        
+        timestamp_success = write_update_timestamp(service, RNP_REPORT_ID, SHEET_NAME)
+        
+        if not timestamp_success:
+            logging.warning("⚠️  Время обновления записано с предупреждениями")
+        
+        print()
+        
+        # ====================================================================
+        # ШАГ 14: Итоговый отчёт
+        # ====================================================================
+        logging.info("📊 ШАГ 14: Итоговый отчёт")
         logging.info("=" * 80)
         
         logging.info(f"✅ Успешно обновлена база РНП!")

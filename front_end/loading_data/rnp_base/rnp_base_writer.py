@@ -320,3 +320,44 @@ def create_backup(
         logging.error(f"❌ Ошибка при создании backup: {e}")
         return False
 
+
+def write_update_timestamp(
+    service,
+    spreadsheet_id: str,
+    sheet_name: str
+) -> bool:
+    """
+    Записывает время последнего обновления в ячейку R1 листа.
+    
+    Args:
+        service: Google Sheets service
+        spreadsheet_id: ID таблицы
+        sheet_name: Название листа
+    
+    Returns:
+        True если успешно
+    """
+    from datetime import datetime
+    
+    logging.info(f"⏰ Запись времени обновления в ячейку R1...")
+    
+    try:
+        timestamp_str = datetime.now().strftime('%d.%m.%Y %H:%M:%S')
+        
+        # Записываем время обновления в ячейку R1
+        update_range = f"'{sheet_name}'!R1"
+        
+        service.spreadsheets().values().update(
+            spreadsheetId=spreadsheet_id,
+            range=update_range,
+            valueInputOption="USER_ENTERED",
+            body={'values': [[f"Последнее обновление: {timestamp_str}"]]}
+        ).execute()
+        
+        logging.info(f"✅ Время обновления записано: {timestamp_str}")
+        return True
+    
+    except Exception as e:
+        logging.error(f"❌ Ошибка при записи времени обновления: {e}")
+        return False
+

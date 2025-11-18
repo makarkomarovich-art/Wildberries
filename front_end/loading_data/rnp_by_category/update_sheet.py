@@ -322,8 +322,9 @@ def compare_and_update(service, spreadsheet_id, sheet_name, sheet_data, validate
                     else:
                         updated_cells_count += 1
                     
+                    col_letter = column_number_to_letter(col_num)
                     batch_update_values_data.append({
-                        'range': f"'{sheet_name}'!R{row_num}C{col_num}",
+                        'range': f"'{sheet_name}'!{col_letter}{row_num}",
                         'values': [[new_value]]
                     })
 
