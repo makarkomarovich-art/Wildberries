@@ -106,7 +106,7 @@ def get_data_by_category(date_range: Set[date], db_url: str) -> Dict[tuple, Dict
                 adv_spend = row_dict.get("Расход на рекламу", 0)
                 orders_sum = row_dict.get("Сумма заказов", 0)
                 drr = (adv_spend / orders_sum * 100) if orders_sum > 0 else 0
-                row_dict["ДРР"] = _round_percent(drr, 2)
+                row_dict["ДРР"] = drr
                 
                 db_data_map[(key_id, row_date)] = row_dict
         
