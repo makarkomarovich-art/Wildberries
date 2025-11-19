@@ -253,34 +253,15 @@ def compare_and_update(service, spreadsheet_id, sheet_name, sheet_data, validate
         })
         logging.info(f"Запрос на запись даты {tomorrow.strftime('%d.%m.%Y')} в новый столбец добавлен в батч.")
         
-        # Копируем формулы ДРР из предыдущей колонки в новую
-        for item_id, item_info in validated_articles.items():
-            drr_row = item_info['attributes'].get('ДРР')
-            if drr_row:
-                # Используем формулу, которая ссылается на ячейки в новой колонке
-                # Формат: =ЕСЛИ(новая_колонка_сумма_заказов=0;0;новая_колонка_расход/новая_колонка_сумма_заказов)
-                orders_sum_row = item_info['attributes'].get('Сумма заказов')
-                adv_cost_row = item_info['attributes'].get('Расход на рекламу')
-                
-                if orders_sum_row and adv_cost_row:
-                    # Формула ДРР: Расход на рекламу / Сумма заказов
-                    drr_formula = f'=ЕСЛИ({new_date_col_letter}{orders_sum_row}=0;0;{new_date_col_letter}{adv_cost_row}/{new_date_col_letter}{orders_sum_row})'
-                    batch_update_values_data.append({
-                        'range': f"'{sheet_name}'!{new_date_col_letter}{drr_row}",
-                        'values': [[drr_formula]]
-                    })
-        
-        logging.info(f"Добавлены формулы ДРР для новой колонки.")
+        # Формулы ДРР больше не используем, вычисленные значения теперь приходят из БД
 
     
-    checkable_attributes_count = len([attr for attr in ATTRIBUTE_ORDER if attr not in ["ДРР"]])
+    checkable_attributes_count = len(ATTRIBUTE_ORDER)
     total_cells_to_check = len(validated_articles) * checkable_attributes_count * len(date_columns)
     logging.info(f"Всего ячеек для проверки (склейки * атрибуты * даты): {total_cells_to_check}")
 
     for nm_id, article_info in validated_articles.items():
         for attr_name, row_num in article_info['attributes'].items():
-            if attr_name == "ДРР":
-                continue # Пропускаем вычисляемое поле
 
             for date_obj, col_num in date_columns.items():
                 

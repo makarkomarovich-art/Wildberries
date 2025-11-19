@@ -269,14 +269,14 @@ def compare_and_update(service, spreadsheet_id, sheet_name, sheet_data, validate
         logging.info(f"Запрос на запись даты {tomorrow.strftime('%d.%m.%Y')} в новый столбец добавлен в батч.")
 
     
-    checkable_attributes_count = len([attr for attr in ATTRIBUTE_ORDER if attr not in ["ДРР", "Журнал изменений"]])
+    checkable_attributes_count = len([attr for attr in ATTRIBUTE_ORDER if attr not in ["Журнал изменений"]])
     total_cells_to_check = len(validated_articles) * checkable_attributes_count * len(date_columns)
     logging.info(f"Всего ячеек для проверки (артикулы * атрибуты * даты): {total_cells_to_check}")
 
     for nm_id, article_info in validated_articles.items():
         for attr_name, row_num in article_info['attributes'].items():
-            if attr_name == "ДРР" or attr_name == "Журнал изменений":
-                continue # Пропускаем вычисляемые и нетрогаемые поля
+            if attr_name == "Журнал изменений":
+                continue # Пропускаем нетрогаемые поля
 
             for date_obj, col_num in date_columns.items():
                 

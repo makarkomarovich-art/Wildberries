@@ -9,6 +9,13 @@ from typing import Dict, Any, Set
 from datetime import date
 
 
+def _round_percent(value: float, decimals: int = 2) -> float:
+    """Вспомогательная функция для округления процентов."""
+    if value is None or value == 0:
+        return 0
+    return round(value, decimals)
+
+
 def get_db_connection(db_url: str):
     """Инициализирует и возвращает подключение к базе данных."""
     conn = psycopg2.connect(db_url)
@@ -96,6 +103,12 @@ def get_data_by_articles(article_ids: Set[int], date_range: Set[date], db_url: s
                     row_dict[col_name] = value if value is not None else 0
 
             if nm_id and row_date:
+                # Вычисляем ДРР = (Расход на рекламу / Сумма заказов) * 100
+                adv_spend = row_dict.get("Расход на рекламу", 0)
+                orders_sum = row_dict.get("Сумма заказов", 0)
+                drr = (adv_spend / orders_sum * 100) if orders_sum > 0 else 0
+                row_dict["ДРР"] = _round_percent(drr, 2)
+                
                 db_data_map[(nm_id, row_date)] = row_dict
         
         logging.info(f"✅ Из БД извлечено {len(db_data_map)} записей.")
