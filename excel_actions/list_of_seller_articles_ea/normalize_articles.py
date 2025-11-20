@@ -145,6 +145,7 @@ def extract_data_for_supabase(cards: Iterable[Dict[str, Any]]) -> Tuple[List[Dic
         if not isinstance(sizes, list):
             continue
         
+        vendor_code_for_sizes = str(card.get('vendorCode', '')).strip()
         for size_item in sizes:
             if not isinstance(size_item, dict):
                 continue
@@ -174,6 +175,7 @@ def extract_data_for_supabase(cards: Iterable[Dict[str, Any]]) -> Tuple[List[Dic
                 
                 product_sizes_data.append({
                     'nm_id': nm_id,  # для связи с products
+                    'vendor_code': vendor_code_for_sizes,
                     'barcode': barcode,
                     'size': tech_size  # пустая строка если нет techSize
                 })

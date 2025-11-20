@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      body { font-family: system-ui, sans-serif; font-size: 13px; padding: 12px; }
+      label { display:block; margin-top:8px; }
+      .row { margin-top:6px; }
+      input[type=number] { width:100%; }
+      button { margin-top:12px; }
+    </style>
+  </head>
+  <body>
+    <h3>Блокировка ячеек</h3>
+
+    <div class="row">
+      Ориентация:<br>
+      <label><input type="radio" name="orient" value="ROWS" checked> По строкам</label>
+      <label><input type="radio" name="orient" value="COLS"> По столбцам</label>
+    </div>
+
+    <label>
+      Начальный номер строки / столбца:
+      <input id="startIndex" type="number" min="1" value="2">
+    </label>
+
+    <label>
+      Шаг (через сколько строк/столбцов):
+      <input id="step" type="number" min="1" value="1">
+    </label>
+
+    <label>
+      Количество повторений:
+      <input id="repeatCount" type="number" min="1" value="1">
+    </label>
+
+    <label>
+      С какого столбца защищать (A / F / номер, пусто = A):
+      <input id="fromCol" type="text" value="">
+    </label>
+
+    <label>
+      По какой столбец защищать (пусто = до конца):
+      <input id="toCol" type="text" value="">
+    </label>
+
+    <label>
+      Лист (опционально, пусто = активный):
+      <input id="sheetName" type="text" style="width:100%">
+    </label>
+
+    <p style="margin-top:10px;color:#555;">
+      Будет установлена защита с предупреждением: при редактировании Google Sheets спросит подтверждение.
+    </p>
+
+    <button onclick="apply()">Применить</button>
+
+    <script>
+      function apply() {
+        const orientation = document.querySelector('input[name=orient]:checked').value;
+        const startIndex = document.getElementById('startIndex').value;
+        const step = document.getElementById('step').value;
+        const repeatCount = document.getElementById('repeatCount').value;
+        const fromCol = document.getElementById('fromCol').value.trim();
+        const toCol = document.getElementById('toCol').value.trim();
+        const sheetName = document.getElementById('sheetName').value.trim();
+
+        const cfg = {
+          sheetName: sheetName || '',
+          orientation: orientation,
+          startIndex: startIndex,
+          step: step,
+          repeatCount: repeatCount,
+          fromCol: fromCol,
+          toCol: toCol
+        };
+
+        google.script.run
+          .withSuccessHandler(() => google.script.host.close())
+          .applyProtection(cfg);
+      }
+    </script>
+  </body>
+</html>

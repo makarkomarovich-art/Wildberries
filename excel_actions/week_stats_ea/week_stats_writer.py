@@ -1,4 +1,4 @@
-from typing import Dict, Any, List, Tuple
+from typing import Dict, Any, List, Tuple, Optional
 from supabase import Client
 
 
@@ -8,18 +8,21 @@ def get_week_report_dates_and_type(supabase: Client, realizationreport_id: int) 
     return row.get('date_from'), row.get('date_to'), row.get('report_type')
 
 
-def get_products_map(supabase: Client) -> Dict[int, str]:
-    resp = supabase.table('products').select('id, nm_id').execute()
-    return {r['nm_id']: r['id'] for r in resp.data if r.get('nm_id')}
-
-
-def aggregate_week_rows_by_nm(rows: List[Dict[str, Any]]) -> Dict[int, Dict[str, Any]]:
-    agg: Dict[int, Dict[str, Any]] = {}
+def aggregate_week_rows_by_barcode(rows: List[Dict[str, Any]]) -> Dict[Optional[int], Dict[str, Any]]:
+    """
+    Агрегируем строки week_rows по barcode.
+    Для каждого barcode (включая NULL) создаём запись с накопленными суммами.
+    """
+    agg: Dict[Optional[int], Dict[str, Any]] = {}
+    
     for r in rows:
-        nm = r.get('nm_id')
-        if nm is None:
-            continue
-        a = agg.setdefault(nm, {
+        barcode = r.get('barcode')  # может быть None/NULL или int
+        
+        # Для уникальности используем barcode как ключ (включая None)
+        a = agg.setdefault(barcode, {
+            'nm_id': None,
+            'size': None,
+            'product_size_id': None,
             'sa_name': None,
             'quantity_sells_nm': 0,
             'quantity_return_nm': 0,
@@ -33,6 +36,17 @@ def aggregate_week_rows_by_nm(rows: List[Dict[str, Any]]) -> Dict[int, Dict[str,
             'return_amount_nm': 0,
             'delivery_rub_nm': 0.0,
         })
+        
+        # Запоминаем nm_id, size, product_size_id из первой встретившейся строки
+        if a['nm_id'] is None:
+            a['nm_id'] = r.get('nm_id')
+        if a['size'] is None:
+            a['size'] = r.get('ts_name')
+        if a['product_size_id'] is None:
+            a['product_size_id'] = r.get('product_size_id')
+        if a['sa_name'] is None:
+            a['sa_name'] = r.get('sa_name')
+        
         oper = r.get('supplier_oper_name') or ''
         qty = int(r.get('quantity') or 0)
         price = float(r.get('retail_price') or 0)
@@ -44,17 +58,19 @@ def aggregate_week_rows_by_nm(rows: List[Dict[str, Any]]) -> Dict[int, Dict[str,
         return_amt_cnt = int(r.get('return_amount') or 0)
         delivery_rub = float(r.get('delivery_rub') or 0)
 
-        if a['sa_name'] is None:
-            a['sa_name'] = r.get('sa_name')
-
         if oper in ['Продажа', 'Возврат']:
+            # Продажа / Возврат учитываем со знаком
             mult = 1 if oper == 'Продажа' else -1
             a['quantity_sells_nm'] += qty * mult
             a['retail_price_nm'] += price * mult
             a['retail_amount_nm'] += amount * mult
             a['ppvz_for_pay_nm'] += ppvz * mult
-            a['rub_commission_nm'] += (amount * comm_prc / 100.0) if comm_prc else 0.0
-            a['rub_spp_nm'] += (amount * spp_prc / 100.0) if spp_prc else 0.0
+            # rub_commission_nm: commission_percent * retail_price / 100 с учетом знака
+            if comm_prc:
+                a['rub_commission_nm'] += mult * (price * comm_prc / 100.0)
+            # rub_spp_nm: ppvz_spp_prc * retail_price / 100 с учетом знака
+            if spp_prc:
+                a['rub_spp_nm'] += mult * (price * spp_prc / 100.0)
         if oper == 'Возврат':
             a['quantity_return_nm'] += qty
         if oper == 'Логистика':
@@ -62,7 +78,8 @@ def aggregate_week_rows_by_nm(rows: List[Dict[str, Any]]) -> Dict[int, Dict[str,
             a['return_amount_nm'] += return_amt_cnt
             a['delivery_rub_nm'] += delivery_rub
 
-    for nm, a in agg.items():
+    # Вычисляем производные поля для каждого barcode
+    for barcode_key, a in agg.items():
         a['cancels_nm'] = int(a['return_amount_nm'] - a['quantity_return_nm'])
         a['rub_discountwb_both_nm'] = a['retail_price_nm'] - a['retail_amount_nm']
         a['rub_commision_both_nm'] = a['retail_price_nm'] - a['ppvz_for_pay_nm']
@@ -74,44 +91,43 @@ def aggregate_week_rows_by_nm(rows: List[Dict[str, Any]]) -> Dict[int, Dict[str,
         a['perc_commisian_both_nm'] = (a['rub_commision_both_nm'] / denom) * 100.0
         a['perc_commission_nm'] = (a['rub_commission_nm'] / denom) * 100.0
         a['perc_excess_comission_nm'] = (a['rub_excess_comission_nm'] / denom) * 100.0
+    
     return agg
 
 
 def load_rows_from_db(supabase: Client, realizationreport_id: int) -> List[Dict[str, Any]]:
+    """
+    Загружаем все строки week_rows для данного отчёта.
+    Теперь НЕ фильтруем по barcode (разрешаем NULL).
+    """
     resp = supabase.table('week_rows').select('*').eq('realizationreport_id', realizationreport_id).execute()
-    rows = []
-    for r in (resp.data or []):
-        nm = r.get('nm_id')
-        if nm is None or int(nm) <= 0:
-            continue
-        if r.get('product_id') is None:
-            continue
-        rows.append(r)
-    return rows
+    return resp.data or []
 
 
 def insert_week_stats_for_report(
     supabase: Client,
     realizationreport_id: int
 ) -> Tuple[int, int]:
+    """
+    Загружаем week_rows, агрегируем по barcode, вставляем в week_stats.
+    Возвращаем (кол-во вставленных записей, общее кол-во уникальных barcode).
+    """
     date_from, date_to, report_type = get_week_report_dates_and_type(supabase, realizationreport_id)
-    products_map = get_products_map(supabase)
 
     db_rows = load_rows_from_db(supabase, realizationreport_id)
-    agg = aggregate_week_rows_by_nm(db_rows)
+    agg = aggregate_week_rows_by_barcode(db_rows)
 
     candidates: List[Dict[str, Any]] = []
-    for nm_id, a in agg.items():
-        product_id = products_map.get(nm_id)
-        if product_id is None:
-            continue
+    for barcode, a in agg.items():
         rec = {
             'report_type': report_type,
             'realizationreport_id': realizationreport_id,
-            'product_id': product_id,
+            'product_size_id': a.get('product_size_id'),
             'date_from': date_from,
             'date_to': date_to,
-            'nm_id': nm_id,
+            'nm_id': a.get('nm_id'),
+            'barcode': barcode,
+            'ts_code': a.get('size'),
             'sa_name': a.get('sa_name'),
             'quantity_sells_nm': int(a.get('quantity_sells_nm') or 0),
             'quantity_return_nm': int(a.get('quantity_return_nm') or 0),
@@ -136,26 +152,30 @@ def insert_week_stats_for_report(
         }
         candidates.append(rec)
 
-    existing_resp = supabase.table('week_stats').select('realizationreport_id, nm_id').eq('realizationreport_id', realizationreport_id).execute()
-    existing_pairs = {(row['realizationreport_id'], row['nm_id']) for row in (existing_resp.data or [])}
+    # Проверяем существующие записи по (realizationreport_id, barcode)
+    existing_resp = supabase.table('week_stats').select('realizationreport_id, barcode').eq('realizationreport_id', realizationreport_id).execute()
+    existing_pairs = {(row['realizationreport_id'], row.get('barcode')) for row in (existing_resp.data or [])}
 
-    to_insert = [rec for rec in candidates if (rec['realizationreport_id'], rec['nm_id']) not in existing_pairs]
+    to_insert = [rec for rec in candidates if (rec['realizationreport_id'], rec['barcode']) not in existing_pairs]
 
-    total_unique_nm = len(agg.keys())
+    total_unique_barcodes = len(agg.keys())
     will_insert = len(to_insert)
 
     if not to_insert:
-        return 0, total_unique_nm
+        return 0, total_unique_barcodes
 
     resp = supabase.table('week_stats').insert(to_insert).execute()
     inserted = len(resp.data) if resp.data else len(to_insert)
-    return inserted, total_unique_nm
+    return inserted, total_unique_barcodes
 
 
 def verify_week_stats_totals(
     supabase: Client,
     realizationreport_id: int
 ) -> None:
+    """
+    Сверяем агрегированные суммы из week_stats с итоговыми значениями в week_reports.
+    """
     ws = supabase.table('week_stats').select('retail_amount_nm, ppvz_for_pay_nm, delivery_rub_nm').eq('realizationreport_id', realizationreport_id).execute()
     tot_amount = sum(float(r.get('retail_amount_nm') or 0) for r in (ws.data or []))
     tot_ppvz = sum(float(r.get('ppvz_for_pay_nm') or 0) for r in (ws.data or []))

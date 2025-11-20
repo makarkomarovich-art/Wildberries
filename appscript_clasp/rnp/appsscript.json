@@ -1,0 +1,15 @@
+{
+  "timeZone": "Europe/Moscow",
+  "dependencies": {
+    "libraries": [
+      {
+        "userSymbol": "zazchita",
+        "version": "0",
+        "libraryId": "1ndJrFQ85oNZM05g1mI51JcDMogX6OoWtcQiJ_cTSEjh0RwHzeRzPy-wn",
+        "developmentMode": true
+      }
+    ]
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8"
+}

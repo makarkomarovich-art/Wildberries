@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      body { font-family: system-ui, sans-serif; font-size: 13px; padding: 12px; }
+      label { display:block; margin-top:8px; }
+      .row { margin-top:6px; }
+      button { margin-top:12px; }
+    </style>
+  </head>
+  <body>
+    <h3>Условное форматирование</h3>
+
+    <p>Можно задать до 5 диапазонов (A1-нотация). Пустые строки будут пропущены.</p>
+
+    <label>
+      Диапазон 1 (A1):
+      <input id="range1" type="text" value="D2:D100" style="width:100%">
+    </label>
+    <label>
+      Диапазон 2 (A1):
+      <input id="range2" type="text" style="width:100%">
+    </label>
+    <label>
+      Диапазон 3 (A1):
+      <input id="range3" type="text" style="width:100%">
+    </label>
+    <label>
+      Диапазон 4 (A1):
+      <input id="range4" type="text" style="width:100%">
+    </label>
+    <label>
+      Диапазон 5 (A1):
+      <input id="range5" type="text" style="width:100%">
+    </label>
+
+    <div class="row">
+      Тип градиента:<br>
+      <label><input type="radio" name="gradType" value="TWO" checked> Двухцветный</label>
+      <label><input type="radio" name="gradType" value="THREE"> Трёхцветный</label>
+    </div>
+
+    <div class="row">
+      Ориентация повтора:<br>
+      <label><input type="radio" name="orient" value="ROWS" checked> По строкам</label>
+      <label><input type="radio" name="orient" value="COLS"> По столбцам</label>
+    </div>
+
+    <label>
+      Шаг повтора (через сколько строк/столбцов):
+      <input id="step" type="number" min="1" value="1">
+    </label>
+
+    <label>
+      Количество повторений:
+      <input id="repeatCount" type="number" min="1" value="1">
+    </label>
+
+    <div class="row">
+      <label>
+        <input id="reverse" type="checkbox">
+        Реверсировать цвета (наоборот)
+      </label>
+    </div>
+
+    <div class="row">
+      <label>
+        Лист (опционально, пусто = активный):
+        <input id="sheetName" type="text" style="width:100%">
+      </label>
+    </div>
+
+    <button onclick="apply()">Применить</button>
+
+    <script>
+      function apply() {
+        const ranges = [];
+        for (let i = 1; i <= 5; i++) {
+          const v = document.getElementById('range' + i).value.trim();
+          if (v) ranges.push(v);
+        }
+        const sheetName = document.getElementById('sheetName').value.trim();
+        const reverse = document.getElementById('reverse').checked;
+        const gradType = document.querySelector('input[name=gradType]:checked').value;
+        const orientation = document.querySelector('input[name=orient]:checked').value;
+        const step = document.getElementById('step').value;
+        const repeatCount = document.getElementById('repeatCount').value;
+
+        if (!ranges.length) {
+          alert('Укажи хотя бы один диапазон.');
+          return;
+        }
+
+        const cfg = {
+          sheetName: sheetName || '',
+          ranges: ranges,
+          gradientType: gradType,
+          reverse: reverse,
+          orientation: orientation,
+          step: step,
+          repeatCount: repeatCount
+        };
+
+        google.script.run
+          .withSuccessHandler(() => google.script.host.close())
+          .applyFormatting(cfg);
+      }
+    </script>
+  </body>
+</html>
+
+

@@ -1,7 +1,8 @@
 -- Create week_rows table
 CREATE TABLE week_rows (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  product_id UUID REFERENCES products(id) ON DELETE CASCADE,
+  -- Мягкая связь на конкретный размер товара
+  product_size_id UUID REFERENCES product_sizes(id) ON DELETE CASCADE,
   realizationreport_id INTEGER NOT NULL REFERENCES week_reports(realizationreport_id) ON DELETE CASCADE,
   report_type TEXT,
   rr_id BIGINT,
@@ -46,7 +47,7 @@ CREATE TABLE week_rows (
 );
 
 -- Create indexes
-CREATE INDEX idx_week_rows_product_id ON week_rows (product_id);
+CREATE INDEX idx_week_rows_product_size_id ON week_rows (product_size_id);
 CREATE INDEX idx_week_rows_realizationreport_id ON week_rows (realizationreport_id);
 CREATE INDEX idx_week_rows_nm_id ON week_rows (nm_id);
 CREATE INDEX idx_week_rows_sale_dt ON week_rows (sale_dt);

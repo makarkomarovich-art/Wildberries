@@ -1,0 +1,262 @@
+{
+  "target_article": "rykzak_black",
+  "total_quantity": 1198,
+  "total_supplies": 13,
+  "supply_ids": [
+    30680790,
+    30685076,
+    30691195,
+    31175455,
+    31208675,
+    31584935,
+    31584995,
+    31586010,
+    31606489,
+    33634297,
+    33789804,
+    33789815,
+    34364256
+  ],
+  "warehouse_breakdown": {
+    "Коледино": {
+      "quantity": 60,
+      "supply_ids": [
+        30691195
+      ]
+    },
+    "Подольск": {
+      "quantity": 60,
+      "supply_ids": [
+        30685076
+      ]
+    },
+    "Невинномысск": {
+      "quantity": 280,
+      "supply_ids": [
+        31175455,
+        31584935,
+        33789804
+      ]
+    },
+    "Самара (Новосемейкино)": {
+      "quantity": 180,
+      "supply_ids": [
+        31208675,
+        31586010,
+        33634297
+      ]
+    },
+    "Тула": {
+      "quantity": 417,
+      "supply_ids": [
+        30680790,
+        31584995,
+        33789815,
+        34364256
+      ]
+    },
+    "Электросталь": {
+      "quantity": 201,
+      "supply_ids": [
+        31606489
+      ]
+    }
+  },
+  "detailed_records": [
+    {
+      "incomeId": 30691195,
+      "number": "",
+      "date": "2025-07-17T00:00:00",
+      "lastChangeDate": "2025-07-18T05:03:12",
+      "supplierArticle": "rykzak_black",
+      "techSize": "0",
+      "barcode": "2044679208396",
+      "quantity": 60,
+      "totalPrice": 0,
+      "dateClose": "2025-07-18T00:00:00",
+      "warehouseName": "Коледино",
+      "nmId": 456770543,
+      "status": "Принято"
+    },
+    {
+      "incomeId": 30685076,
+      "number": "",
+      "date": "2025-07-19T00:00:00",
+      "lastChangeDate": "2025-07-20T14:35:32",
+      "supplierArticle": "rykzak_black",
+      "techSize": "0",
+      "barcode": "2044679208396",
+      "quantity": 60,
+      "totalPrice": 0,
+      "dateClose": "2025-07-20T00:00:00",
+      "warehouseName": "Подольск",
+      "nmId": 456770543,
+      "status": "Принято"
+    },
+    {
+      "incomeId": 31175455,
+      "number": "",
+      "date": "2025-07-25T00:00:00",
+      "lastChangeDate": "2025-07-26T01:02:09",
+      "supplierArticle": "rykzak_black",
+      "techSize": "0",
+      "barcode": "2044679208396",
+      "quantity": 40,
+      "totalPrice": 0,
+      "dateClose": "2025-07-26T00:00:00",
+      "warehouseName": "Невинномысск",
+      "nmId": 456770543,
+      "status": "Принято"
+    },
+    {
+      "incomeId": 31208675,
+      "number": "",
+      "date": "2025-07-25T00:00:00",
+      "lastChangeDate": "2025-07-26T01:02:09",
+      "supplierArticle": "rykzak_black",
+      "techSize": "0",
+      "barcode": "2044679208396",
+      "quantity": 40,
+      "totalPrice": 0,
+      "dateClose": "2025-07-26T00:00:00",
+      "warehouseName": "Самара (Новосемейкино)",
+      "nmId": 456770543,
+      "status": "Принято"
+    },
+    {
+      "incomeId": 30680790,
+      "number": "",
+      "date": "2025-07-26T00:00:00",
+      "lastChangeDate": "2025-07-27T02:55:17",
+      "supplierArticle": "rykzak_black",
+      "techSize": "0",
+      "barcode": "2044679208396",
+      "quantity": 60,
+      "totalPrice": 0,
+      "dateClose": "2025-07-27T00:00:00",
+      "warehouseName": "Тула",
+      "nmId": 456770543,
+      "status": "Принято"
+    },
+    {
+      "incomeId": 31584995,
+      "number": "",
+      "date": "2025-08-08T00:00:00",
+      "lastChangeDate": "2025-08-09T03:41:01",
+      "supplierArticle": "rykzak_black",
+      "techSize": "0",
+      "barcode": "2044679208396",
+      "quantity": 101,
+      "totalPrice": 0,
+      "dateClose": "2025-08-09T00:00:00",
+      "warehouseName": "Тула",
+      "nmId": 456770543,
+      "status": "Принято"
+    },
+    {
+      "incomeId": 31586010,
+      "number": "",
+      "date": "2025-08-08T00:00:00",
+      "lastChangeDate": "2025-08-10T06:36:33",
+      "supplierArticle": "rykzak_black",
+      "techSize": "0",
+      "barcode": "2044679208396",
+      "quantity": 40,
+      "totalPrice": 0,
+      "dateClose": "2025-08-10T00:00:00",
+      "warehouseName": "Самара (Новосемейкино)",
+      "nmId": 456770543,
+      "status": "Принято"
+    },
+    {
+      "incomeId": 31606489,
+      "number": "",
+      "date": "2025-08-07T00:00:00",
+      "lastChangeDate": "2025-08-10T17:55:53",
+      "supplierArticle": "rykzak_black",
+      "techSize": "0",
+      "barcode": "2044679208396",
+      "quantity": 201,
+      "totalPrice": 0,
+      "dateClose": "2025-08-10T00:00:00",
+      "warehouseName": "Электросталь",
+      "nmId": 456770543,
+      "status": "Принято"
+    },
+    {
+      "incomeId": 31584935,
+      "number": "",
+      "date": "2025-08-08T00:00:00",
+      "lastChangeDate": "2025-08-11T01:07:46",
+      "supplierArticle": "rykzak_black",
+      "techSize": "0",
+      "barcode": "2044679208396",
+      "quantity": 140,
+      "totalPrice": 0,
+      "dateClose": "2025-08-11T00:00:00",
+      "warehouseName": "Невинномысск",
+      "nmId": 456770543,
+      "status": "Принято"
+    },
+    {
+      "incomeId": 33789815,
+      "number": "",
+      "date": "2025-10-28T00:00:00",
+      "lastChangeDate": "2025-10-29T06:55:14",
+      "supplierArticle": "rykzak_black",
+      "techSize": "0",
+      "barcode": "2044679208396",
+      "quantity": 100,
+      "totalPrice": 0,
+      "dateClose": "2025-10-29T00:00:00",
+      "warehouseName": "Тула",
+      "nmId": 456770543,
+      "status": "Принято"
+    },
+    {
+      "incomeId": 33634297,
+      "number": "",
+      "date": "2025-10-31T00:00:00",
+      "lastChangeDate": "2025-10-31T22:01:02",
+      "supplierArticle": "rykzak_black",
+      "techSize": "0",
+      "barcode": "2044679208396",
+      "quantity": 100,
+      "totalPrice": 0,
+      "dateClose": "2025-10-31T00:00:00",
+      "warehouseName": "Самара (Новосемейкино)",
+      "nmId": 456770543,
+      "status": "Принято"
+    },
+    {
+      "incomeId": 33789804,
+      "number": "",
+      "date": "2025-11-01T00:00:00",
+      "lastChangeDate": "2025-11-03T15:05:18",
+      "supplierArticle": "rykzak_black",
+      "techSize": "0",
+      "barcode": "2044679208396",
+      "quantity": 100,
+      "totalPrice": 0,
+      "dateClose": "2025-11-03T00:00:00",
+      "warehouseName": "Невинномысск",
+      "nmId": 456770543,
+      "status": "Принято"
+    },
+    {
+      "incomeId": 34364256,
+      "number": "",
+      "date": "2025-11-17T00:00:00",
+      "lastChangeDate": "2025-11-18T11:46:48",
+      "supplierArticle": "rykzak_black",
+      "techSize": "0",
+      "barcode": "2044679208396",
+      "quantity": 156,
+      "totalPrice": 0,
+      "dateClose": "2025-11-18T00:00:00",
+      "warehouseName": "Тула",
+      "nmId": 456770543,
+      "status": "Принято"
+    }
+  ]
+}

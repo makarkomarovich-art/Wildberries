@@ -141,10 +141,10 @@ def upsert_to_supabase(
     if product_sizes_data:
         print(f"   Размеров/баркодов для upsert: {len(product_sizes_data)}")
         for size_item in product_sizes_data:
-            nm_id = size_item.pop('nm_id')  # убираем nm_id, добавляем product_id
+            nm_id = size_item.get('nm_id')  # сохраняем nm_id в записи и добавляем product_id
             product_uuid = nm_id_to_uuid.get(nm_id)
             if not product_uuid:
-                print(f"   ⚠️ WARNING: Не найден UUID для nm_id={nm_id}, пропускаем барк од {size_item.get('barcode')}")
+                print(f"   ⚠️ WARNING: Не найден UUID для nm_id={nm_id}, пропускаем баркод {size_item.get('barcode')}")
                 continue
             size_item['product_id'] = product_uuid
         

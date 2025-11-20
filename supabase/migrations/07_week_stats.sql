@@ -1,12 +1,15 @@
--- week_stats: aggregated per nm_id per realizationreport_id
+-- week_stats: aggregated per barcode per realizationreport_id
 CREATE TABLE week_stats (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   report_type TEXT,
   realizationreport_id INTEGER NOT NULL REFERENCES week_reports(realizationreport_id) ON DELETE CASCADE,
-  product_id UUID REFERENCES products(id) ON DELETE CASCADE,
+  -- Мягкая связь на конкретный размер товара
+  product_size_id UUID REFERENCES product_sizes(id) ON DELETE CASCADE,
   date_from DATE NOT NULL,
   date_to DATE NOT NULL,
-  nm_id BIGINT NOT NULL,
+  barcode BIGINT,
+  nm_id BIGINT,
+  ts_code TEXT,
   sa_name TEXT,
   quantity_sells_nm INTEGER,
   quantity_return_nm INTEGER,
@@ -32,8 +35,8 @@ CREATE TABLE week_stats (
 );
 
 -- Uniqueness
-CREATE UNIQUE INDEX idx_week_stats_unique ON week_stats (realizationreport_id, nm_id);
+CREATE UNIQUE INDEX idx_week_stats_unique ON week_stats (realizationreport_id, barcode);
 
 -- Indexes
 CREATE INDEX idx_week_stats_realizationreport_id ON week_stats (realizationreport_id);
-CREATE INDEX idx_week_stats_nm_id ON week_stats (nm_id);
+CREATE INDEX idx_week_stats_barcode ON week_stats (barcode);

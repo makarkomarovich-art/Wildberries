@@ -38,8 +38,8 @@ logging.getLogger("httpx").setLevel(logging.WARNING)
 # ============================================================================
 # НАСТРОЙКИ ОТЧЕТА - УСТАНОВИТЕ ДАТЫ ЗДЕСЬ
 # ============================================================================
-REPORT_DATE_FROM = "2025-10-06"  # Начальная дата отчета
-REPORT_DATE_TO = "2025-10-12"    # Конечная дата отчета
+REPORT_DATE_FROM = "2025-11-03"  # Начальная дата отчета
+REPORT_DATE_TO = "2025-11-09"    # Конечная дата отчета
 # ============================================================================
 
 
@@ -195,6 +195,9 @@ def process_weekly_reports(
     
     # 4. Подсчитываем supplier_oper_name для каждого realizationreport_id
     for realizationreport_id, report_records in reports_by_realizationreport_id.items():
+        # Общее количество строк в оригинальных данных
+        total_rows = len(report_records)
+        
         # Считаем количество по каждому supplier_oper_name
         oper_name_counts = {}
         for record in report_records:
@@ -203,8 +206,18 @@ def process_weekly_reports(
         
         # Выводим результаты
         logger.info(f"\nrealizationreport_id {realizationreport_id}:")
+        logger.info(f"  Всего строк: {total_rows}")
         for oper_name, count in sorted(oper_name_counts.items(), key=lambda x: -x[1]):
             logger.info(f"  {oper_name} - {count} строк")
+        
+        # Проверяем, что сумма отсортированных строк равна общему количеству
+        summed_rows = sum(oper_name_counts.values())
+        if summed_rows == total_rows:
+            logger.info(f"  ✅ Сумма строк по supplier_oper_name совпадает с общим количеством ({summed_rows})")
+        else:
+            logger.warning(
+                f"  ⚠️ Несовпадение суммы строк по supplier_oper_name: сумма={summed_rows}, всего={total_rows}"
+            )
     
     # 5. Агрегируем данные с учетом логики по supplier_oper_name
     aggregated = aggregator.aggregate_by_oper_name(reports_by_realizationreport_id)

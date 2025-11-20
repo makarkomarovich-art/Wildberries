@@ -8,6 +8,13 @@ from datetime import date
 from typing import Dict, List, Tuple, Any
 
 
+def _round_percent(value: float, decimals: int = 2) -> float:
+    """Вспомогательная функция для округления процентов."""
+    if value is None or value == 0:
+        return 0
+    return round(value, decimals)
+
+
 def build_level_1_articulы(
     raw_data: Dict[Tuple[int, date], Dict[str, Any]]
 ) -> List[Dict[str, Any]]:
@@ -34,6 +41,7 @@ def build_level_1_articulы(
         
         # ДРР = (Расход на рекламу / Сумма заказов) * 100
         drr = (adv_spend / orders_sum * 100) if orders_sum > 0 else 0
+        drr = _round_percent(drr, 2)
         
         row = {
             'date': row_date,
@@ -88,21 +96,25 @@ def build_level_2_предметы(
         
         # Вычисляем CPM и CPC
         # CPM = (расходы / просмотры) * 1000
-        cpm = (sum_val / views_val * 1000) if views_val > 0 else 0
+        cpm = round((sum_val / views_val * 1000)) if views_val > 0 else 0
         # CPC = расходы / клики
         cpc = (sum_val / clicks_val) if clicks_val > 0 else 0
         
         # ДРР = (Расход на рекламу / Сумма заказов) * 100
         drr = (sum_val / orders_sum * 100) if orders_sum > 0 else 0
+        drr = _round_percent(drr, 2)
         
         # Конверсия в корзину = (В корзину / Клики общие) * 100
         conv_to_cart = (add_to_cart / clicks_general * 100) if clicks_general > 0 else 0
+        conv_to_cart = _round_percent(conv_to_cart, 2)
         
         # Конверсия в заказ = (Заказы / В корзину) * 100
         conv_to_order = (orders / add_to_cart * 100) if add_to_cart > 0 else 0
+        conv_to_order = _round_percent(conv_to_order, 2)
         
         # CTR = (Рекламные клики / Рекламные просмотры) * 100
         ctr_val = (clicks_val / views_val * 100) if views_val > 0 else 0
+        ctr_val = _round_percent(ctr_val, 2)
         
         # Цена одного заказа = Сумма заказов / Заказы
         order_price = (orders_sum / orders) if orders > 0 else 0
@@ -161,21 +173,25 @@ def build_level_3_склейки(
         
         # Вычисляем CPM и CPC
         # CPM = (расходы / просмотры) * 1000
-        cpm = (sum_val / views_val * 1000) if views_val > 0 else 0
+        cpm = round((sum_val / views_val * 1000)) if views_val > 0 else 0
         # CPC = расходы / клики
         cpc = (sum_val / clicks_val) if clicks_val > 0 else 0
         
         # ДРР = (Расход на рекламу / Сумма заказов) * 100
         drr = (sum_val / orders_sum * 100) if orders_sum > 0 else 0
+        drr = _round_percent(drr, 2)
         
         # Конверсия в корзину = (В корзину / Клики общие) * 100
         conv_to_cart = (add_to_cart / clicks_general * 100) if clicks_general > 0 else 0
+        conv_to_cart = _round_percent(conv_to_cart, 2)
         
         # Конверсия в заказ = (Заказы / В корзину) * 100
         conv_to_order = (orders / add_to_cart * 100) if add_to_cart > 0 else 0
+        conv_to_order = _round_percent(conv_to_order, 2)
         
         # CTR = (Рекламные клики / Рекламные просмотры) * 100
         ctr_val = (clicks_val / views_val * 100) if views_val > 0 else 0
+        ctr_val = _round_percent(ctr_val, 2)
         
         # Цена одного заказа = Сумма заказов / Заказы
         order_price = (orders_sum / orders) if orders > 0 else 0
@@ -234,21 +250,25 @@ def build_level_4_магазин(
         
         # Вычисляем CPM и CPC
         # CPM = (расходы / просмотры) * 1000
-        cpm = (sum_val / views_val * 1000) if views_val > 0 else 0
+        cpm = round((sum_val / views_val * 1000)) if views_val > 0 else 0
         # CPC = расходы / клики
         cpc = (sum_val / clicks_val) if clicks_val > 0 else 0
         
         # ДРР = (Расход на рекламу / Сумма заказов) * 100
         drr = (sum_val / orders_sum * 100) if orders_sum > 0 else 0
+        drr = _round_percent(drr, 2)
         
         # Конверсия в корзину = (В корзину / Клики общие) * 100
         conv_to_cart = (add_to_cart / clicks_general * 100) if clicks_general > 0 else 0
+        conv_to_cart = _round_percent(conv_to_cart, 2)
         
         # Конверсия в заказ = (Заказы / В корзину) * 100
         conv_to_order = (orders / add_to_cart * 100) if add_to_cart > 0 else 0
+        conv_to_order = _round_percent(conv_to_order, 2)
         
         # CTR = (Рекламные клики / Рекламные просмотры) * 100
         ctr_val = (clicks_val / views_val * 100) if views_val > 0 else 0
+        ctr_val = _round_percent(ctr_val, 2)
         
         # Цена одного заказа = Сумма заказов / Заказы
         order_price = (orders_sum / orders) if orders > 0 else 0

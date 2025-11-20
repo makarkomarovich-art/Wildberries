@@ -107,7 +107,17 @@ def get_data_by_articles(article_ids: Set[int], date_range: Set[date], db_url: s
                 adv_spend = row_dict.get("Расход на рекламу", 0)
                 orders_sum = row_dict.get("Сумма заказов", 0)
                 drr = (adv_spend / orders_sum * 100) if orders_sum > 0 else 0
-                row_dict["ДРР"] = drr
+                row_dict["ДРР"] = _round_percent(drr, 2)
+                
+                # Вычисляем CPM - округляем до целого
+                cpm_val = row_dict.get("CPM", 0)
+                if isinstance(cpm_val, (int, float)) and cpm_val != 0:
+                    row_dict["CPM"] = round(cpm_val)
+                
+                # CPC - округляем до двух знаков после запятой
+                cpc_val = row_dict.get("CPC", 0)
+                if isinstance(cpc_val, (int, float)) and cpc_val != 0:
+                    row_dict["CPC"] = round(cpc_val, 2)
                 
                 db_data_map[(nm_id, row_date)] = row_dict
         
